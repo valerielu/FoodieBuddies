@@ -57,9 +57,9 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 **Objective:** Users profile can be updated through the API.
 
-- [ ] `City` model
+- [ ] `User` model
 - [ ] Seed database with a small amount of test data
-- [ ] API for notes (`UsersController`)
+- [ ] API for users (`UsersController`)
 - [ ] JBuilder views for Users
 - User components and respective Redux loops
   - [ ] `UserForm`
@@ -72,7 +72,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 - [ ] `City` model
 - [ ] Seed database with a small amount of test data
-- [ ] API for notes (`CitiesController`)
+- [ ] API for cities (`CitiesController`)
 - [ ] JBuilder views for cities
 - City components and respective Redux loops
   - [ ] `CitiesIndex`
@@ -87,7 +87,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 - [ ] `Event` model
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for notes (`EventsController`)
+- [ ] CRUD API for events (`EventsController`)
 - [ ] JBuilder views for events
 - [ ] Adding events requires a city
 - [ ] Adding events requires a host(currentUser, if currentUser is a host)
@@ -105,7 +105,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 - [ ] `Host` model
 - [ ] Seed database with a small amount of test data
-- [ ] API for notes (`HostsController`)
+- [ ] API for hosts (`HostsController`)
 - [ ] JBuilder views for hosts
 - Host components and respective Redux loops
   - [ ] `HostsIndex`
