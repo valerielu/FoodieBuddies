@@ -4,56 +4,49 @@
  - AuthForm(For Sign up and Sign in)
 
 **HomeContainer**
+ - Header
  - Home
- - Sidebar
  - Footer
 
 **CitiesContainer**
- - NotesHeader
-  * CityIndex
- - Footer
+ * CityIndex(linked to each city)
 
-**NotebookContainer**
- - NotebookHeader
-  + NoteIndex
+**CityContainer**
+ - EventsIndex
+ - HostsIndex
 
-**SearchResultsContainer**
- - Search
- - NoteIndex
+**NewCityContainer**
+ - NewCity
+ - NewCityButton
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**EventContainer**
+ - EventDetail
+ - JoinEventButton
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-   * NoteTools
-    - NotebookSearch
-    - Tags
-     + Tag
-    * Note
+ **NewEventContainer**
+  - NewEvent
+  - NewEventButton
 
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
+**HostContainer**
+ - HostDetail
 
-**Search**
+**NewHostContainer**
+ - NewHost
+ - NewHostButton
 
-**NewNotebook**
- - NewNotebook
+**DashboardContainer**
+ - AttendingEventsContainer
+   - EventDetail
+   - UnattendEventButton
+ - HostingEventsIndex
+   - EventDetail
+   - UpdateEventButton
+   - DeleteEventButton
 
-**NewTag**
- - NewTag
-
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
-
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
+ **AccountContainer**
+  - EditUserForm
+  - UpdateUserButton
+  - DeleteUserButton
 
 ## Routes
 
@@ -61,14 +54,9 @@
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/" | "HomeContainer" |
+| "/cities" | "CitiesContainer" |
+| "/cities/:cityId" | "CityContainer" |
+| "/hosting" | "NewHostContainer" |
+| "/cities/:cityId/host/:hostdId" | "HostContainer" |
+| "/dashboard" | "DashboardContainer"

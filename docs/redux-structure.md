@@ -50,103 +50,95 @@ Redux structure, you'll need to do the same.
   0. invoked from API callbacks on success for actions that generate POST requests
   0. the `ErrorReducer` removes `errors` for a given `form` in the application's state.
 
-## Note Cycles
+## City Cycles
 
-### Notes API Request Actions
-
-* `fetchAllNotes`
-  0. invoked from `NotesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notes` is called.
-  0. `receiveAllNotes` is set as the success callback.
-
-* `createNote`
-  0. invoked from new note button `onClick`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the success callback.
-
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notes/:id` is called.
-  0. `receiveSingleNote` is set as the success callback.
-
-* `updateNote`
-  0. invoked from `NoteForm` `onSubmit`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the success callback.
-
-* `destroyNote`
-  0. invoked from delete note button `onClick`
-  0. `DELETE /api/notes/:id` is called.
-  0. `removeNote` is set as the success callback.
-
-### Notes API Response Actions
-
-* `receiveAllNotes`
-  0. invoked from an API callback
-  0. the `NoteReducer` updates `notes` in the application's state.
-
-* `receiveSingleNote`
-  0. invoked from an API callback
-  0. the `NoteReducer` updates `notes[id]` in the application's state.
-
-* `removeNote`
-  0. invoked from an API callback
-  0. the `NoteReducer` removes `notes[id]` from the application's state.
-
-## Notebook Cycles
-
-### Notebooks API Request Actions
+### Cities API Request Actions
 
 * `fetchAllCities`
   0. invoked from `CitiesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
+  0. `GET /api/cities` is called.
   0. `receiveAllCities` is set as the success callback.
 
-* `createNotebook`
-  0. invoked from new notebook button `onClick`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `createCity`
+  0. invoked from new city button `onClick`
+  0. `POST /api/cities` is called.
+  0. `receiveSingleCity` is set as the callback.
 
-* `fetchSingleNotebook`
-  0. invoked from `NotebookDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks/:id` is called.
-  0. `receiveSingleNotebook` is set as the success callback.
+* `fetchSingleCity`
+  0. invoked from `CityDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId` is called.
+  0. `receiveSingleCity` is set as the success callback.
 
-* `updateNotebook`
-  0. invoked from `NotebookForm` `onSubmit`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the success callback.
 
-* `destroyNotebook`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/notebooks/:id` is called.
-  0. `removeNotebook` is set as the success callback.
+### Cities API Response Actions
 
-### Notebooks API Response Actions
-
-* `receiveAllNotebooks`
+* `receiveAllCities`
   0. invoked from an API callback.
-  0. The `Notebook` reducer updates `notebooks` in the application's state.
+  0. The `City` reducer updates `cities` in the application's state.
 
-* `receiveSingleNotebook`
+* `receiveSingleCity`
   0. invoked from an API callback.
-  0. The `Notebook` reducer updates `notebooks[id]` in the application's state.
+  0. The `City` reducer updates `cities[id]` in the application's state.
 
-* `removeNotebook`
-  0. invoked from an API callback.
-  0. The `Notebook` reducer removes `notebooks[id]` from the application's state.
 
-## SearchSuggestion Cycles
+## Event Cycles
 
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the success callback.
+### Events API Request Actions
 
-* `receiveSearchSuggestions`
-  0. invoked from an API callback.
-  0. The `SearchSuggestion` reducer updates `suggestions` in the application's state.
+* `fetchAllEvents`
+  0. invoked from `CityContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId/events` is called.
+  0. `receiveAllEvents` is set as the success callback.
 
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. The `SearchSuggestion` reducer resets `suggestions` in the application's state.
+* `createEvent`
+  0. invoked from new event button `onClick`
+  0. `POST /api/cities/:cityId/events` is called.
+  0. `receiveSingleEvent` is set as the success callback.
+
+* `updateEvent`
+  0. invoked from `EventForm` `onSubmit`
+  0. `PATCH /api/cities/:cityId/events/:eventId` is called.
+  0. `receiveSingleEvent` is set as the success callback.
+
+* `destroyEvent`
+  0. invoked from delete event button `onClick`
+  0. `DELETE /api/cities/:cityId/events/:eventId` is called.
+  0. `removeEvent` is set as the success callback.
+
+### Events API Response Actions
+
+* `receiveAllEvents`
+  0. invoked from an API callback
+  0. the `EventReducer` updates `events` in the application's state.
+
+* `receiveSingleEvent`
+  0. invoked from an API callback
+  0. the `EventReducer` updates `events[id]` in the application's state.
+
+* `removeEvent`
+  0. invoked from an API callback
+  0. the `EventReducer` removes `events[id]` from the application's state.
+
+
+## Host Cycles
+
+* `fetchAllHosts`
+  0. invoked from `CityContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId/hosts` is called.
+  0. `receiveAllHosts` is set as the success callback.
+
+* `fetchSingleHost`
+  0. invoked from `HostContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId/hosts/:hostId` is called.
+  0. `receiveSingleHost` is set as the success callback.
+
+
+### Hosts API Response Actions
+
+* `receiveAllHosts`
+  0. invoked from an API callback
+  0. the `HostReducer` updates `hosts` in the application's state.
+
+* `receiveSingleHost`
+  0. invoked from an API callback
+  0. the `HostReducer` updates `hosts[id]` in the application's state.
