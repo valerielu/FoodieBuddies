@@ -142,3 +142,16 @@ Redux structure, you'll need to do the same.
 * `receiveSingleHost`
   0. invoked from an API callback
   0. the `HostReducer` updates `hosts[id]` in the application's state.
+
+
+## Attendance Cycles!!!
+
+* `fetchAllHosts`
+  0. invoked from `CityContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId/hosts` is called.
+  0. `receiveAllHosts` is set as the success callback.
+
+* `fetchSingleHost`
+  0. invoked from `HostContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId/hosts/:hostId` is called.
+  0. `receiveSingleHost` is set as the success callback.

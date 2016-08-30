@@ -15,9 +15,6 @@
  - EventsIndex
  - HostsIndex
 
-**NewCityContainer**
- - NewCity
- - NewCityButton
 
 **EventContainer**
  - EventDetail
@@ -54,9 +51,10 @@
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/" | "HomeContainer" |
-| "/cities" | "CitiesContainer" |
+| "/"        | "HomeContainer" | (index route)
+| "/cities"  | "CitiesContainer" |
 | "/cities/:cityId" | "CityContainer" |
 | "/hosting" | "NewHostContainer" |
 | "/cities/:cityId/host/:hostdId" | "HostContainer" |
-| "/dashboard" | "DashboardContainer"
+| "/dashboard" | "DashboardContainer" |
+| "/userprofile" | "AccountContainer" |

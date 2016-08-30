@@ -14,7 +14,6 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] Host Event (have users host and general users)
 - [ ] Join Event in your city (user city)
 - [ ] Dashboard of joined events/hosted events
-- [ ] Google Map API showing events based on location
 - [ ] Production README
 
 
@@ -53,7 +52,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] Allow user update profile
 - [ ] Review phase 1
 
-### Phase 1.1: Users API (2 days)
+### Phase 1.1: Users API (1 day)
 
 **Objective:** Users profile can be updated through the API.
 
@@ -64,7 +63,6 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - User components and respective Redux loops
   - [ ] `UserForm`
 - [ ] Style users/edit components
-- [ ] Seed Users
 
 ### Phase 2: Cities Model, API, and components (2 days)
 
@@ -77,7 +75,6 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - City components and respective Redux loops
   - [ ] `CitiesIndex`
   - [ ] `CityIndexItem`
-  - [ ] `CityForm`
 - [ ] Style cities components
 - [ ] Seed cities
 
@@ -91,7 +88,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] JBuilder views for events
 - [ ] Adding events requires a city
 - [ ] Adding events requires a host(currentUser, if currentUser is a host)
-- [ ] Viewing events by city (with google map API)
+- [ ] Viewing events by city
 - Event components and respective Redux loops
   - [ ] `EventsIndex` (by city)
   - [ ] `EventIndexItem`
@@ -99,7 +96,11 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] Style event components
 - [ ] Seed events
 
-### Phase 4: Hosts (1 days)
+### Phase 4: Events Map integration (1 day)
+- [ ] Viewing events by city to pull up a city map and mark all the events
+- [ ] Add events by address to add new markers on map
+
+### Phase 5: Hosts (1 day)
 
 **Objective:** Hosts can be created and read through the API.
 
@@ -116,6 +117,8 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 ### Bonus Features (TBD)
 - [ ] Search events by host
-- [ ] Search events by city
-- [ ] Set reminders on events
-- [ ] Multiple sessions
+- [ ] Search events by type of food
+- [ ] Set reminders on events (google calendar API)
+- [ ] Submit Cit suggestions
+- [ ] Google Map API showing events based on location
+- [ ] Events and hosts ratings

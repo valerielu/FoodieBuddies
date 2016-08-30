@@ -23,8 +23,6 @@
 
 - `GET /api/cities`
   - Cities index
-- `POST /api/cities`
-  - Creating a city
 - `GET /api/cities/:id`
   - Show page a city (all the events and hosts will be listed as well)
 
