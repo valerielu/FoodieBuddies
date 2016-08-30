@@ -13,7 +13,7 @@ const SessionReducer = (state = preloadedState, action) => {
       newState.currentUser = action.currentUser;
       return newState;
     case Actions.SessionConstants.RECEIVE_ERRORS:
-      newState.errors = action.errors;
+      newState.errors = JSON.parse(action.errors.responseText);
       return newState;
     case Actions.SessionConstants.LOGOUT:
       newState.currentUser = null;

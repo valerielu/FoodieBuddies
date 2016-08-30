@@ -15,6 +15,7 @@ const SessionMiddleware = ({getState, dispatch}) => (next) => (action) => {
     case Actions.SessionConstants.LOGOUT:
       success = () => (next(action));
       API.logout(success);
+      break;
     case Actions.SessionConstants.SIGNUP:
       success = (currentUser) => {
         dispatch(Actions.receiveCurrentUser(currentUser));};
