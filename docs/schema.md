@@ -7,8 +7,8 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-host_status     | boolean   | not null, default: false
-intro           | text      |
+is_host         | boolean   | not null, default: false
+profile         | text      |
 profile_pic_url | string    |
 city_id         | integer   | foreign key (references city that the host is in), indexed
 
@@ -35,8 +35,8 @@ city_id     | integer   | not null, foreign key (references city), indexed (shou
 food_type   | string    |
 description | text      |
 yelp_link   | string    |
-lat         | float     | not null
-lng         | float     | not null
+lat         | float     |
+lng         | float     |
 
 ## attendances
 column name | data type | details
