@@ -59,11 +59,6 @@ Redux structure, you'll need to do the same.
   0. `GET /api/cities` is called.
   0. `receiveAllCities` is set as the success callback.
 
-* `createCity`
-  0. invoked from new city button `onClick`
-  0. `POST /api/cities` is called.
-  0. `receiveSingleCity` is set as the callback.
-
 * `fetchSingleCity`
   0. invoked from `CityDetail` `didMount`/`willReceiveProps`
   0. `GET /api/cities/:cityId` is called.

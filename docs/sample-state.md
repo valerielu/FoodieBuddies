@@ -15,6 +15,14 @@
       name: "Durham",
       state: "NC",
       country: "USA",
+      hosts: {
+        1: {
+          username: "greathost",
+          profile: "life story of great host",
+          profile_pic_url: "hostpic/123",
+          city_id: 1
+        }
+      }
     }
   },
   events: {
@@ -26,7 +34,13 @@
       limit: 20,
       description: "is yummy",
       city_id: 2,
-      host_id: 12
+      host_id: 12,
+      attendees: {
+        1: {
+          username: "valpal123"
+        }
+      }
+
     }
   }
 }
