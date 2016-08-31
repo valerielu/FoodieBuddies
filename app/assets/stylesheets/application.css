@@ -24,6 +24,7 @@ header {
   justify-content: center;
   background: var(--header-footer-color);
   height: 75px;
+  /*position: fixed;*/
 }
 
 footer {

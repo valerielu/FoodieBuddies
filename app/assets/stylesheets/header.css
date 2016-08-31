@@ -1,27 +1,33 @@
 .header-container {
   display: flex;
   align-items: center;
-  width: 900px;
-  position: fixed;
+  width: 100%;
 }
 
 .header-links-container {
   display: flex;
-  float: right;
+  position: absolute;
+  right: 30px;
   /*justify-content: space-between;*/
 }
 
-.header-link, .login-link {
+.header-nav-container, .header-greeting-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-anchor {
+  position: absolute;
+  left: 30px;
+}
+
+.header-link, .login-link, .header-nav-link{
   padding: 10px;
   color: #fff;
-  margin: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.header-nav-link {
-  
-}
 
 .header-link:hover, .header-nav-link:hover, .login-link:hover {
   border-bottom: 2px solid #DFDCE3;

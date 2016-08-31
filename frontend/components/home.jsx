@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <div>
         <div className="home-background"></div>
-        <h1 ></h1>
+        <h1></h1>
       </div>
 
     );
