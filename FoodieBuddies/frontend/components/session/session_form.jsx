@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="login-form">
           <input type="text" onChange={this.updateFields("username")} value={this.state.username} className="login-input" placeholder="Username"/>
-          <input type="text" onChange={this.updateFields("password")} value={this.state.password} className="login-input" placeholder="Password"/>
+          <input type="text" onChange={this.updateFields("password")} value={this.state.password} className="login-input" placeholder="Password (at least 6 characters)"/>
           <input type="submit" value={buttonDisplay} className="login-button"/>
         </form>
         <div className="login-choices">
