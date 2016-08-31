@@ -3,7 +3,7 @@
 **AuthFormContainer**
  - AuthForm(For Sign up and Sign in)
 
-**APPContainer**
+**AppContainer**
   - Header
   - Footer
 
@@ -16,7 +16,6 @@
 **CityContainer**
  - EventsIndex
  - HostsIndex
-
 
 **EventContainer**
  - EventDetail

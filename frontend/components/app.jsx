@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "./header_footer/header.jsx";
+import HeaderContainer from "./header_footer/header_container.jsx";
 import Footer from "./header_footer/footer.jsx";
 
 const App = ({children}) => (
   <div>
-    <Header />
+    <HeaderContainer />
     {children}
-    <Footer />
   </div>
 );
 

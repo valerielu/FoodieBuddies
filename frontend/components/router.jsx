@@ -2,7 +2,8 @@ import React from "react";
 import {Router, Route, IndexRoute, hashHistory, browserHistory} from "react-router";
 import App from "./app.jsx";
 import SessionFormContainer from "./session/session_form_container.jsx";
-import Home from "./home.jsx";
+import HomeContainer from "./home_container.jsx";
+import CitiesContainer from "./city/cities_container.jsx";
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -31,9 +32,13 @@ class AppRouter extends React.Component{
     return(
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
-          <IndexRoute component={ Home } onEnter={this._ensureLoggedIn}/>
-          <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-          <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
+          <IndexRoute component={ HomeContainer }/>
+          <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
+          <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
+          <Route path="/cities" component={ CitiesContainer } />
+          <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/hosting" component={ CitiesContainer } />
+          <Route path="/userprofile" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
         </Route>
       </Router>
     );

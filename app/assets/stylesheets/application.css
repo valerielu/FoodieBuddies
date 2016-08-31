@@ -33,10 +33,10 @@ footer {
   background: var(--header-footer-color);
 }
 
-
-link, button.hover  {
+button.hover  {
   cursor: pointer;
 }
+
 
 body {
   font-family: 'Roboto', sans-serif;

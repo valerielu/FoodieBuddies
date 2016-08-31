@@ -9,5 +9,12 @@
  width: 100%;
  height: 100%;
  z-index: -999;
- height: 700px;
+}
+
+.home-welcome-container {
+  height: 450px;
+}
+
+.home-content-container {
+  height: 700px;
 }

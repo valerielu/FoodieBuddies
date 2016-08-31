@@ -7,8 +7,8 @@
 
 FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [X] Hosting on Heroku
+- [X] New account creation, login, and guest/demo login
 - [ ] Cities (view events and hosts at each city)
 - [ ] Host Event (have users host and general users)
 - [ ] Join Event in your city (user city)
@@ -48,14 +48,15 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Blank landing component after signup/signin
 - [X] Style signup/signin components
 - [X] Seed users/hosts
+- [ ] Allow user/host update profile
 - [ ] Allow user/host delete profile
 
 ### Phase 1.1: Users API (1 day)
 
 **Objective:** Users profile can be updated through the API.
 
-- [ ] `User` model
-- [ ] Seed database with a small amount of test data
+- [X] `User` model
+- [X] Seed database with a small amount of test data
 - [ ] API for users (`UsersController`)
 - [ ] JBuilder views for Users
 - User components and respective Redux loops

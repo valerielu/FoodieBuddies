@@ -39,9 +39,10 @@
   letter-spacing: 2px;
 }
 
-.signup-link:hover, .logout-button:hover {
+.signup-button:hover, .logout-button:hover {
   color: #4ABDAC;
   background: #fff;
+  cursor: pointer;
 }
 
 .logout-button, .signup-button {

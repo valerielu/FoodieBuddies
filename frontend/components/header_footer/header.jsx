@@ -1,6 +1,6 @@
 import React from "react";
 import GreetingContainer from "./greeting_container.jsx";
-import NavContainer from "./nav_container.jsx";
+import Nav from "./nav.jsx";
 import { Link } from 'react-router';
 
 class Header extends React.Component{
@@ -9,8 +9,6 @@ class Header extends React.Component{
   }
 
   render () {
-
-
     return (
       <header>
         <div className="header-container">
@@ -20,7 +18,7 @@ class Header extends React.Component{
           <div className="header-links-container">
             <Link className="header-link" to="/cities">Cities</Link>
             <Link className="header-link" to="/hosting">Hosting</Link>
-            <NavContainer />
+            <Nav currentUser={this.props.currentUser}/>
             <GreetingContainer />
           </div>
         </div>
