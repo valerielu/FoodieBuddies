@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px 0;
 }
 
 .login-form {
@@ -33,7 +34,6 @@
   color: #F7B733;
   font-size: 36px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
 :root {
@@ -93,8 +93,4 @@
 .login-errors > li {
   color: #f00;
   font-size: 15px;
-}
-
-button.hover  {
-  cursor: pointer;
 }

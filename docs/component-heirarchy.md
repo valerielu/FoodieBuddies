@@ -3,10 +3,12 @@
 **AuthFormContainer**
  - AuthForm(For Sign up and Sign in)
 
+**APPContainer**
+  - Header
+  - Footer
+
 **HomeContainer**
- - Header
- - Home
- - Footer
+  - HOME
 
 **CitiesContainer**
  * CityIndex(linked to each city)
@@ -20,7 +22,7 @@
  - EventDetail
  - JoinEventButton
 
- **NewEventContainer**
+**NewEventContainer**
   - NewEvent
   - NewEventButton
 
@@ -49,8 +51,8 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
+| "/signup" | "AuthFormContainer" |
+| "/login" | "AuthFormContainer" |
 | "/"        | "HomeContainer" | (index route)
 | "/cities"  | "CitiesContainer" |
 | "/cities/:cityId" | "CityContainer" |

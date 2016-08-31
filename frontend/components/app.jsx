@@ -1,11 +1,12 @@
 import React from "react";
-import GreetingContainer from "./session/greeting_container.jsx";
+import Header from "./header_footer/header.jsx";
+import Footer from "./header_footer/footer.jsx";
 
 const App = ({children}) => (
   <div>
-    <h1>FoodieBuddies</h1>
-    <GreetingContainer />
+    <Header />
     {children}
+    <Footer />
   </div>
 );
 

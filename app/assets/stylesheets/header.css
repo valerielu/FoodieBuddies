@@ -1,0 +1,46 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  position: fixed;
+}
+
+.header-links-container {
+  display: flex;
+  float: right;
+  /*justify-content: space-between;*/
+}
+
+.header-link, .header-nav-link, .login-link {
+  padding: 10px;
+  color: #fff;
+  margin: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-link:hover, .header-nav-link:hover, .login-link:hover {
+  border-bottom: 2px solid #DFDCE3;
+}
+
+.welcome-text {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.signup-link:hover, .logout-button:hover {
+  color: #4ABDAC;
+  background: #fff;
+}
+
+.logout-button, .signup-link {
+  border: 2px solid #fff;
+  background: none;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}

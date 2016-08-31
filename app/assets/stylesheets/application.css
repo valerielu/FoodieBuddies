@@ -14,21 +14,30 @@
  *= require_self
  */
 
-  :root {
-    --variable: #f00;
-  }
-
-
-header {
+:root {
+  --header-footer-color: #4ABDAC;
 
 }
 
-footer {
+header {
+  display: flex;
+  justify-content: center;
+  background: var(--header-footer-color);
+  height: 75px;
+}
 
+footer {
+  display: flex;
+  justify-content: center;
+  background: var(--header-footer-color);
+}
+
+
+link, button.hover  {
+  cursor: pointer;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
   background: #faf6e8;
 }
