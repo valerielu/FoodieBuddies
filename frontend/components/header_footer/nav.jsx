@@ -9,7 +9,6 @@ class Nav extends React.Component {
   }
 
   render () {
-    console.log("got to nav render");
     if (this.props.currentUser) {
       return (
         <nav className="header-nav-container">

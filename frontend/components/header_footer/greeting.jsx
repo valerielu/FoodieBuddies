@@ -6,13 +6,20 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
   }
 
   handleLogout() {
     this.props.logout();
-    console.log("gonna redirect to root!");
     this.props.router.push("/");
   }
+
+  handleSignUp() {
+    this.props.router.push("/signup");
+  }
+
+
+  // <Link className="-link" to="/signup">Sign up</Link>
 
   render () {
     if (this.props.currentUser) {
@@ -27,7 +34,7 @@ class Greeting extends React.Component {
       return (
         <div className="header-greeting-container">
           <Link className="login-link" to="/login">Login</Link>
-          <Link className="signup-link" to="/signup">Sign up</Link>
+          <button className="signup-button" onClick={this.handleSignUp}>Sign Up</button>
         </div>
       );
     }
