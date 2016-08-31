@@ -11,12 +11,16 @@
   /*justify-content: space-between;*/
 }
 
-.header-link, .header-nav-link, .login-link {
+.header-link, .login-link {
   padding: 10px;
   color: #fff;
   margin: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.header-nav-link {
+  
 }
 
 .header-link:hover, .header-nav-link:hover, .login-link:hover {

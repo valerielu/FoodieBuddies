@@ -1,8 +1,7 @@
 # FoodieBuddies
 
-[Heroku link][heroku] **Note:** TBD (Will be up by end of Monday 8/29)
-
-[heroku]: http://www.herokuapp.com
+[Heroku link][heroku]
+[heroku]: https://foodiebuddies.herokuapp.com/
 
 ## Minimum Viable Product
 
