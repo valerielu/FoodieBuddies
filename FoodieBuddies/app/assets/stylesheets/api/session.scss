@@ -1,3 +1,96 @@
 // Place all the styles related to the api/Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-choices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.login-alternative1, .login-alternative2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.login-greeting {
+  color: #F7B733;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.login-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 50px;
+  width: 500px;
+  font-size: 15px;
+  margin: 10px;
+}
+
+.login-button {
+  background: #FC4A1A;
+  height: 50px;
+  width: 300px;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 15px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+}
+
+.tour-button {
+  background: #4ABDAC;
+  height: 24px;
+  width: 120px;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 12px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+}
+
+.other-button {
+  background: #4ABDAC;
+  padding: 5px 10px;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 12px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+}
+
+.login-phrase {
+  color: #808080;
+  font-size: 12px;
+}
+
+.login-errors > li {
+  color: #f00;
+  font-size: 15px;
+}
+
+button.hover  {
+  cursor: pointer;
+}

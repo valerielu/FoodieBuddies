@@ -31,36 +31,40 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    const buttonDisplay = (this.props.formType) === 'login' ? "Log In" : "Sign Up";
+    const buttonDisplay = (this.props.formType) === 'login' ? "LOG IN" : "SIGN UP";
     const otherForm = (this.props.formType) === 'login' ? "/signup" : "/login";
     const errors = this.props.errors.map((error, idx) => (
       <li key={idx}>{error}</li>
     ));
 
     const phrase = (this.props.formType) === 'login' ? "Not yet a user?" : "Already a user?";
+    const welcome = "Let's get food!";
     return (
       <div className="login-form-container">
-        <h3>Welcome!</h3>
+        <p className="login-greeting">{welcome}</p>
 
         <ul className="login-errors">
           {errors}
         </ul>
 
         <form onSubmit={this.handleSubmit} className="login-form">
-
-          <label className="login-label">Username
-            <input type="text" onChange={this.updateFields("username")} value={this.state.username} className="login-input"/>
-          </label>
-          <label className="login-label">Password
-            <input type="text" onChange={this.updateFields("password")}/>
-          </label>
-
-          <input type="submit" value={buttonDisplay}/>
+          <input type="text" onChange={this.updateFields("username")} value={this.state.username} className="login-input" placeholder="Username"/>
+          <input type="text" onChange={this.updateFields("password")} value={this.state.password} className="login-input" placeholder="Password"/>
+          <input type="submit" value={buttonDisplay} className="login-button"/>
         </form>
+        <div className="login-choices">
+          <div className="login-alternative1">
+            <span className="login-phrase">{phrase}</span>
+            <Link className="other-button" to={otherForm}>{otherForm.slice(1).toUpperCase()}</Link>
+          </div>
+          <div className="login-alternative2">
+            <span className="login-phrase">Not ready to sign up?</span>
+            <input type="submit" value="TAKE A TOUR" className="tour-button"/>
+          </div>
+        </div>
+        <div className="arrow bounce">
 
-        {phrase}
-        <Link to={otherForm}>{otherForm.slice(1).toUpperCase()}</Link>
-
+        </div>
       </div>
     );
   }

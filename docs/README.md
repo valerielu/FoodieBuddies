@@ -47,9 +47,8 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Redux cycle for frontend authentication
 - [X] User signup/signin components
 - [X] Blank landing component after signup/signin
-- [ ] Style signup/signin components
-- [ ] Seed users/hosts
-- [ ] Allow host update profile
+- [X] Style signup/signin components
+- [X] Seed users/hosts
 - [ ] Allow user/host delete profile
 
 ### Phase 1.1: Users API (1 day)
