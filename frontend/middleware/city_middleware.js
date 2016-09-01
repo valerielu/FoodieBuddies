@@ -9,7 +9,12 @@ const CityMiddleware = ({getState, dispatch}) => (next) => (action) => {
       success = (cities) => {
         dispatch(Actions.receiveAllCities(cities));};
       API.requestAllCities(success);
-      return next(action);
+      break;
+    case Actions.CityConstants.REQUEST_SINGLE_CITY:
+      success = (city) => {
+        dispatch(Actions.receiveSingleCity(city));};
+      API.requestSingleCity(action.cityId, success);
+      break;
     default:
       return next(action);
   }

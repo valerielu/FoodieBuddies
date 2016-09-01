@@ -12,6 +12,7 @@
 #  city_id         :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string
 #
 
 class User < ApplicationRecord
@@ -19,11 +20,15 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   validate :host_profile_completion
 
-  # belongs_to :city
+  belongs_to :city, optional: true
 
   has_many :attendances
 
-  has_many :events,
+  has_many :attending_events,
+  through: :attendances,
+  source: :event
+
+  has_many :hosted_events,
   primary_key: :id,
   foreign_key: :host_id,
   class_name: :Event

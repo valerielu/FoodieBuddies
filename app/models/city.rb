@@ -10,6 +10,7 @@
 #  lng        :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  pic_url    :string
 #
 
 class City < ApplicationRecord
@@ -18,7 +19,7 @@ class City < ApplicationRecord
   has_many :hosts,
   primary_key: :id,
   foreign_key: :city_id,
-  class_name: :City
+  class_name: :User
 
   has_many :events
 

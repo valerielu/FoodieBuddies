@@ -18,10 +18,14 @@
 }
 
 .cities-tagline {
-  font-size: 15px;
+  font-size: 20px;
   color: #808080;
   margin: 20px 0px;
   letter-spacing: 1px;
+}
+
+.city-item-image {
+  
 }
 
 .cities-images-container {
@@ -71,32 +75,4 @@
 
 .city-item-container li:hover span {
   border-bottom: 2px solid #fff;
-}
-
-
-.city-item-Paris {
-  background-image: url("http://static-v3a.raileurope-world.com/local/cache-vignettes/L760xH507/france-paris_eiffel_tower-_c_prochasson-frederic-shutterstock_102019039-1d869.jpg");
-
-}
-
-.city-item-LasVegas {
-  background-image: url("https://timesharepresentationdeals.com/wp-content/uploads/2016/07/vegas-portada-2.jpg");
-
-}
-
-.city-item-NewYork {
-  background-image: url("https://www.omnihotels.com/-/media/images/hotels/nycber/destinations/nyc-aerial-skyline.jpg?h=660&la=en&w=1170");
-
-}
-
-.city-item-SanFrancisco {
-  background-image: url("https://i.ytimg.com/vi/NA31XYw3dV8/maxresdefault.jpg");
-}
-
-.city-item-Sydney {
-  background-image: url("https://images.trvl-media.com/media/content/shared/images/travelguides/destination/178312/Sydney-Opera-House-31126.jpg");
-}
-
-.city-item-Taipei {
-  background-image: url("https://i.ytimg.com/vi/fz1cBwNEUXI/maxresdefault.jpg");
 }

@@ -10,6 +10,7 @@
 #  lng        :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  pic_url    :string
 #
 
 require 'test_helper'

@@ -18,8 +18,6 @@ class Greeting extends React.Component {
     this.props.router.push("/signup");
   }
 
-
-  // <span className="welcome-text"> Welcome, {this.props.currentUser.username}!</span>
   render () {
     if (this.props.currentUser) {
       return (

@@ -119,7 +119,7 @@ Redux structure, you'll need to do the same.
 
 * `fetchAllHosts`
   0. invoked from `CityDetailsContainer` `didMount`/`willReceiveProps`
-  0. `GET /api/cities/:cityId` is called. (through associations => city.hosts)
+  0. `GET /api/cities/:cityId` is called. (through associations => `city.hosts`)
   0. `receiveAllHosts` is set as the success callback.
 
 * `fetchSingleHost`
@@ -153,7 +153,7 @@ Redux structure, you'll need to do the same.
 
 * `fetchAllEvents for a single user`
   0. invoked from `DashboardContainer` and `CityDetailsContainer` `didMount`/`willReceiveProps`
-  0. `GET /api/events/:eventId/` is called. (through associations => city.events)
+  0. `GET /api/events/:eventId/` is called. (through associations => `city.events`)
   0. `receiveAllEvents` is set as the success callback.
   0. Including attending and hosting events (if a host)
 

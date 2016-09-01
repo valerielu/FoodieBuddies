@@ -6,13 +6,14 @@ import HomeContainer from "./home_container.jsx";
 import CitiesContainer from "./city/cities_container.jsx";
 import UserProfileContainer from "./user/user_profile_container.jsx";
 import CityDetailsContainer from "./city/city_details_container.jsx";
+import {requestSingleCity} from "../actions/city_actions.js";
 
 class AppRouter extends React.Component{
   constructor(props){
     super(props);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
-    this.requestSingleCity = this.requestSingleCity.bind(this)
+    this.requestSingleCityDetails = this.requestSingleCityDetails.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -31,9 +32,8 @@ class AppRouter extends React.Component{
     }
   }
 
-  requestSingleCity(nextState) {
-    // const
-    // nextState.params.cityId
+  requestSingleCityDetails(nextState, replace) {
+    this.context.store.dispatch(requestSingleCity(nextState.params.cityId));
   }
 
   render(){
@@ -44,9 +44,8 @@ class AppRouter extends React.Component{
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/hosting" component={ CitiesContainer } />
-          <Route path="/cities" component={ CitiesContainer } >
-            <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this.requestSingleCity}/>
-          </Route>
+          <Route path="/cities" component={ CitiesContainer } />
+          <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this.requestSingleCityDetails}/>
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
         </Route>

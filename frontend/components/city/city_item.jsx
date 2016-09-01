@@ -16,6 +16,7 @@ class CityItem extends React.Component{
     return (
       <div className="city-item-container">
         <li className={className} onClick={this.handleCityClick}>
+          <img className="city-item-image" src={this.props.city.pic_url}/>
           <span className="city-name">
             {this.props.city.name}
           </span>
