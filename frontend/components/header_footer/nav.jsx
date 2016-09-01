@@ -12,8 +12,11 @@ class Nav extends React.Component {
     if (this.props.currentUser) {
       return (
         <nav className="header-nav-container">
+
+          <i className="fa fa-bars" aria-hidden="true"></i>
           <Link className="header-nav-link" to="/dashboard">Dashboard</Link>
-          <Link className="header-nav-link" to="/userprofile">Account</Link>
+          <i className="fa fa-cog" aria-hidden="true"></i>
+          <Link className="header-nav-link" to="/userprofile">Profile</Link>
         </nav>
       );
     } else {

@@ -19,13 +19,12 @@ class Greeting extends React.Component {
   }
 
 
-  // <Link className="-link" to="/signup">Sign up</Link>
-
+  // <span className="welcome-text"> Welcome, {this.props.currentUser.username}!</span>
   render () {
     if (this.props.currentUser) {
       return (
         <div className="header-greeting-container">
-          <span className="welcome-text"> Welcome, {this.props.currentUser.username}!</span>
+          <span className="welcome-text"> Welcome! {this.props.currentUser.username} </span>
           <button className="logout-button" onClick={this.handleLogout}>Log Out</button>
         </div>
       );

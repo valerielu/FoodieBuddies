@@ -10,4 +10,12 @@
 #
 
 class Attendance < ApplicationRecord
+  validates :user, :event
+
+  belongs_to :event
+  belongs_to :user
+
+  has_one :city,
+  through: :event,
+  source: :city
 end

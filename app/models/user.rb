@@ -17,13 +17,27 @@
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  validate :host_profile_completion
+
+  # belongs_to :city
+
+  has_many :attendances
+
+  has_many :events,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :Event
 
   attr_reader :password
 
   after_initialize :ensure_session_token
 
-  def host_validation
-    # for when host is true
+  def host_profile_completion
+    if self.is_host
+      self.errors[:profile] << "Profile can't be blank" unless self.profile
+      self.errors[:first_name] << "First name can't be blank" unless self.profile
+      self.errors[:city_id] << "City can't be blank" unless self.city_id
+    end
   end
 
   def password=(password)

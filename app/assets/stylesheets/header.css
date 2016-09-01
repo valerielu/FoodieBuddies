@@ -1,14 +1,14 @@
 .header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 20px;
 }
 
 .header-links-container {
   display: flex;
-  position: absolute;
-  right: 30px;
-  /*justify-content: space-between;*/
+  align-items: center;
 }
 
 .header-nav-container, .header-greeting-container {
@@ -16,16 +16,13 @@
   align-items: center;
 }
 
-.header-logo-anchor {
-  position: absolute;
-  left: 30px;
-}
 
 .header-link, .login-link, .header-nav-link{
   padding: 10px;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
+  border: 2px solid #4ABDAC;
 }
 
 
@@ -34,10 +31,18 @@
 }
 
 .welcome-text {
-  color: #fff;
+  color: #F7B733;
   font-size: 15px;
+  font-weight: bold;
   letter-spacing: 2px;
+  animation: fadetext 1.5s ease 0s 1 normal forwards;
 }
+
+@keyframes fadetext {
+    0% { opacity: 0; transform: translateY(80px)}
+    100%  { opacity: 1; transform: translateY(0px)}
+}
+
 
 .signup-button:hover, .logout-button:hover {
   color: #4ABDAC;
@@ -54,4 +59,11 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 5px;
+  margin: 5px 10px;
+  padding: 5px 10px;
+}
+
+
+.fa {
+  color: #fff;
 }

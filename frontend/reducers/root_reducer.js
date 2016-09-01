@@ -1,9 +1,12 @@
 import SessionReducer from "./session_reducer.js";
+import UserReducer from "./user_reducer.js";
+import CityReducer from "./city_reducer.js";
 import {combineReducers} from "redux";
 
 const RootReducer = combineReducers(
   {
-    session: SessionReducer
+    session: SessionReducer,
+    cities: CityReducer
   }
 );
 

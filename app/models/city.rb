@@ -13,4 +13,13 @@
 #
 
 class City < ApplicationRecord
+  validates :name, :country, :lat, :lng, presence: true
+
+  has_many :hosts,
+  primary_key: :id,
+  foreign_key: :city_id,
+  class_name: :City
+
+  has_many :events
+
 end

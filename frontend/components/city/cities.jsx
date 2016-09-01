@@ -1,14 +1,37 @@
 import React from "react";
-import { Link } from 'react-router';
+import CityItem from "./city_item.jsx";
 
 class Cities extends React.Component{
   constructor(props) {
     super(props);
   }
 
-  render () {
+  componentDidMount() {
+    this.props.requestAllCities();
+  }
+
+  render() {
+    let cities;
+    if (this.props.cities) {
+      cities = Object.keys(this.props.cities).map(id => {
+        let city = this.props.cities[id];
+        return (
+          <CityItem key={id} city={city} />
+        );
+      });
+    }
+
     return (
-      <h1>In city!</h1>
+      <div className="cities-container">
+        <h1 className="cities-title">Where can you find us?</h1>
+        <h1 className="cities-tagline">Find foodiebuddies in your city!</h1>
+        <div className="cities-images-container">
+          <ul className="city-list">
+            {cities}
+          </ul>
+        </div>
+        <h1 className="cities-tagline">Coming to more cities soon!</h1>
+      </div>
     );
   }
 }

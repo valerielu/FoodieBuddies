@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :is_host, default: false
       t.text :profile
       t.string :profile_pic_url
-      t.integer :city_id, index: true
+      t.integer :city_id, index: true, default: nil
       t.timestamps
     end
 

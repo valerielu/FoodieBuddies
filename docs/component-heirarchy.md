@@ -8,12 +8,12 @@
   - Footer
 
 **HomeContainer**
-  - HOME
+  - Home
 
 **CitiesContainer**
  * CityIndex(linked to each city)
 
-**CityContainer**
+**CityDetailContainer**
  - EventsIndex
  - HostsIndex
 
@@ -26,16 +26,21 @@
   - NewEventButton
 
 **HostContainer**
- - HostDetail
+ - HostInfo
+ - NewHostContainer
+
+ **HostDetailContainer**
+  - HostDetail
 
 **NewHostContainer**
- - NewHost
- - NewHostButton
+  - NewHost
+  - NewHostButton
 
 **DashboardContainer**
  - AttendingEventsContainer
    - EventDetail
    - UnattendEventButton
+
  - HostingEventsIndex
    - EventDetail
    - UpdateEventButton
@@ -54,8 +59,9 @@
 | "/login" | "AuthFormContainer" |
 | "/"        | "HomeContainer" | (index route)
 | "/cities"  | "CitiesContainer" |
-| "/cities/:cityId" | "CityContainer" |
-| "/hosting" | "NewHostContainer" |
-| "/cities/:cityId/host/:hostdId" | "HostContainer" |
+| "/cities/:cityId" | "CityDetailContainer" |
+| "/hosting" | "HostContainer" |
+| "/cities/:cityId/host/:hostdId" | "HostDetailContainer" |
 | "/dashboard" | "DashboardContainer" |
 | "/userprofile" | "AccountContainer" |
+| "/events/new" | "NewEventContainer" |

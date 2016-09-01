@@ -38,8 +38,8 @@ class SessionForm extends React.Component {
   }
 
   handleDemo() {
-    this.props.processForm({
-      username: "valerie",
+    this.props.login({
+      username: "JaneDoe",
       password: "testing"
     });
   }
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     ));
 
     const phrase = (this.props.formType) === 'login' ? "Not yet a user?" : "Already a user?";
-    const welcome = "Let's get food!";
+    const welcome = (this.props.formType) === 'login' ? "Welcome back!" : "Join us!";
     return (
       <div className="login-form-container">
         <p className="login-greeting">{welcome}</p>

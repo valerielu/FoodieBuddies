@@ -1,12 +1,15 @@
 import Cities from "./cities.jsx";
 import {connect} from "react-redux";
+import {requestAllCities} from "../../actions/city_actions.js";
+
 
 const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  cities: state.cities
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  
+  requestAllCities: () => (dispatch(requestAllCities()))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cities);

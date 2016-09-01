@@ -28,4 +28,5 @@ const SessionMiddleware = ({getState, dispatch}) => (next) => (action) => {
   }
 };
 
+
 export default SessionMiddleware;

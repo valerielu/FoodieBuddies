@@ -1,9 +1,13 @@
 import Home from "./home.jsx";
 import {connect} from "react-redux";
-import {logout} from "../actions/session_actions.js";
+import {login} from "../actions/session_actions.js";
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
 });
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  login: (user) => dispatch(login(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

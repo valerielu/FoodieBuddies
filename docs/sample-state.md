@@ -1,8 +1,11 @@
-```json
+json
 {
-  currentUser: {
-    id: 1,
-    username: "app-academy"
+  session: {
+    currentUser: {
+      id: 1,
+      username: "app-academy"
+    },
+    errors: ["error1", "error2"]
   },
   forms: {
     signUp: {errors: []},
@@ -18,6 +21,7 @@
       hosts: {
         1: {
           username: "greathost",
+          first_name: "Daniel"
           profile: "life story of great host",
           profile_pic_url: "hostpic/123",
           city_id: 1
@@ -44,4 +48,3 @@
     }
   }
 }
-```

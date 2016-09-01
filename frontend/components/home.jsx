@@ -19,6 +19,11 @@ class Home extends React.Component {
   handleDemo() {
     if (this.props.currentUser) {
       this.props.router.push("/cities");
+    } else {
+      this.props.login({
+        username: "JaneDoe",
+        password: "testing"
+      });
     }
   }
 
@@ -28,24 +33,33 @@ class Home extends React.Component {
       <div className="home-container">
 
         <div className="home-welcome-container">
+
           <div className="home-background"></div>
-          <h1 className="home-title">Food is better with company</h1>
-          <h1 className="home-tagline">Meet local foodies and try a new restaurant together!</h1>
-          <div className="home-welcome-buttons">
-            <button className="signup-button" onClick={this.handleSignUp}>{joinButton}</button>
-            <button className="demo-button" onClick={this.handleDemo}>Guest Login</button>
+          <div className="home-text-container">
+            <h1 className="home-title">Food is better with company</h1>
+            <h1 className="home-tagline">Meet local foodies and try a new restaurant together!</h1>
+
+            <div className="home-welcome-buttons-container">
+              <button className="home-signup-button" onClick={this.handleSignUp}>{joinButton}</button>
+              <button className="demo-button" onClick={this.handleDemo}>Guest Login</button>
+            </div>
           </div>
         </div>
+
         <div className="home-content-container">
-          <h1 className="home-content-title">Why do it?</h1>
+
+          <h1 className="home-content-title">Why do people love foodiebuddies?</h1>
+
           <div className="home-content-box">
             <img src="./gaeg" alt=""/>
             <h2 className="content-box-title">Because the more the merrier</h2>
           </div>
+
           <div className="home-content-box">
             <h2 className="content-box-title">Because friends who eat together stay together</h2>
             <img src="./gaeg" alt=""/>
           </div>
+
         </div>
       </div>
 
