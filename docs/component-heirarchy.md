@@ -11,7 +11,8 @@
   - Home
 
 **CitiesContainer**
- * CityIndex(linked to each city)
+ - Cities
+  - CityItem
 
 **CityDetailContainer**
  - EventsIndex
@@ -19,11 +20,11 @@
 
 **EventContainer**
  - EventDetail
- - JoinEventButton
+ - JoinEventButton (or for a host, delete or update event buttons)
 
 **NewEventContainer**
-  - NewEvent
-  - NewEventButton
+  - NewEvent (form - only for hosts)
+  - CreateEventButton
 
 **HostContainer**
  - HostInfo
@@ -33,8 +34,8 @@
   - HostDetail
 
 **NewHostContainer**
-  - NewHost
-  - NewHostButton
+  - NewHost (form)
+  - CreateHostButton
 
 **DashboardContainer**
  - AttendingEventsContainer
@@ -50,6 +51,7 @@
   - EditUserForm
   - UpdateUserButton
   - DeleteUserButton
+  - For hosts, a update host profile form
 
 ## Routes
 

@@ -118,14 +118,24 @@ Redux structure, you'll need to do the same.
 ## Host Cycles
 
 * `fetchAllHosts`
-  0. invoked from `CityContainer` `didMount`/`willReceiveProps`
-  0. `GET /api/cities/:cityId/hosts` is called.
+  0. invoked from `CityDetailsContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/cities/:cityId` is called. (through associations => city.hosts)
   0. `receiveAllHosts` is set as the success callback.
 
 * `fetchSingleHost`
   0. invoked from `HostContainer` `didMount`/`willReceiveProps`
   0. `GET /api/cities/:cityId/hosts/:hostId` is called.
   0. `receiveSingleHost` is set as the success callback.
+
+* `createHost`
+  0. invoked from `NewHostContainer` submit
+  0. `POST /api/cities/:cityId/hosts/` is called.
+  0. `receiveSingleHost` is set as the success callback.  
+
+* `updateHost`
+  0. invoked from `AccountContainer` submit
+  0. `POST /api/users/:userId` is called.
+  0. `receiveSingleHost` is set as the success callback.  
 
 
 ### Hosts API Response Actions
@@ -139,14 +149,15 @@ Redux structure, you'll need to do the same.
   0. the `HostReducer` updates `hosts[id]` in the application's state.
 
 
-## Attendance Cycles!!!
+## Attendance Cycles
 
-* `fetchAllHosts`
-  0. invoked from `CityContainer` `didMount`/`willReceiveProps`
-  0. `GET /api/cities/:cityId/hosts` is called.
-  0. `receiveAllHosts` is set as the success callback.
+* `fetchAllEvents for a single user`
+  0. invoked from `DashboardContainer` and `CityDetailsContainer` `didMount`/`willReceiveProps`
+  0. `GET /api/events/:eventId/` is called. (through associations => city.events)
+  0. `receiveAllEvents` is set as the success callback.
+  0. Including attending and hosting events (if a host)
 
-* `fetchSingleHost`
+<!-- * `fetchSingleEvent`
   0. invoked from `HostContainer` `didMount`/`willReceiveProps`
   0. `GET /api/cities/:cityId/hosts/:hostId` is called.
-  0. `receiveSingleHost` is set as the success callback.
+  0. `receiveSingleHost` is set as the success callback. -->
