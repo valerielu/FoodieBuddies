@@ -18,11 +18,16 @@
 
 
 .header-link, .login-link, .header-nav-link{
-  padding: 10px;
+  margin: 10px 15px 0px 15px;
+  padding-bottom: 10px;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
   border: 2px solid #4ABDAC;
+}
+
+.login-link {
+  margin-left: 0px;
 }
 
 .header-logo-img:hover {
@@ -30,7 +35,7 @@
 }
 
 .header-link:hover, .header-nav-link:hover, .login-link:hover {
-  border-bottom: 2px solid #DFDCE3;
+  border-bottom: 2px solid #fff;
 }
 
 .welcome-text {
@@ -67,6 +72,6 @@
 }
 
 
-.fa {
+.fa-bars, .fa-users, .fa-building, .fa-cog{
   color: #fff;
 }

@@ -14,7 +14,7 @@ class HostItem extends React.Component{
   render() {
 
     const prof_pic = (this.props.host.profile_pic_url) ? this.props.host.profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
-    const className = `host-${this.props.host.name}`;
+    const className = `host-${this.props.host.username}`;
 
     return (
       <div className="host-item-container">

@@ -9,7 +9,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 - [X] Hosting on Heroku
 - [X] New account creation, login, and guest/demo login
-- [ ] Cities (view events and hosts at each city)
+- [X] Cities (view events and hosts at each city)
 - [ ] Host Event (have users host and general users)
 - [ ] Join Events
 - [ ] Dashboard of joined events/hosted events
@@ -73,7 +73,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - City components and respective Redux loops
   - [X] `CitiesIndex`
   - [X] `CityIndexItem`
-  - [ ] `CityDetails`
+  - [X] `CityDetails`
 - [ ] Style cities components
 - [X] Seed cities
 

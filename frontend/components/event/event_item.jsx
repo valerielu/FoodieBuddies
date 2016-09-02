@@ -12,27 +12,32 @@ class EventItem extends React.Component{
   }
 
   render() {
-    const button = 0;
+    const button = 0; //check if event is already attended by current user (if yes, show on your calendar
+    // if not, show the attend button)
     return (
-      <div className="event-item-container">
-        <li className="event-item" onClick={this.handleEventClick}>
-          <div className="event-time-container">
-            <span className="event-date">
-              {this.props.event.date}
-            </span>
-            <span className="event-time">
-              {this.props.event.date}
-            </span>
-          </div>
-          <div className="event-location-container">
-            <span className="event-location">
-              {this.props.event.location}
-            </span>
-            <span className="event-restaurant">
-              {this.props.event.location}
-            </span>
-          </div>
-        </li>
+      <div className="event-container">
+        <div className="event-detail-container">
+          <li className="event-item">
+            <div className="event-time-container">
+              <span className="event-date">
+                {this.props.event.date}
+              </span>
+              <span className="event-time">
+                {this.props.event.time}
+              </span>
+            </div>
+            <div className="event-location-container">
+              <span className="event-location">
+                {this.props.event.location}
+              </span>
+              <span className="event-restaurant">
+                {this.props.event.restaurant}
+              </span>
+            </div>
+          </li>
+        </div>
+
+        {button}
       </div>
     );
   }

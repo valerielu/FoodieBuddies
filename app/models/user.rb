@@ -22,13 +22,13 @@ class User < ApplicationRecord
 
   belongs_to :city, optional: true
 
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
 
   has_many :attending_events,
   through: :attendances,
   source: :event
 
-  has_many :hosted_events,
+  has_many :hosted_events, dependent: :destroy,
   primary_key: :id,
   foreign_key: :host_id,
   class_name: :Event

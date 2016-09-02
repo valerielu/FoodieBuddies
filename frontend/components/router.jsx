@@ -46,7 +46,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/hosting" component={ CitiesContainer } />
           <Route path="/cities" component={ CitiesContainer } />
-          <Route path="/cities/:cityId" component={ CityDetailsContainer } />
+          <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
         </Route>

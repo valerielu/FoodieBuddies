@@ -62,8 +62,18 @@ class SessionForm extends React.Component {
         </ul>
 
         <form onSubmit={this.handleSubmit} className="login-form">
-          <input type="text" onChange={this.updateFields("username")} value={this.state.username} className="login-input" placeholder="Username"/>
-          <input type="password" onChange={this.updateFields("password")} value={this.state.password} className="login-input" placeholder="Password (at least 6 characters)"/>
+          <div className="input-container">
+            <div className="username-addon">
+              <span className="input-group-addon"><i className="fa fa-user" aria-hidden="true"></i></span>
+            </div>
+            <input type="text" onChange={this.updateFields("username")} value={this.state.username} className="login-input" placeholder="Username"/>
+          </div>
+          <div className="input-container">
+            <div className="password-addon">
+              <span className="input-group-addon"><i className="fa fa-key fa-fw" aria-hidden="true"></i></span>
+            </div>
+            <input type="password" onChange={this.updateFields("password")} value={this.state.password} className="login-input" placeholder="Password (at least 6 characters)"/>
+          </div>
           <input type="submit" value={buttonDisplay} className="login-button"/>
         </form>
         <div className="login-choices">

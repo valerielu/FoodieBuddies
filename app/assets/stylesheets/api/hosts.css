@@ -1,3 +1,5 @@
+/* For the host display on city page*/
+
 .host-item-container li {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,7 @@
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 2px;
+  margin: 20px;
 }
 
 .host-item-container li:hover {
@@ -32,3 +35,5 @@
   font-size: 20px;
   color: #000;
 }
+
+/* For the host details */

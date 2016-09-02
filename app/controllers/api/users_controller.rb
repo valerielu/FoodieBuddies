@@ -13,8 +13,6 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
-      login(@user)
-      # render :show
       render json: @user
     else
       render json: @user.errors.full_messages, status: 422
@@ -27,7 +25,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
+    @user = User.find_by(id: params[:id])
     @user.destroy
     render json: {}
   end
@@ -36,6 +34,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :profile, :profile_pic_url, :city_id, :first_name)
   end
 end

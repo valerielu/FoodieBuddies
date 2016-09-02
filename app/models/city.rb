@@ -16,11 +16,11 @@
 class City < ApplicationRecord
   validates :name, :country, :lat, :lng, presence: true
 
-  has_many :hosts,
+  has_many :hosts, dependent: :destroy,
   primary_key: :id,
   foreign_key: :city_id,
   class_name: :User
 
-  has_many :events
+  has_many :events, dependent: :destroy
 
 end

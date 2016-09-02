@@ -19,7 +19,7 @@
 #
 
 class Event < ApplicationRecord
-  validates :date, :time, :location, :limit, :host, :city, presence: true
+  validates :date, :time, :location, :limit, :host, :city_id, presence: true
   belongs_to :city
 
   belongs_to :host,
@@ -27,6 +27,6 @@ class Event < ApplicationRecord
   foreign_key: :host_id,
   class_name: :User
 
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
 
 end

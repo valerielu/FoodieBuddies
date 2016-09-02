@@ -1,7 +1,7 @@
 import React from "react";
 import {withRouter} from "react-router";
-import Event from "../event/event_item.jsx";
-import Host from "../user/host_item.jsx";
+import EventItemContainer from "../event/event_item_container.jsx";
+import HostItemContainer from "../user/host_item_container.jsx";
 
 class CityDetails extends React.Component{
   constructor(props) {
@@ -20,11 +20,11 @@ class CityDetails extends React.Component{
     if (this.props.city) {
 
       const events = this.props.events.map(event => (
-        <Event key={event.id} event={event} currentUser={this.props.currentUser}/>
+        <EventItemContainer key={event.id} event={event}/>
       ));
 
       const hosts = this.props.hosts.map(host => (
-        <Host key={host.id} host={host}/>
+        <HostItemContainer key={host.id} host={host}/>
       ));
 
       const eventStatus = (events.length > 0) ?
@@ -35,7 +35,7 @@ class CityDetails extends React.Component{
         :
         (<div className="city-detail-events-text-container">
           <h1 className="city-detail-events-title"> No foodie events coming up!</h1>
-         <h1 className="city-detail-events-description"> Talk to the hosts to create one or become a host yourself! </h1>
+          <h1 className="city-detail-events-description"> Talk to the hosts to create one or become a host yourself! </h1>
         </div>);
 
       const eventCreateButton = ( this.props.currentUser && this.props.currentUser.is_host) ?
@@ -55,15 +55,17 @@ class CityDetails extends React.Component{
           <div className="city-detail-events-container">
             {eventStatus}
             {eventCreateButton}
-            <ul>
+            <ul className="city-detail-events-list">
               {events}
             </ul>
           </div>
 
           <div className="city-detail-hosts-container">
-            <h1 className="city-detail-hosts-title">Get to know your hosts in {this.props.city.name}</h1>
-            <h1 className="city-detail-hosts-description"></h1>
-            <ul>
+            <div className="city-detail-hosts-text-container">
+              <h1 className="city-detail-hosts-title">Get to know your hosts in {this.props.city.name}!</h1>
+              <h1 className="city-detail-hosts-description"></h1>
+            </div>
+            <ul className="city-detail-hosts-list">
               {hosts}
             </ul>
           </div>

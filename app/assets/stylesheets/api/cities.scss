@@ -15,12 +15,13 @@
   font-weight: bold;
   margin-top: 50px;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 5px #ccc;
 }
 
 .cities-tagline {
   font-size: 20px;
   color: #808080;
-  margin: 20px 0px;
+  margin: 30px 0px 20px 0px;
   letter-spacing: 1px;
 }
 
@@ -49,6 +50,7 @@
   height: 160px;
   border-radius: 2px;
   z-index: -1;
+  opacity: 0.8;
 }
 
 .city-item-container li {

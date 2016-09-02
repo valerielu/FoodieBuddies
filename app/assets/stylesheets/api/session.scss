@@ -23,13 +23,6 @@
   margin-top: 20px;
 }
 
-.login-alternative1, .login-alternative2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 10px;
-}
-
 .login-greeting {
   color: #F7B733;
   font-size: 36px;
@@ -41,15 +34,51 @@
   --variable: #f00;
 }
 
-.login-input {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  height: 10px;
-  width: 500px;
-  font-size: 15px;
+.input-container {
   margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 10px;
+  width: 400px;
+  font-size: 15px;
   padding: 20px;
 }
+
+.input-group-addon {
+  font-size: 20px;
+  position: absolute;
+  top: 8px;
+  left: 15px;
+}
+
+.fa-user {
+  font-size: 22px;
+}
+
+
+.username-addon, .password-addon {
+  height: 42px;
+  width: 50px;
+  background: #eee;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.fa-user, .fa-key {
+  color: #696969;
+}
+
 
 .login-button, .tour-button, .other-button {
   color: #fff;
@@ -94,7 +123,15 @@
   font-size: 12px;
 }
 
+.login-alternative1, .login-alternative2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
 .login-errors > li {
   color: #f00;
   font-size: 15px;
+  list-style-type: circle;
 }
