@@ -24,9 +24,6 @@
   letter-spacing: 1px;
 }
 
-.city-item-image {
-  
-}
 
 .cities-images-container {
   display: flex;
@@ -47,25 +44,31 @@
   margin: 20px;
 }
 
-.city-item-container li {
-  font-size: 25px;
-  color: #fff;
-  opacity: 0.8;
-  font-weight: bold;
-  letter-spacing: 1px;
+.city-item-image {
   width: 320px;
   height: 160px;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.city-item-container li {
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: center center;
-  background-size: cover;
-  border-radius: 2px;
+  width: 320px;
+  height: 160px;
 }
 
 .city-name {
   border: 2px solid transparent;
   text-shadow: 2px 2px 5px #ccc;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  vertical-align: middle
 }
 
 

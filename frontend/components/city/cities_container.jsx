@@ -5,7 +5,7 @@ import {requestAllCities} from "../../actions/city_actions.js";
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  cities: state.cities
+  cities: state.cities.allcities
 });
 
 const mapDispatchToProps = (dispatch) => ({

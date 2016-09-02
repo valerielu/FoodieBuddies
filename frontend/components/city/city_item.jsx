@@ -1,5 +1,5 @@
 import React from "react";
-import {withRouter} from "react-router";
+// import {withRouter} from "react-router";
 
 class CityItem extends React.Component{
   constructor(props) {
@@ -7,8 +7,8 @@ class CityItem extends React.Component{
     this.handleCityClick = this.handleCityClick.bind(this);
   }
 
-  handleCityClick() {
-    this.props.router.push(`/cities/${this.props.city.id}`);
+  handleCityClick(e) {
+    this.props.requestSingleCity(this.props.city.id);
   }
 
   render() {
@@ -16,10 +16,10 @@ class CityItem extends React.Component{
     return (
       <div className="city-item-container">
         <li className={className} onClick={this.handleCityClick}>
-          <img className="city-item-image" src={this.props.city.pic_url}/>
           <span className="city-name">
             {this.props.city.name}
           </span>
+          <img className="city-item-image" src={this.props.city.pic_url} />
         </li>
       </div>
     );
@@ -27,5 +27,4 @@ class CityItem extends React.Component{
 }
 
 
-
-export default withRouter(CityItem);
+export default CityItem;

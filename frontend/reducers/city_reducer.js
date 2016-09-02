@@ -5,9 +5,10 @@ const CityReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case Actions.CityConstants.RECEIVE_ALL_CITIES:
-      return action.cities;
+      newState["allcities"] = action.cities;
+      return newState;
     case Actions.CityConstants.RECEIVE_SINGLE_CITY:
-      newState["cityDetails"] = action.city;
+      newState["city"] = action.city;
       return newState;
     default:
       return state;

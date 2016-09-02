@@ -1,0 +1,32 @@
+.city-detail-welcome-container {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-detail-image {
+  opacity: 0.5;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.city-detail-title, .city-detail-tagline {
+  color: #fff;
+}
+
+.city-detail-title {
+  position: absolute;
+  vertical-align: middle;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.city-detail-tagline {
+  position: absolute;
+  font-size: 25px;
+  letter-spacing: 2px;
+}

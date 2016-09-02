@@ -1,5 +1,5 @@
 import React from "react";
-import CityItem from "./city_item.jsx";
+import CityItemContainer from "./city_item_container.jsx";
 
 class Cities extends React.Component{
   constructor(props) {
@@ -13,13 +13,13 @@ class Cities extends React.Component{
   render() {
     let cities;
     if (this.props.cities) {
-      cities = Object.keys(this.props.cities).map(id => {
-        let city = this.props.cities[id];
-        return (
-          <CityItem key={id} city={city} />
+      const cityDetailIndex = 0;
+      cities = Object.keys(this.props.cities).map(id =>
+          (
+            <CityItemContainer key={id} city={this.props.cities[id]} />
+          )
         );
-      });
-    }
+      }
 
     return (
       <div className="cities-container">

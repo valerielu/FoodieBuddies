@@ -13,7 +13,7 @@ class AppRouter extends React.Component{
     super(props);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
-    this.requestSingleCityDetails = this.requestSingleCityDetails.bind(this);
+    // this.requestSingleCityDetails = this.requestSingleCityDetails.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -32,9 +32,10 @@ class AppRouter extends React.Component{
     }
   }
 
-  requestSingleCityDetails(nextState, replace) {
-    this.context.store.dispatch(requestSingleCity(nextState.params.cityId));
-  }
+  // requestSingleCityDetails(nextState, replace) {
+  //   this.context.store.dispatch(requestSingleCity(nextState.params.cityId));
+  //   // onEnter={this.requestSingleCityDetails}
+  // }
 
   render(){
     return(
@@ -45,7 +46,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/hosting" component={ CitiesContainer } />
           <Route path="/cities" component={ CitiesContainer } />
-          <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this.requestSingleCityDetails}/>
+          <Route path="/cities/:cityId" component={ CityDetailsContainer } />
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
         </Route>

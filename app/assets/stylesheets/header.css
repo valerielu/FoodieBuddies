@@ -25,6 +25,9 @@
   border: 2px solid #4ABDAC;
 }
 
+.header-logo-img:hover {
+  cursor: pointer;
+}
 
 .header-link:hover, .header-nav-link:hover, .login-link:hover {
   border-bottom: 2px solid #DFDCE3;

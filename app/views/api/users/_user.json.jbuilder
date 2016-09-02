@@ -1,5 +1,5 @@
-if current_user.is_host
-  json.extract! user, :id, :username, :is_host, :profile, :profile_pic_url, :city_id
+if user.is_host
+  json.extract! user, :id, :username, :is_host, :profile, :profile_pic_url, :city_id, :first_name
 else
   json.extract! user, :id, :username, :is_host
 end
