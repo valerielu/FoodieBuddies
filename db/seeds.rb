@@ -14,15 +14,15 @@ user4 = User.create!(username: "valerie3", password: "testing")
 host1 = User.create!(username: "FirstHost", password: "testing", is_host: true,
   profile: "host story", profile_pic_url: "test/123", city_id: 1, first_name: "val")
 host2 = User.create!(username: "SecondtHost", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi"))
+  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi")
 host3 = User.create!(username: "LilyPad", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Lily"))
+  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Lily")
 host4 = User.create!(username: "LindaZhang", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Linda"))
+  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Linda")
 host5 = User.create!(username: "JessicaQueen", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi"))
+  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi")
 host6 = User.create!(username: "Richy0", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi"))
+  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg", city_id: 2, first_name: "Happy Corgi")
 
 paris = City.create!(name: "Paris", state: "", country: "France", lat: 48.8566,
   lng: 2.3522, pic_url: "http://static-v3a.raileurope-world.com/local/cache-vignettes/L760xH507/france-paris_eiffel_tower-_c_prochasson-frederic-shutterstock_102019039-1d869.jpg")
@@ -37,15 +37,15 @@ sydney = City.create!(name: "Sydney", state: "", country: "Australia", lat: -33.
 taipei = City.create!(name: "Taipei", state: "", country: "Taiwan", lat: 25.0330,
   lng: 121.5654, pic_url: "https://i.ytimg.com/vi/fz1cBwNEUXI/maxresdefault.jpg")
 
-event1 = Event.create!()
-  date
-  time
-  location
-  limit
-  host_id
-  city_id
-  food_type
-  restaurant
-  yelp_link
-  lat
-  lng
+# event1 = Event.create!()
+#   date
+#   time
+#   location
+#   limit
+#   host_id
+#   city_id
+#   food_type
+#   restaurant
+#   yelp_link
+#   lat
+#   lng
