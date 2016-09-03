@@ -8,7 +8,7 @@ class HostItem extends React.Component{
   }
 
   handleHostClick() {
-
+    this.props.router.push(`/hosts/${this.props.host.id}`);
   }
 
   render() {
@@ -19,10 +19,10 @@ class HostItem extends React.Component{
     return (
       <div className="host-item-container">
         <li className={className} onClick={this.handleHostClick}>
+          <img className="host-item-image" src={prof_pic} />
           <span className="host-name">
             {this.props.host.first_name}
           </span>
-          <img className="host-item-image" src={prof_pic} />
         </li>
       </div>
     );

@@ -59,7 +59,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] JBuilder views for Users
 - User components and respective Redux loops
   - [X] `UserForm` (essentially delete button)
-- [ ] Allow user/host delete profile
+- [X] Allow user/host delete profile
 - [ ] Style users/edit components
 
 ### Phase 2: Cities Model, API, and components (1 day)
@@ -74,24 +74,24 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
   - [X] `CitiesIndex`
   - [X] `CityIndexItem`
   - [X] `CityDetails`
-- [ ] Style cities components
+- [X] Style cities components
 - [X] Seed cities
 
 ### Phase 3: Events (2 days)
 
 **Objective:** Event belong to City and Host that can be created, read, edited and destroyed through the API.
 
-- [ ] `Event` model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for events (`EventsController`)
-- [ ] JBuilder views for events
-- [ ] Adding events requires a city
-- [ ] Adding events requires a host(currentUser, if currentUser is a host)
+- [X] `Event` model
+- [X] Seed database with a small amount of test data
+- [X] CRUD API for events (`EventsController`)
+- [X] JBuilder views for events
+- [X] Adding events requires a city
+- [X] Adding events requires a host(currentUser, if currentUser is a host)
 - [ ] Viewing events by city
 - Event components and respective Redux loops
-  - [ ] `EventsIndex` (by city)
-  - [ ] `EventIndexItem`
-  - [ ] `EventForm`
+  - [ ] `EventItem`(by city on city details and by user on dashboard)
+  - [ ] `NewEventForm`
+  - [ ] `EditEventForm` (modal)
 - [ ] Style event components
 - [ ] Seed events
 
@@ -114,14 +114,15 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 **Objective:** Hosts can be created and read through the API.
 
-- [ ] Seed database with a small amount of test data (special users as Hosts)
-- [ ] API for hosts (`UsersController`)
-- [ ] JBuilder views for hosts
+- [X] Seed database with a small amount of test data (special users as Hosts)
+- [X] API for hosts (`UsersController`)
+- [X] JBuilder views for hosts
 - Host components and respective Redux loops
-  - [ ] `HostsIndex`
-  - [ ] `HostIndexItem`
+  - [X] `Hosting`
+  - [X] `HostItem`
   - [ ] `HostForm`
   - [ ] `HostDetail`
+  - [ ] `UpdateHostInfo` (inside profile for hosts)
 - [ ] Style hosts components
 - [ ] Seed hosts
 
@@ -136,3 +137,4 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] Submit Cit suggestions
 - [ ] Google Map API showing events based on location
 - [ ] Events and hosts ratings
+- [ ] Yelp API integration for restaurant inspirations and event details

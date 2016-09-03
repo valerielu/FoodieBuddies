@@ -7,6 +7,8 @@ import CitiesContainer from "./city/cities_container.jsx";
 import UserProfileContainer from "./user/user_profile_container.jsx";
 import CityDetailsContainer from "./city/city_details_container.jsx";
 import {requestSingleCity} from "../actions/city_actions.js";
+import HostingContainer from "./user/hosting_container.jsx";
+import HostingFormContainer from "./user/host_form_container.jsx";
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -28,14 +30,15 @@ class AppRouter extends React.Component{
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/'); //change this to reroute to the last page they were on
+      //before being redirected to log in instead of just the home page
     }
   }
 
   // requestSingleCityDetails(nextState, replace) {
   //   this.context.store.dispatch(requestSingleCity(nextState.params.cityId));
   //   // onEnter={this.requestSingleCityDetails}
-  // }
+  // }  //moved this request to on click of the city image and the rediect in the middle ware
 
   render(){
     return(
@@ -44,11 +47,16 @@ class AppRouter extends React.Component{
           <IndexRoute component={ HomeContainer }/>
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
-          <Route path="/hosting" component={ CitiesContainer } />
+          <Route path="/hosting" component={ HostingContainer } >
+            <Route path="/hosting/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
+          </Route>
           <Route path="/cities" component={ CitiesContainer } />
           <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/cities/:cityId/hosts/:hostId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}>
+            <Route path="/hosting/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
+          </Route>
         </Route>
       </Router>
     );

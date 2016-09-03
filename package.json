@@ -11,7 +11,6 @@
     "webpack": "webpack",
     "postinstall": "./node_modules/.bin/webpack"
   },
-
   "engines": {
     "node": "6.2.1",
     "npm": "3.9.3"
@@ -28,9 +27,11 @@
     "jquery": "^3.1.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "webpack": "^1.13.2"
   }
 }

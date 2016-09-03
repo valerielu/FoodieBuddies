@@ -14,24 +14,13 @@
  *= require_self
  */
 
-:root {
-  --header-footer-color: #4ABDAC;
 
-}
-
-header {
+/*footer {
   display: flex;
   justify-content: center;
   background: var(--header-footer-color);
-  height: 75px;
-  /*position: fixed;*/
-}
+}*/
 
-footer {
-  display: flex;
-  justify-content: center;
-  background: var(--header-footer-color);
-}
 
 button.hover  {
   cursor: pointer;

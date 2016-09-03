@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-    this.otherForm = (this.props.formType) === 'login' ? "/signup" : "/login";
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
     this.handleOtherLink = this.handleOtherLink.bind(this);
@@ -28,8 +27,8 @@ class SessionForm extends React.Component {
     };
   }
 
-  handleOtherLink() {
-    this.props.router.push(this.otherForm);
+  handleOtherLink(otherForm) {
+    this.props.router.push(otherForm);
   }
 
   handleSubmit(e) {
@@ -46,6 +45,8 @@ class SessionForm extends React.Component {
 
   render () {
     const buttonDisplay = (this.props.formType) === 'login' ? "LOG IN" : "SIGN UP";
+
+    const otherForm = (this.props.formType) === 'login' ? "signup" : "login";
 
     const errors = this.props.errors.map((error, idx) => (
       <li key={idx}>{error}</li>
@@ -79,7 +80,7 @@ class SessionForm extends React.Component {
         <div className="login-choices">
           <div className="login-alternative1">
             <span className="login-phrase">{phrase}</span>
-            <button className="other-button" onClick={this.handleOtherLink}>{this.otherForm.slice(1)}</button>
+            <button className="other-button" onClick={this.handleOtherLink.bind(this, otherForm)}>{otherForm}</button>
           </div>
           <div className="login-alternative2">
             <span className="login-phrase">Not ready to sign up?</span>

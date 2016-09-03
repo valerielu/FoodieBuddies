@@ -13,13 +13,25 @@
   width: 100%;
 }
 
+.city-detail-text-containter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  vertical-align: middle;
+  height: 35%;
+  width: 50%;
+  background-color:rgba(255, 255, 255, 0.3);
+}
+
 .city-detail-title, .city-detail-tagline {
   color: #fff;
   font-weight: bold;
   text-shadow: 2px 2px 5px #ccc;
 }
 
-.city-detail-title{
+.city-detail-title {
   position: absolute;
   vertical-align: middle;
   font-size: 50px;
@@ -30,7 +42,7 @@
   position: absolute;
   font-size: 25px;
   letter-spacing: 1px;
-  bottom: 150px;
+  bottom: 20px;
 }
 
 .city-detail-events-container, .city-detail-hosts-container {
@@ -63,7 +75,26 @@
 
 .city-detail-events-list, .city-detail-hosts-list {
   display: flex;
-  /*width: 1100px;*/
+  width: 1000px;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.create-event-button, .create-host-button {
+  background: none;
+  color: #4ABDAC;
+  border: 2px solid #4ABDAC;
+  font-family: "Roboto";
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin: 5px 10px;
+  padding: 10px 10px;
+}
+
+.create-event-button:hover, .create-host-button:hover {
+  color: #fff;
+  background: #4ABDAC;
 }

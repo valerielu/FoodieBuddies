@@ -6,13 +6,22 @@ import HostItemContainer from "../user/host_item_container.jsx";
 class CityDetails extends React.Component{
   constructor(props) {
     super(props);
-
+    this.handleEventCreate = this.handleEventCreate.bind(this);
+    this.handleHostCreate = this.handleHostCreate.bind(this);
   }
 
   componentDidMount() {
     if (!this.props.city) {
       this.props.requestSingleCity(this.props.params.cityId);
     }
+  }
+
+  handleEventCreate() {
+    this.props.router.push("/dashboard");
+  }
+
+  handleHostCreate() {
+    this.props.router.push("/hosting");
   }
 
   render() {
@@ -30,7 +39,7 @@ class CityDetails extends React.Component{
       const eventStatus = (events.length > 0) ?
         (<div className="city-detail-events-text-container">
           <h1 className="city-detail-events-title">Join a foodie event!</h1>
-         <h1 className="city-detail-events-description"> Meet some serious foodies and go on a delicious adventure! </h1>
+          <h1 className="city-detail-events-description"> Meet some serious foodies and go on a delicious adventure! </h1>
         </div>)
         :
         (<div className="city-detail-events-text-container">
@@ -39,17 +48,19 @@ class CityDetails extends React.Component{
         </div>);
 
       const eventCreateButton = ( this.props.currentUser && this.props.currentUser.is_host) ?
-        (<button className="create-event-button" onClick={this.handleLogout}>Log Out</button>)
+        (<button className="create-event-button" onClick={this.handleEventCreate}>Create new event</button>)
         :
-        (<div></div>);
+        (<button className="create-host-button" onClick={this.handleHostCreate}>Become a host</button>);
 
       return (
         <div className="city-detail-container">
 
           <div className="city-detail-welcome-container">
             <img className="city-detail-image" src={this.props.city.pic_url} />
-            <h1 className="city-detail-title">{this.props.city.name}</h1>
-            <h1 className="city-detail-tagline">Ready to grub?</h1>
+            <div className="city-detail-text-containter">
+              <h1 className="city-detail-title">{this.props.city.name}</h1>
+              <h1 className="city-detail-tagline">Ready to grub?</h1>
+            </div>
           </div>
 
           <div className="city-detail-events-container">

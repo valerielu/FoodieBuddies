@@ -76,6 +76,7 @@
   color: #4ABDAC;
   border: 2px solid #4ABDAC;
   background: none;
+  cursor: pointer;
 }
 
 .home-content-container {
