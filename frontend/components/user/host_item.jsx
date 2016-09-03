@@ -8,7 +8,7 @@ class HostItem extends React.Component{
   }
 
   handleHostClick() {
-    this.props.router.push(`/hosts/${this.props.host.id}`);
+    this.props.router.push(`/cities/${this.props.host.city_id}/hosts/${this.props.host.id}`);
   }
 
   render() {

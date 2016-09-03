@@ -9,6 +9,7 @@ import CityDetailsContainer from "./city/city_details_container.jsx";
 import {requestSingleCity} from "../actions/city_actions.js";
 import HostingContainer from "./user/hosting_container.jsx";
 import HostingFormContainer from "./user/host_form_container.jsx";
+import HostDetails from "./user/host_details.jsx";
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -52,10 +53,10 @@ class AppRouter extends React.Component{
           </Route>
           <Route path="/cities" component={ CitiesContainer } />
           <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/cities/:cityId/hosts/:hostId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/cities/:cityId/hosts/:hostId" component={ HostDetails } onEnter={this._ensureLoggedIn}/>
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}>
-            <Route path="/hosting/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/events/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
           </Route>
         </Route>
       </Router>

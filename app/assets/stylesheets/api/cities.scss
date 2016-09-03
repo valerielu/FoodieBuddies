@@ -14,15 +14,13 @@
   color: #808080;
   font-weight: bold;
   margin-top: 50px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 5px #ccc;
+  text-shadow: 2px 2px 3px #ccc;
 }
 
 .cities-tagline {
   font-size: 20px;
   color: #808080;
   margin: 30px 0px 20px 0px;
-  letter-spacing: 1px;
 }
 
 
@@ -46,20 +44,24 @@
 }
 
 .city-item-image {
-  width: 320px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
   border-radius: 2px;
   z-index: -1;
   opacity: 0.8;
+  position: absolute;
+  vertical-align: middle
 }
 
-.city-item-container li {
+.city-item-container {
   opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 320px;
   height: 160px;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .city-name {
@@ -74,10 +76,12 @@
 }
 
 
-.city-item-container li:hover {
+.city-item-container:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px #000;
+  //transition
 }
 
-.city-item-container li:hover span {
+.city-item-container:hover span {
   border-bottom: 2px solid #fff;
 }

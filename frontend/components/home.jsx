@@ -51,13 +51,13 @@ class Home extends React.Component {
           <h1 className="home-content-title">Why do people love foodiebuddies?</h1>
 
           <div className="home-content-box">
-            <img src="./gaeg" alt=""/>
+            <img src="" alt=""/>
             <h2 className="content-box-title">Because the more the merrier</h2>
           </div>
 
           <div className="home-content-box">
             <h2 className="content-box-title">Because friends who eat together stay together</h2>
-            <img src="./gaeg" alt=""/>
+            <img src="" alt=""/>
           </div>
 
         </div>

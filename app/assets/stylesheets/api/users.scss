@@ -11,27 +11,37 @@
 
 .host-status-container, .delete-container{
   display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 20px;
 }
 
 .delete-text, .host-status-text {
   font-size: 20px;
-  margin: 20px;
   color: #909090;
   letter-spacing: 2px;
 }
 
 .host-button, .delete-button{
   background: none;
-  color: #4ABDAC;
-  border: 2px solid #4ABDAC;
   font-family: "Roboto";
   font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 5px;
   margin: 5px 10px;
-  padding: 10px 5px;
+  padding: 10px 10px;
+}
+
+.host-button {
+  color: #4ABDAC;
+  border: 2px solid #4ABDAC;
+}
+
+.host-button:hover {
+  color: #fff;
+  background: #4ABDAC;
+
 }
 
 .delete-button {
@@ -39,13 +49,8 @@
   border: 2px solid #FC4A1A;
 }
 
-.host-button:hover {
-  color: #fff;
-  background: #4ABDAC;
-}
 
 .delete-button:hover {
   color: #fff;
   background: #FC4A1A;
-  border: none;
 }

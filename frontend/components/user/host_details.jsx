@@ -18,7 +18,7 @@ class HostDetails extends React.Component{
 
     return (
       <div className="host-details-container">
-
+        In host details page!!
       </div>
     );
   }

@@ -14,13 +14,11 @@ class CityItem extends React.Component{
   render() {
     const className = `city-item-${this.props.city.name.split(" ").join("")}`;
     return (
-      <div className="city-item-container">
-        <li className={className} onClick={this.handleCityClick}>
+      <div className="city-item-container" onClick={this.handleCityClick}>
           <span className="city-name">
             {this.props.city.name}
           </span>
           <img className="city-item-image" src={this.props.city.pic_url} />
-        </li>
       </div>
     );
   }

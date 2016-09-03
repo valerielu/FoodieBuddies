@@ -7,6 +7,7 @@ class Hosting extends React.Component{
     super(props);
     this.handleEventCreate = this.handleEventCreate.bind(this);
     this.handleHostCreate = this.handleHostCreate.bind(this);
+    // this.state = {showform: false};
     this.showform = false;
   }
 
@@ -15,8 +16,11 @@ class Hosting extends React.Component{
   }
 
   handleHostCreate() {
+    // this.setState({showform: true});
     this.showform = true;
     this.props.router.push("/hosting/new");
+    //dont need this now since i set state it will re-render
+    //but i am keeping it because I want to ensure log in whe the form is shown
   }
 
   render() {
