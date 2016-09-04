@@ -39,9 +39,9 @@ class User < ApplicationRecord
 
   def host_profile_completion
     if self.is_host
-      self.errors[:profile] << "Profile can't be blank" unless self.profile
-      self.errors[:first_name] << "First name can't be blank" unless self.profile
-      self.errors[:city_id] << "City can't be blank" unless self.city_id
+      self.errors[:profile] << "can't be blank" unless self.profile
+      self.errors[:first_name] << "can't be blank" unless self.first_name
+      self.errors[:city_id] << "can't be blank" unless self.city_id
     end
   end
 

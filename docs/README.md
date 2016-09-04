@@ -82,7 +82,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 **Objective:** Event belong to City and Host that can be created, read, edited and destroyed through the API.
 
 - [X] `Event` model
-- [X] Seed database with a small amount of test data
+- [ ] Seed database with a small amount of test data
 - [X] CRUD API for events (`EventsController`)
 - [X] JBuilder views for events
 - [X] Adding events requires a city
@@ -120,7 +120,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - Host components and respective Redux loops
   - [X] `Hosting`
   - [X] `HostItem`
-  - [ ] `HostForm`
+  - [ ] `HostForm` (create a host => updating a user)
   - [ ] `HostDetail`
   - [ ] `UpdateHostInfo` (inside profile for hosts)
 - [ ] Style hosts components

@@ -7,13 +7,20 @@ const preloadedState = {
 };
 
 const SessionReducer = (state = preloadedState, action) => {
-  let newState = merge({}, preloadedState);
+  let newState = merge({}, state);
   switch (action.type) {
     case Actions.SessionConstants.RECEIVE_CURRENT_USER:
+      newState.errors = [];
       newState.currentUser = action.currentUser;
       return newState;
     case Actions.SessionConstants.RECEIVE_ERRORS:
-      newState.errors = JSON.parse(action.errors.responseText);
+      console.log("in sess reducer");
+      console.log(action.errors);
+      if (action.errors) {
+        newState.errors = JSON.parse(action.errors.responseText);
+      } else {
+        newState.errors = [];
+      }
       return newState;
     case Actions.SessionConstants.LOGOUT:
       return preloadedState;

@@ -55,8 +55,15 @@
 .city-detail-events-text-container, .city-detail-hosts-text-container {
   align-items: left;
   width: 66%;
+}
+
+.city-detail-host-text-container {
+  display: flex;
+  align-items: center;
+  width: 60%;
 
 }
+
 .city-detail-events-title, .city-detail-hosts-title  {
   font-size: 30px;
   color: #F7B733;
@@ -70,6 +77,12 @@
   color: #808080;
   margin: 20px 0 20px 0;
   letter-spacing: 1px;
+}
+
+.city-detail-host-note {
+  font-size: 15px;
+  font-weight: bold;
+  color: #F7B733;
 }
 
 

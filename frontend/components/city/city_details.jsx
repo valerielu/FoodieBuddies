@@ -47,8 +47,12 @@ class CityDetails extends React.Component{
           <h1 className="city-detail-events-description"> Talk to the hosts to create one or become a host yourself! </h1>
         </div>);
 
-      const eventCreateButton = ( this.props.currentUser && this.props.currentUser.is_host) ?
-        (<button className="create-event-button" onClick={this.handleEventCreate}>Create new event</button>)
+      const eventCreateButton = ( this.props.currentUser && this.props.currentUser.city_id && this.props.currentUser.city_id === this.props.city.id) ?
+        (<div className="city-detail-host-text-container">
+          <h1 className="city-detail-host-note"> You are a host of this city! Add to the event list! </h1>
+          <button className="create-event-button" onClick={this.handleEventCreate}>Create new event</button>
+         </div>)
+
         :
         (<button className="create-host-button" onClick={this.handleHostCreate}>Become a host</button>);
 

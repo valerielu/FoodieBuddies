@@ -17,3 +17,14 @@ export const editAccount = (credentials, success, error) => {
     error
   });
 };
+
+export const createHost = (host, currentUser, success, error) => {
+  $.ajax({
+    method: "PATCH",
+    url: `/api/users/${currentUser.id}`,
+    dataType: "json",
+    data: {user: host},
+    success,
+    error
+  });
+};
