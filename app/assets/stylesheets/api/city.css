@@ -20,7 +20,8 @@
   position: absolute;
   vertical-align: middle;
   height: 35%;
-  width: 50%;
+  width: 60%;
+  padding: 0 40px 0 40px;
   background-color:rgba(255, 255, 255, 0.3);
 }
 

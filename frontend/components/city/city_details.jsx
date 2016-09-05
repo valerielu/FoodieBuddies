@@ -62,7 +62,7 @@ class CityDetails extends React.Component{
           <div className="city-detail-welcome-container">
             <img className="city-detail-image" src={this.props.city.pic_url} />
             <div className="city-detail-text-containter">
-              <h1 className="city-detail-title">{this.props.city.name}</h1>
+              <h1 className="city-detail-title">{this.props.city.name}, {this.props.city.country}</h1>
               <h1 className="city-detail-tagline">Ready to grub?</h1>
             </div>
           </div>

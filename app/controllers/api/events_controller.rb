@@ -1,8 +1,7 @@
 class Api::EventsController < ApplicationController
 
   def index
-    hosted_events = Event.where("host_id = ? OR ", current_user.id )
-    events = hosted_events
+    events = Event.where("host_id = ? OR id IN (?)", current_user.id, current_user.attendances.pluck(:event_id))
     @events = events.includes(:host, :city, :attendances)
     render :index
   end
@@ -39,7 +38,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(date, time, location, limit, food_type, restaurant, yelp_link, lat, lng)
+    params.require(:event).permit(:date_time, :location, :limit, :food_type, :restaurant, :yelp_link, :lat, :lng, :host_id, :city_id)
   end
 
 end

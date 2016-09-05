@@ -10,7 +10,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Hosting on Heroku
 - [X] New account creation, login, and guest/demo login
 - [X] Cities (view events and hosts at each city)
-- [ ] Users can become hosts
+- [X] Users can become hosts
 - [ ] Hosts can create events
 - [ ] Join Events
 - [ ] Dashboard of joined events/hosted events
@@ -83,7 +83,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 **Objective:** Event belong to City and Host that can be created, read, edited and destroyed through the API.
 
 - [X] `Event` model
-- [ ] Seed database with a small amount of test data
+- [X] Seed database with a small amount of test data
 - [X] CRUD API for events (`EventsController`)
 - [X] JBuilder views for events
 - [X] Adding events requires a city
@@ -100,15 +100,12 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 
 **Objective:** User's event attendance can be created and read through the API.
 
-- [ ] Seed database with a small amount of test data
+- [X] Seed database with a small amount of test data
 - [ ] API for attendances (`AttendancesController`)
 - [ ] JBuilder views for event attendance
 - Attendance components and respective Redux loops
-  - [ ] `AttendanceIndex`
-  - [ ] `AttendanceIndexItem`
   - [ ] `AttendButton`
   - [ ] `UnAttendButton`
-- [ ] Style attendance components
 - [ ] Seed attendances
 
 ### Phase 5: Hosts (1 day)
@@ -121,9 +118,9 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - Host components and respective Redux loops
   - [X] `Hosting`
   - [X] `HostItem`
-  - [ ] `HostForm` (create a host => updating a user)
-  - [ ] `HostDetail`
-  - [ ] `UpdateHostInfo` (inside profile for hosts)
+  - [X] `HostForm` (create a host => updating a user)
+  - [X] `HostDetail`
+  - [X] `UpdateHostInfo` (inside profile for hosts)
 - [ ] Style hosts components
 - [ ] Seed hosts
 

@@ -53,7 +53,7 @@ class Hosting extends React.Component{
       <div className="hosting-container">
 
         <div className="hosting-welcome-container">
-          <img className="hosting-image" src="" />
+          <img className="hosting-image" src="http://static1.squarespace.com/static/54f3f210e4b0d588ced54230/5529c7f9e4b02ed06b91adb0/55bff339e4b016f66900af8e/1438647567033/SMS+Text+FLY+Group+Eating+NYC+concierge.jpg?format=2500w" />
           <div className="hosting-welcome-text-containter">
             <h1 className="hosting-welcome-title">Join the host fam!</h1>
             <h1 className="hosting-welcome-tagline">Meet awesome people and start eating!</h1>

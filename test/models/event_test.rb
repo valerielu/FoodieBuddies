@@ -3,8 +3,7 @@
 # Table name: events
 #
 #  id         :integer          not null, primary key
-#  date       :date             not null
-#  time       :time             not null
+#  date_time  :datetime         not null
 #  location   :string           not null
 #  limit      :integer          not null
 #  host_id    :integer          not null

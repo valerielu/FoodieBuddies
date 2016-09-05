@@ -11,6 +11,7 @@ import HostingContainer from "./user/hosting_container.jsx";
 import HostFormContainer from "./user/host_form_container.jsx";
 import HostDetailsContainer from "./user/host_details_container.jsx";
 import EventFormContainer from "./event/event_form_container.jsx";
+import DashboardContainer from "./dashboard/dashboard_container.jsx";
 
 
 class AppRouter extends React.Component{
@@ -56,7 +57,7 @@ class AppRouter extends React.Component{
           <Route path="/cities" component={ CitiesContainer } />
           <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/cities/:cityId/hosts/:hostId" component={ HostDetailsContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/events/new" component={ EventFormContainer } onEnter={this._ensureLoggedIn}/>
         </Route>

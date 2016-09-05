@@ -1,8 +1,10 @@
 import React from "react";
 import {withRouter} from "react-router";
 import { Link } from 'react-router';
-import Select from 'react-select';
 // import 'react-select/dist/react-select.css';
+import Select from 'react-select';
+// import 'react-date-picker/index.css';
+// import { DateField, Calendar } from 'react-date-picker';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -71,16 +73,46 @@ class EventForm extends React.Component {
     } else {
       errors = [];
     }
-// :date, :time, :location, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
-    return (
-      <div className="new-host-form-container">
-        <h1 className="new-host-form-title">Sign up to be a host!</h1>
 
-        <ul className="host-form-errors">
+    // const onChange = (dateString, { dateMoment, timestamp }) => {
+    //   console.log(dateString);
+    // };
+    //
+    // let date = '2017-04-24';
+    // <Calendar
+    //   dateFormat="YYYY-MM-DD"
+    //   date={date}
+    //   onChange={onChange}
+    // />
+    //
+    // <DateField
+    //   dateFormat="YYYY-MM-DD hh:mm a"
+    //   forceValidDate={true}
+    //   updateOnDateClick={true}
+    //   defaultValue={1473053015232}
+    // >
+    //   <DatePicker
+    //     navigation={true}
+    //     locale="en"
+    //     forceValidDate={true}
+    //     highlightWeekends={true}
+    //     highlightToday={true}
+    //     weekNumbers={true}
+    //     weekStartDay={0}
+    //   />
+    // </DateField>
+
+// :date, :time, :location, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
+
+    return (
+      <div className="new-event-form-container">
+        <h1 className="new-event-form-title">Create a new event</h1>
+
+        <ul className="event-form-errors">
           {errors}
         </ul>
 
-        <form onSubmit={this.handleSubmit} className="new-host-form">
+        <form onSubmit={this.handleSubmit} className="new-event-form">
           <div className="form-input-container">
             <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First Name"/>
 
@@ -88,7 +120,7 @@ class EventForm extends React.Component {
 
           <div className="form-input-container">
 
-            <h1>Choose the city that you want to host in!</h1>
+            <h1>Choose the city that you want to event in!</h1>
             <Select className="form-city-input" onChange={this.updateCityField} options={this.cityOptions()} value={this.state.cityName}/>
           </div>
 

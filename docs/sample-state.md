@@ -6,20 +6,14 @@ json
       username: "app-academy",
       is_host: false
     },
-    errors: ["error1", "error2"]
+    errors: ["error1", "error2"] => including sign up/log in errors and update user (host create and update) errors
   },
   forms: {
-    createHost: {
-      //maybe these belong in the currentUser errors?
-    },
     createEvent: {
-      errors: ["date can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
-    },
-    updateHost: {
-      //maybe these belong in the currentUser errors?
+      errors: ["date_time can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
     },
     updateEvent: {
-
+      errors: ["date can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
     }
   },
   cities: {
