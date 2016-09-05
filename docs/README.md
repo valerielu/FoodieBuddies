@@ -10,7 +10,8 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Hosting on Heroku
 - [X] New account creation, login, and guest/demo login
 - [X] Cities (view events and hosts at each city)
-- [ ] Host Event (have users host and general users)
+- [ ] Users can become hosts
+- [ ] Hosts can create events
 - [ ] Join Events
 - [ ] Dashboard of joined events/hosted events
 - [ ] Production README

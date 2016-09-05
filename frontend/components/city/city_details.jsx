@@ -1,7 +1,7 @@
 import React from "react";
 import {withRouter} from "react-router";
 import EventItemContainer from "../event/event_item_container.jsx";
-import HostItemContainer from "../user/host_item_container.jsx";
+import HostItem from "../user/host_item.jsx";
 
 class CityDetails extends React.Component{
   constructor(props) {
@@ -17,7 +17,7 @@ class CityDetails extends React.Component{
   }
 
   handleEventCreate() {
-    this.props.router.push("/dashboard");
+    this.props.router.push("/events/new");
   }
 
   handleHostCreate() {
@@ -33,7 +33,7 @@ class CityDetails extends React.Component{
       ));
 
       const hosts = this.props.hosts.map(host => (
-        <HostItemContainer key={host.id} host={host}/>
+        <HostItem key={host.id} host={host}/>
       ));
 
       const eventStatus = (events.length > 0) ?
@@ -50,7 +50,7 @@ class CityDetails extends React.Component{
       const eventCreateButton = ( this.props.currentUser && this.props.currentUser.city_id && this.props.currentUser.city_id === this.props.city.id) ?
         (<div className="city-detail-host-text-container">
           <h1 className="city-detail-host-note"> You are a host of this city! Add to the event list! </h1>
-          <button className="create-event-button" onClick={this.handleEventCreate}>Create new event</button>
+          <button className="create-event-button" onClick={this.handleEventCreate}>Create event</button>
          </div>)
 
         :
@@ -90,7 +90,7 @@ class CityDetails extends React.Component{
 
     }
     else {
-      return (<div></div>);
+      return (<div>nothing yet</div>);
     }
   }
 }

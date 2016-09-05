@@ -19,7 +19,9 @@
 #
 
 class Event < ApplicationRecord
-  validates :date, :time, :location, :limit, :host, :city_id, presence: true
+  validates :date, :time, :location, :limit, :host_id, :city_id, presence: true
+  validates :limit, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 5 }
+
   belongs_to :city
 
   belongs_to :host,
@@ -28,5 +30,9 @@ class Event < ApplicationRecord
   class_name: :User
 
   has_many :attendances, dependent: :destroy
+
+  has_many :attendees,
+  through: :attendances,
+  source: :user
 
 end

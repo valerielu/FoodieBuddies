@@ -1,4 +1,4 @@
-import {UserConstants} from "../actions/user_actions.js";
+import {UserConstants, receiveSingleUser} from "../actions/user_actions.js";
 import * as API from "../util/users_api_util.js";
 import {logout, receiveCurrentUser, receiveErrors} from "../actions/session_actions.js";
 import {hashHistory} from "react-router";
@@ -14,14 +14,19 @@ const UserMiddleware = ({getState, dispatch}) => (next) => (action) => {
       dispatch(logout());
       API.deleteAccount(action.currentUser, success);
       break;
-    case UserConstants.CREATE_HOST:
+    case UserConstants.UPDATE_USER:
       success = (currentUser) => {
         dispatch(receiveCurrentUser(currentUser));
-        hashHistory.push("/dashboard");
       };
       error = (errors) => {
         dispatch(receiveErrors(errors));};
-      API.createHost(action.host, action.currentUser, success, error);
+      API.updateUser(action.host, action.currentUser, success, error);
+      break;
+    case UserConstants.REQUEST_SINGLE_USER:
+      success = (user) => {
+        dispatch(receiveSingleUser(user));
+      };
+      API.requestSingleUser(action.userId, success);
       break;
     default:
       return next(action);

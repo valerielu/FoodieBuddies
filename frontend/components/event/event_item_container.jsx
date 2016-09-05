@@ -1,6 +1,5 @@
 import EventItem from "./event_item.jsx";
 import {connect} from "react-redux";
-// import {requestAllCities} from "../../actions/city_actions.js";
 
 
 const mapStateToProps = (state) => ({

@@ -14,7 +14,7 @@ const CityMiddleware = ({getState, dispatch}) => (next) => (action) => {
     case Actions.CityConstants.REQUEST_SINGLE_CITY:
       success = (city) => {
         dispatch(Actions.receiveSingleCity(city));
-        hashHistory.push(`/cities/${city.id}`);
+        // hashHistory.push(`/cities/${city.id}`);
       };
       API.requestSingleCity(action.cityId, success);
       break;

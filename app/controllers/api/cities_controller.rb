@@ -5,7 +5,8 @@ class Api::CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find_by(id: params[:id])
+    city = City.find_by(id: params[:id])
+    @city = city.includes(:hosts, :events)
     render :show
   end
 end

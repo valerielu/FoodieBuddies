@@ -12,7 +12,7 @@ class Hosting extends React.Component{
   }
 
   handleEventCreate() {
-    this.props.router.push("/dashboard");
+    this.props.router.push("/events/new");
   }
 
   handleHostCreate() {
@@ -32,7 +32,7 @@ class Hosting extends React.Component{
       (<div className="hosting-action-container">
           <h1 className="hosting-action-title">You are already a host! (which means you are awesome)</h1>
           <h1 className="hosting-action-description">Be even more awesome by starting new event!</h1>
-          <button className="create-event-button" onClick={this.handleEventCreate}>Create event!</button>
+          <button className="create-event-button" onClick={this.handleEventCreate}>Create event</button>
         </div>
       );
     } else {
@@ -55,7 +55,7 @@ class Hosting extends React.Component{
         <div className="hosting-welcome-container">
           <img className="hosting-image" src="" />
           <div className="hosting-welcome-text-containter">
-            <h1 className="hosting-welcome-title">Join the fam!</h1>
+            <h1 className="hosting-welcome-title">Join the host fam!</h1>
             <h1 className="hosting-welcome-tagline">Meet awesome people and start eating!</h1>
           </div>
         </div>

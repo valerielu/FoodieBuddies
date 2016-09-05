@@ -1,14 +1,11 @@
-import * as Actions from "../actions/user_actions.js";
+import {UserConstants} from "../actions/user_actions.js";
 import merge from "lodash/merge";
-
-const preloadedState = {
-  currentUser: null,
-  errors: []
-};
 
 const UserReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
+    case UserConstants.RECEIVE_SINGLE_USER:
+      return action.user;
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import Select from 'react-select';
 // import 'react-select/dist/react-select.css';
 
-class HostForm extends React.Component {
+class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,15 +24,9 @@ class HostForm extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentWillMount(){
     this.props.requestAllCities();
     this.props.receiveErrors();
-  }
-
-  componentDidUpdate() {
-    if (this.props.currentUser.is_host) {
-      this.props.router.push("/dashboard");
-    }
   }
 
   updateFields (property) {
@@ -64,7 +58,7 @@ class HostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state, this.props.currentUser);
+    this.props.createHost(this.state, this.props.currentUser);
   }
 
   render () {
@@ -77,7 +71,7 @@ class HostForm extends React.Component {
     } else {
       errors = [];
     }
-
+// :date, :time, :location, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
     return (
       <div className="new-host-form-container">
         <h1 className="new-host-form-title">Sign up to be a host!</h1>
@@ -103,7 +97,7 @@ class HostForm extends React.Component {
           </div>
 
           <div className="form-input-container">
-            <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile} placeholder="Tell us your story and favorite restaurants/foods?"></textarea>
+            <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile}></textarea>
           </div>
 
           <input className="create-host-button" type="submit" value="Submit" />
@@ -114,4 +108,4 @@ class HostForm extends React.Component {
   }
 }
 
-export default withRouter(HostForm);
+export default withRouter(EventForm);

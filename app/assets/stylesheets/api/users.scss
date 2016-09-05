@@ -19,10 +19,52 @@
 .delete-text, .host-status-text {
   font-size: 20px;
   color: #909090;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
-.host-button, .delete-button{
+.delete-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-account-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.fa-times:hover {
+    color: #FC4A1A;
+}
+
+.delete-account-choices {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-account-title, .delete-account-tagline {
+  color: #909090;
+}
+
+.delete-account-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.delete-account-tagline {
+  font-size: 15px;
+  margin: 20px;
+}
+
+
+.host-button, .delete-button, .delete-confirm-button, .cancel-button{
   background: none;
   font-family: "Roboto";
   font-size: 15px;
@@ -33,24 +75,27 @@
   padding: 10px 10px;
 }
 
-.host-button {
+.host-button, .cancel-button {
   color: #4ABDAC;
   border: 2px solid #4ABDAC;
 }
 
-.host-button:hover {
+.host-button:hover, .cancel-button:hover {
   color: #fff;
   background: #4ABDAC;
 
 }
 
-.delete-button {
+.delete-button, .delete-confirm-button {
   color: #FC4A1A;
   border: 2px solid #FC4A1A;
 }
 
-
-.delete-button:hover {
+.delete-button:hover, .delete-confirm-button:hover {
   color: #fff;
   background: #FC4A1A;
+}
+
+.cancel-button, .delete-confirm-button {
+  width: 50%;
 }

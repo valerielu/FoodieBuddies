@@ -8,8 +8,10 @@ import UserProfileContainer from "./user/user_profile_container.jsx";
 import CityDetailsContainer from "./city/city_details_container.jsx";
 import {requestSingleCity} from "../actions/city_actions.js";
 import HostingContainer from "./user/hosting_container.jsx";
-import HostingFormContainer from "./user/host_form_container.jsx";
-import HostDetails from "./user/host_details.jsx";
+import HostFormContainer from "./user/host_form_container.jsx";
+import HostDetailsContainer from "./user/host_details_container.jsx";
+import EventFormContainer from "./event/event_form_container.jsx";
+
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -49,15 +51,14 @@ class AppRouter extends React.Component{
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn} />
           <Route path="/hosting" component={ HostingContainer } >
-            <Route path="/hosting/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
+            <Route path="/hosting/new" component={ HostFormContainer } onEnter={this._ensureLoggedIn}/>
           </Route>
           <Route path="/cities" component={ CitiesContainer } />
           <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/cities/:cityId/hosts/:hostId" component={ HostDetails } onEnter={this._ensureLoggedIn}/>
+          <Route path="/cities/:cityId/hosts/:hostId" component={ HostDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/dashboard" component={ CitiesContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}>
-          <Route path="/events/new" component={ HostingFormContainer } onEnter={this._ensureLoggedIn}/>
-          </Route>
+          <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/events/new" component={ EventFormContainer } onEnter={this._ensureLoggedIn}/>
         </Route>
       </Router>
     );

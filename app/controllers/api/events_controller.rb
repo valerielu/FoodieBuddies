@@ -1,5 +1,11 @@
 class Api::EventsController < ApplicationController
 
+  def index
+    hosted_events = Event.where("host_id = ? OR ", current_user.id )
+    events = hosted_events
+    @events = events.includes(:host, :city, :attendances)
+    render :index
+  end
 
   def create
     @event = Event.new(event_params)
@@ -8,6 +14,11 @@ class Api::EventsController < ApplicationController
     else
       render json: @event.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @event = Event.find_by(id: params[:id])
+    render :show
   end
 
   def update

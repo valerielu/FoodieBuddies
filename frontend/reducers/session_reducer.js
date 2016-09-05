@@ -14,8 +14,6 @@ const SessionReducer = (state = preloadedState, action) => {
       newState.currentUser = action.currentUser;
       return newState;
     case Actions.SessionConstants.RECEIVE_ERRORS:
-      console.log("in sess reducer");
-      console.log(action.errors);
       if (action.errors) {
         newState.errors = JSON.parse(action.errors.responseText);
       } else {

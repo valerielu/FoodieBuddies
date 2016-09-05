@@ -1,15 +1,23 @@
 /* For the host display on city page*/
 
+.host-item-container {
+  width: 25%;
+  margin: 20px;
+}
+
+.host-item-container:hover {
+  box-shadow: 0 0 15px #909090;
+}
+
 .host-item-container li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 230px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 2px;
-  margin: 20px;
 }
 
 .host-item-container li:hover {
@@ -25,6 +33,7 @@
   width: 180px;
   height: 150px;
   margin: 10px;
+  margin-bottom: 0;
 }
 
 .host-name {
@@ -34,6 +43,7 @@
   letter-spacing: 1px;
   font-size: 20px;
   color: #000;
+  margin: 10px;
 }
 
 /* For the host details */

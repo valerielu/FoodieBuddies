@@ -1,5 +1,5 @@
 import React from "react";
-// import {withRouter} from "react-router";
+import {withRouter} from "react-router";
 
 class CityItem extends React.Component{
   constructor(props) {
@@ -9,6 +9,10 @@ class CityItem extends React.Component{
 
   handleCityClick(e) {
     this.props.requestSingleCity(this.props.city.id);
+    // this.props.router.push(`/cities/${this.props.city.id}`);
+    setTimeout(() => {this.props.router.push(`/cities/${this.props.city.id}`);}, 100);
+    // => the refreshing looks better when setting this time out on the city details page
+
   }
 
   render() {
@@ -25,4 +29,4 @@ class CityItem extends React.Component{
 }
 
 
-export default CityItem;
+export default withRouter(CityItem);
