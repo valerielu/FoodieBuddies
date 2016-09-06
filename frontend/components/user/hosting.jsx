@@ -30,7 +30,7 @@ class Hosting extends React.Component{
     if (this.props.currentUser && this.props.currentUser.is_host) {
       conditionalHostContent =
       (<div className="hosting-action-container">
-          <h1 className="hosting-action-title">You are already a host! (which means you are awesome)</h1>
+          <h1 className="hosting-action-title"><i className="fa fa-bell-o" aria-hidden="true"></i>  You are already a host! (which means you are awesome)</h1>
           <h1 className="hosting-action-description">Be even more awesome by starting new event!</h1>
           <button className="create-event-button" onClick={this.handleEventCreate}>Create event</button>
         </div>
@@ -39,9 +39,7 @@ class Hosting extends React.Component{
       const phrase = "I'm interested!";
       conditionalHostContent =
       (<div className="hosting-action-container">
-         <h1 className="hosting-action-title">Not yet a host!</h1>
-         <h1 className="hosting-action-description">Join the awesomeness</h1>
-         <button className="login-button"
+         <button className="host-interest-button"
            onClick={this.handleHostCreate}>{phrase}</button>
        </div>
      );
@@ -69,9 +67,10 @@ class Hosting extends React.Component{
             <li>Am I host material?</li>
             <li>How can I get involved?</li>
           </ol>
+          <h1 className="hosting-info-description"> Join us!</h1>
+          {conditionalHostContent}
         </div>
 
-        {conditionalHostContent}
         {HostForm}
 
       </div>

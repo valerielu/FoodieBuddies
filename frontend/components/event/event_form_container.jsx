@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createEvent: (event) => (dispatch(createEvent(event))),
+  createEvent: (event) => (dispatch(createEvent(event)))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventForm);

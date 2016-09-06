@@ -25,8 +25,8 @@ class EventForm extends React.Component {
   }
 
   componentWillMount(){
-    this.props.requestAllCities();
-    this.props.receiveErrors();
+    // this.props.requestAllCities();
+    // this.props.receiveErrors();
   }
 
   updateFields (property) {

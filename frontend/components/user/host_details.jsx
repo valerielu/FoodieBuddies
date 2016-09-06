@@ -6,9 +6,7 @@ class HostDetails extends React.Component{
   }
 
   componentWillMount() {
-    if (!this.props.host) {
-      this.props.requestSingleUser(this.props.params.hostId);
-    }
+    this.props.requestSingleUser(this.props.params.hostId);
   }
 
   render() {
@@ -25,22 +23,23 @@ class HostDetails extends React.Component{
 
         <div className="host-details-container">
           <div className="host-detail-welcome-container">
-            <img className="host-detail-welcome-image" src="" />
             <div className="host-detail-welcome-text-containter">
               <h1 className="host-detail-welcome-title">{title}</h1>
               <h1 className="host-detail-welcome-tagline">{tagline}</h1>
             </div>
-          </div>
 
-          <div className="host-details-image-container">
-            <img className="host-profile-image" src={profile_pic} />
           </div>
+          <div className="host-info-container">
+            <div className="host-details-image-container">
+              <img className="host-profile-image" src={profile_pic} />
+            </div>
 
-          <div className="host-details-profile-container">
-            <h1 className="host-detail-profile-title">{profileTitle}</h1>
-            <p>{this.props.host.profile}</p>
+            <div className="host-details-profile-container">
+              <h1 className="host-detail-profile-title">{profileTitle}</h1>
+              <p>{this.props.host.profile}</p>
+            </div>
+
           </div>
-
         </div>
       );
     } else {

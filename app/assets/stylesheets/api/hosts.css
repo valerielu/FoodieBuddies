@@ -42,11 +42,14 @@
   margin: 20px 0;
 }
 
+.hosting-info-container {
+  margin: 40px;
+}
+
 .hosting-info-title {
   font-size: 30px;
   color: #F7B733;
   font-weight: bold;
-  margin-top: 40px;
   letter-spacing: 1px;
 }
 
@@ -54,8 +57,30 @@
   font-size: 15px;
   color: #808080;
   margin: 20px 0 20px 0;
+  font-weight: bold;
 }
 
+
+.host-interest-button {
+  color: #fff;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #FC4A1A;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.host-interest-button:hover {
+  color: #FC4A1A;
+  background: none;
+  cursor: pointer;
+  border: 2px solid #FC4A1A
+}
+
+ol li {
+  color: #808080;
+}
 
 
 /* For the host display on city page*/
@@ -105,3 +130,54 @@
 }
 
 /* For the host details */
+
+.host-detail-welcome-text-containter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  background: #F7B733;
+  opacity: 0.6;
+}
+
+.host-detail-welcome-title {
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.host-detail-welcome-tagline {
+  font-size: 20px;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.host-details-image-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.host-profile-image {
+  
+}
+
+.host-info-container {
+  display: flex;
+}
+
+.host-details-profile-container {
+  padding: 30px;
+}
+
+.host-detail-profile-title {
+  font-size: 30px;
+  color: #909090;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
