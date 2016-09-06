@@ -13,25 +13,27 @@ class EventItem extends React.Component{
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      eventData: undefined
     };
   }
 
-
   handleUpdateEvent() {
-    console.log('udpate');
+    // this.props.updateEvent(this.props.event.id, this.state.eventData);
   }
 
   handleJoinEvent() {
-console.log('join');
+    this.props.attendEvent({user_id: this.props.currentUser.id, event_id: this.props.event.id});
   }
 
   handleDropoutEvent() {
-console.log('dropout');
+    this.props.unattendEvent(this.props.event.id, this.props.currentUser.id);
+    this.closeModal();
   }
 
   handleDeleteEvent() {
-    console.log('delete');
+    this.props.deleteEvent(this.props.event.id);
+    this.closeModal();
   }
 
   handleHostClick() {

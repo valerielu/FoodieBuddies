@@ -37,7 +37,7 @@ class Home extends React.Component {
           <div className="home-background"></div>
           <div className="home-text-container">
             <h1 className="home-title">Food is better with company</h1>
-            <h1 className="home-tagline">Meet local foodies and try a new restaurant together!</h1>
+            <h1 className="home-tagline">Meet local foodies and try new restaurants together!</h1>
 
             <div className="home-welcome-buttons-container">
               <button className="home-signup-button" onClick={this.handleSignUp}>{joinButton}</button>

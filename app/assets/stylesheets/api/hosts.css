@@ -1,8 +1,62 @@
 /* For the hosting page*/
 
 .hosting-image {
+  background-image: url("http://static1.squarespace.com/static/54f3f210e4b0d588ced54230/5529c7f9e4b02ed06b91adb0/55bff339e4b016f66900af8e/1438647567033/SMS+Text+FLY+Group+Eating+NYC+concierge.jpg?format=2500w");
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*opacity: 0.8;*/
   width: 100%;
+  height: 100%;
+  z-index: -1;
 }
+
+.hosting-welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  /*background-color:rgba(0, 0, 0, 0.2);*/
+}
+
+.hosting-welcome-text-containter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hosting-welcome-title {
+  font-size: 50px;
+  color: #000;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.hosting-welcome-tagline {
+  font-size: 20px;
+  color: #000;
+  margin: 20px 0;
+}
+
+.hosting-info-title {
+  font-size: 30px;
+  color: #F7B733;
+  font-weight: bold;
+  margin-top: 40px;
+  letter-spacing: 1px;
+}
+
+.hosting-info-description {
+  font-size: 15px;
+  color: #808080;
+  margin: 20px 0 20px 0;
+}
+
+
 
 /* For the host display on city page*/
 

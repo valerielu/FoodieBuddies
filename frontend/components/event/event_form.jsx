@@ -100,7 +100,7 @@ class EventForm extends React.Component {
     //   />
     // </DateField>
 
-// :date, :time, :location, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
+// :date_time, :location, :limit, :food_type, :restaurant, :yelp_link, :lat, :lng, :host_id, :city_id
 
     return (
       <div className="new-event-form-container">

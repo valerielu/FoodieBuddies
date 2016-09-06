@@ -53,19 +53,21 @@ class Hosting extends React.Component{
       <div className="hosting-container">
 
         <div className="hosting-welcome-container">
-          <img className="hosting-image" src="http://static1.squarespace.com/static/54f3f210e4b0d588ced54230/5529c7f9e4b02ed06b91adb0/55bff339e4b016f66900af8e/1438647567033/SMS+Text+FLY+Group+Eating+NYC+concierge.jpg?format=2500w" />
+          <div className="hosting-image"></div>
           <div className="hosting-welcome-text-containter">
-            <h1 className="hosting-welcome-title">Join the host fam!</h1>
+            <h1 className="hosting-welcome-title">Join the host family</h1>
             <h1 className="hosting-welcome-tagline">Meet awesome people and start eating!</h1>
           </div>
         </div>
 
         <div className="hosting-info-container">
           <h1 className="hosting-info-title">There are so many good restaurants, but so few people to try them with...</h1>
-          <h1 className="hosting-info-description"> If you love bring people together get with us! </h1>
+          <h1 className="hosting-info-description"> If you love bringing people together and you love food (obviously), then keep reading! </h1>
           <ol>
-            <li>hello1</li>
-            <li>hello2</li>
+            <li>What is a host?</li>
+            <li>Why do hosts love hosting?</li>
+            <li>Am I host material?</li>
+            <li>How can I get involved?</li>
           </ol>
         </div>
 

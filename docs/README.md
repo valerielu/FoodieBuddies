@@ -12,7 +12,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Cities (view events and hosts at each city)
 - [X] Users can become hosts
 - [ ] Hosts can create events
-- [ ] Join Events
+- [X] Join Events
 - [X] Dashboard of joined events/hosted events
 - [ ] Production README
 
@@ -101,11 +101,11 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 **Objective:** User's event attendance can be created and read through the API.
 
 - [X] Seed database with a small amount of test data
-- [ ] API for attendances (`AttendancesController`)
-- [ ] JBuilder views for event attendance
+- [X] API for attendances (`AttendancesController`)
+- [X] JBuilder views for event attendance
 - Attendance components and respective Redux loops
-  - [ ] `AttendButton`
-  - [ ] `UnAttendButton`
+  - [X] `AttendButton`
+  - [X] `UnAttendButton`
 - [ ] Seed attendances
 
 ### Phase 5: Hosts (1 day)

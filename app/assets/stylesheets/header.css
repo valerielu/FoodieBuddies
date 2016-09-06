@@ -8,7 +8,7 @@ header {
   background: var(--header-footer-color);
   height: var(--header-height);
   box-shadow: 0 0 15px rgba(0, 0, 0, .50);
-  position: fixed;
+  /*position: fixed;*/
   z-index: 1;
   width: 100%
 }
