@@ -19,7 +19,7 @@ class Header extends React.Component{
       <header>
         <div className="header-container">
           <a className="header-logo-anchor" onClick={this.handleLogo}>
-            <img src="" className="header-logo-img"/>
+            <img src="http://res.cloudinary.com/dsj48uswp/image/upload/v1473149615/logo-white_dsmjpl.png" className="header-logo-img"/>
           </a>
           <div className="header-links-container">
             <i className="fa fa-building" aria-hidden="true"></i>
