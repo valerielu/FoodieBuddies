@@ -22,6 +22,10 @@ class AppRouter extends React.Component{
     // this.requestSingleCityDetails = this.requestSingleCityDetails.bind(this);
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   _ensureLoggedIn(nextState, replace){
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;

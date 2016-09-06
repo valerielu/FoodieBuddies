@@ -51,7 +51,7 @@ class EventItem extends React.Component{
   render() {
     let eventButton;
     if (this.props.event.host_id === this.props.currentUser.id) {
-      eventButton = (<button className="join-event-button" onClick={this.handleUpdateEvent}>Edit Event</button>);
+      eventButton = (<div></div>);
     } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
       eventButton = (<button className="join-event-button" onClick={this.openModal}>Maybe next time</button>);
     } else if (this.props.event.limit === this.props.event.attendees.length) {
@@ -60,12 +60,14 @@ class EventItem extends React.Component{
       eventButton = (<button className="join-event-button" onClick={this.handleJoinEvent}>Sign me up!</button>);
     }
 
-    let deleteButton;
+    let deleteButton, editButton;
 
     if (this.props.event.host_id === this.props.currentUser.id) {
-      deleteButton = (<button className="join-event-button" onClick={this.openModal}>Delete Event</button>);
+      deleteButton = (<button className="edit-event-button" onClick={this.openModal}><i className="fa fa-trash-o" aria-hidden="true"></i></button>);
+      editButton = (<button className="edit-event-button" onClick={this.handleUpdateEvent}><i className="fa fa-pencil" aria-hidden="true"></i></button>);
     } else {
       deleteButton = (<div></div>);
+      editButton = (<div></div>);
     }
 
     const seatsLeft = this.props.event.limit - this.props.event.attendees.length;
@@ -119,10 +121,19 @@ class EventItem extends React.Component{
       <div className="event-item-with-button-container">
         <div className="event-item-container">
 
-          <div className="event-host-container" onClick={this.handleHostClick}>
-            <img className="event-host-image" src={this.props.event.host_profile_pic_url} />
-            <h1 className="event-host-name">{this.props.event.host_name}</h1>
+
+          <div className="event-right-container">
+            <div className="event-host-container" onClick={this.handleHostClick}>
+              <img className="event-host-image" src={this.props.event.host_profile_pic_url} />
+              <h1 className="event-host-name">{this.props.event.host_name}</h1>
+            </div>
+
+            <div className="event-host-buttons-container">
+              {deleteButton}
+              {editButton}
+            </div>
           </div>
+
 
           <div className="event-details-container">
 
@@ -156,11 +167,11 @@ class EventItem extends React.Component{
           <div className="event-seats">
             <h1 className={seatsclassName}>{seatsLeft} seats left!</h1>
           </div>
+
         </div>
 
-        <div className="event-buttons-container">
+        <div className="event-button-container">
           {eventButton}
-          {deleteButton}
         </div>
 
         <Modal
@@ -185,7 +196,5 @@ class EventItem extends React.Component{
     );
   }
 }
-
-
 
 export default withRouter(EventItem);

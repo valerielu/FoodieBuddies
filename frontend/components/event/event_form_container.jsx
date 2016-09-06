@@ -3,12 +3,12 @@ import {connect} from "react-redux";
 import {createEvent} from "../../actions/event_actions.js";
 
 const mapStateToProps = (state) => ({
-  // currentUser: state.session.currentUser,
-  // cities: state.cities.allcities,
-  // errors: state.session.errors
+  currentUser: state.session.currentUser,
+  // errors: state.forms.eventForm
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  // updateEvent
   createEvent: (event) => (dispatch(createEvent(event)))
 });
 

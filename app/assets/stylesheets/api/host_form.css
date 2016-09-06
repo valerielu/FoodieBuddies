@@ -2,3 +2,18 @@
   height: 20px;
   padding: 0;
 }
+
+.form-input-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic-thumbnail {
+  height: 40px;
+  width: 40px;
+  border: none;
+}
+
+.hide-profile-pic-thumbnail {
+  display: none;
+}

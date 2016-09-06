@@ -13,6 +13,7 @@ class UserProfile extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
     this.handleAddPhoto = this.handleAddPhoto.bind(this);
+    this.handleDeletePhoto = this.handleDeletePhoto.bind(this);
     this.handleViewEvent = this.handleViewEvent.bind(this);
     this.state = {
       first_name: this.props.currentUser.first_name,
@@ -36,8 +37,18 @@ class UserProfile extends React.Component{
     this.props.router.push(`/cities/${this.props.currentUser.city_id}`);
   }
 
-  handleAddPhoto() {
+  handleAddPhoto(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options, (error, images) => {
+        if (error === null) {
+          this.setState({profile_pic_url: images[0].url});
+        }
+    });
+  }
 
+  handleDeletePhoto() {
+    this.setState({profile_pic_url: ""});
   }
 
   handleSubmit(e) {
@@ -78,6 +89,13 @@ class UserProfile extends React.Component{
       hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
     }
 
+    let profileThumbnailClass;
+    if (!this.state.profile_pic_url || this.state.profile_pic_url.length === 0) {
+      profileThumbnailClass = "hide-profile-pic-thumbnail";
+    } else {
+      profileThumbnailClass = "profile-pic-thumbnail";
+    }
+
 
     if (this.props.currentUser.is_host) {
       hostUpdateForm =
@@ -95,8 +113,10 @@ class UserProfile extends React.Component{
 
             </div>
 
-            <div className="form-input-container">
+            <div className="form-input-image-container">
               <button className="create-event-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Change profile photo</button>
+              <i className="fa fa-times" aria-hidden="true" onClick={this.handleDeletePhoto}></i>
+              <img className={profileThumbnailClass} src={this.state.profile_pic_url} />
             </div>
 
             <div className="form-input-container">

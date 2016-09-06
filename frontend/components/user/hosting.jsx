@@ -8,7 +8,7 @@ class Hosting extends React.Component{
     this.handleEventCreate = this.handleEventCreate.bind(this);
     this.handleHostCreate = this.handleHostCreate.bind(this);
     // this.state = {showform: false};
-    this.showform = false;
+    this.showform = window.location.hash.includes("hosting/new") ? true : false;
   }
 
   handleEventCreate() {

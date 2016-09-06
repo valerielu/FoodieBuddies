@@ -8,23 +8,36 @@ class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      first_name: undefined,
-      is_host: true,
-      city_id: undefined,
-      profile_pic_url: "",
-      profile: undefined,
-      cityName: ""
+      location: undefined,
+      limit: undefined,
+      city_id: this.props.currentUser.city_id,
+      host_id: this.props.currentUser.id,
+      food_type: undefined,
+      restaurant: undefined,
+      yelp_link: undefined
     };
+
+    // json.host_name event.host.first_name
+    // json.host_profile_pic_url event.host.profile_pic_url
+    // json.city_name event.city.name
+    // json.attendees event.attendances.pluck(:user_id)
+    // json.date_time event.date_time.strftime("%A %^b-%d-%Y %I:%M%p")
+    // json.serialized_date_time event.date_time
+    // # Time.iso8601(date_time)
+    // # new Date (date_time)
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
     this.cityOptions = this.cityOptions.bind(this);
     this.updateCityField = this.updateCityField.bind(this);
     this.handleAddPhoto = this.handleAddPhoto.bind(this);
-
   }
 
   componentWillMount(){
+    if (!this.props.currentUser.is_host) {
+      this.props.router.push("/hosting");
+    }
     // this.props.requestAllCities();
     // this.props.receiveErrors();
   }
@@ -58,7 +71,7 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createHost(this.state, this.props.currentUser);
+    this.props.createEvent(this.state);
   }
 
   render () {
@@ -100,7 +113,7 @@ class EventForm extends React.Component {
     //   />
     // </DateField>
 
-// :date_time, :location, :limit, :food_type, :restaurant, :yelp_link, :lat, :lng, :host_id, :city_id
+
 
     return (
       <div className="new-event-form-container">

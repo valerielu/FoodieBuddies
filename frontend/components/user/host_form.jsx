@@ -20,6 +20,7 @@ class HostForm extends React.Component {
     this.cityOptions = this.cityOptions.bind(this);
     this.updateCityField = this.updateCityField.bind(this);
     this.handleAddPhoto = this.handleAddPhoto.bind(this);
+    this.handleDeletePhoto = this.handleDeletePhoto.bind(this);
 
   }
 
@@ -50,8 +51,18 @@ class HostForm extends React.Component {
     }
   }
 
-  handleAddPhoto() {
+  handleAddPhoto(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options, (error, images) => {
+        if (error === null) {
+          this.setState({profile_pic_url: images[0].url});
+        }
+    });
+  }
 
+  handleDeletePhoto() {
+    this.setState({profile_pic_url: ""});
   }
 
   cityOptions () {
@@ -82,6 +93,14 @@ class HostForm extends React.Component {
       errors = [];
     }
 
+
+    let profileThumbnailClass;
+    if (!this.state.profile_pic_url || this.state.profile_pic_url.length === 0) {
+      profileThumbnailClass = "hide-profile-pic-thumbnail";
+    } else {
+      profileThumbnailClass = "profile-pic-thumbnail";
+    }
+
     return (
       <div className="new-host-form-container">
         <h1 className="new-host-form-title">Sign up to be a host!</h1>
@@ -103,8 +122,10 @@ class HostForm extends React.Component {
             <Select className="form-city-input" onChange={this.updateCityField} options={this.cityOptions()} value={this.state.cityName}/>
           </div>
 
-          <div className="form-input-container">
-            <button className="create-event-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Upload profile photo</button>
+          <div className="form-input-image-container">
+            <button className="create-host-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Upload profile photo</button>
+            <i className="fa fa-times" aria-hidden="true" onClick={this.handleDeletePhoto}></i>
+            <img className={profileThumbnailClass} src={this.state.profile_pic_url} />
           </div>
 
           <div className="form-input-container">

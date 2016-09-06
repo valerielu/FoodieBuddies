@@ -9,11 +9,8 @@ json
     errors: ["error1", "error2"] => including sign up/log in errors and update user (host create and update) errors
   },
   forms: {
-    createEvent: {
+    eventForm: {
       errors: ["date_time can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
-    },
-    updateEvent: {
-      errors: ["date can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
     }
   },
   cities: {
@@ -45,7 +42,7 @@ json
       }
     }
   },
-  dashboard: {
+  events: {
     attendingEvents: {
       1: {
         id: 1
@@ -56,6 +53,7 @@ json
         description: "is yummy",
         city_id: 2,
         host_id: 12,
+        attendees: [1, 6]
       }
     },
     hostedEvents: {
@@ -68,14 +66,21 @@ json
         description: "is yummy",
         city_id: 2,
         host_id: 12,
-        attendees: {
-          1: {
-            id: 2,
-            username: "valpal123"
-          }
-        }
+        attendees: [2, 5, 7]
       }
     }
   }
+  users: {
+    host: {
+      1: {
+        id: 1,
+        username: "JaneDoe",
+        is_host: true,
+        ...
 
+
+        ...
+      }
+    }
+  }
 }
