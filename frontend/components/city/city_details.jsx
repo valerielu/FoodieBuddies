@@ -49,7 +49,7 @@ class CityDetails extends React.Component{
 
       const eventCreateButton = ( this.props.currentUser && this.props.currentUser.city_id && this.props.currentUser.city_id === this.props.city.id) ?
         (<div className="city-detail-host-text-container">
-          <h1 className="city-detail-host-note"> You are a host of this city! Add to the event list! </h1>
+          <h1 className="city-detail-host-note"> <i className="fa fa-bell-o" aria-hidden="true"></i> You are a host of this city! Add to the event list! </h1>
           <button className="create-event-button" onClick={this.handleEventCreate}>Create event</button>
          </div>)
 
@@ -78,7 +78,7 @@ class CityDetails extends React.Component{
           <div className="city-detail-hosts-container">
             <div className="city-detail-hosts-text-container">
               <h1 className="city-detail-hosts-title">Get to know your hosts in {this.props.city.name}!</h1>
-              <h1 className="city-detail-hosts-description"></h1>
+              <h1 className="city-detail-hosts-description">The host community is full of folks that generally love good conversations, bringing people together, and open minds. Like yourself, each of them has an incredible story that brought them to where they are right now.</h1>
             </div>
             <ul className="city-detail-hosts-list">
               {hosts}
@@ -90,7 +90,7 @@ class CityDetails extends React.Component{
 
     }
     else {
-      return (<div>nothing yet</div>);
+      return (<div></div>);
     }
   }
 }

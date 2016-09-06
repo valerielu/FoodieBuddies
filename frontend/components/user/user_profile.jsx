@@ -13,6 +13,7 @@ class UserProfile extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
     this.handleAddPhoto = this.handleAddPhoto.bind(this);
+    this.handleViewEvent = this.handleViewEvent.bind(this);
     this.state = {
       first_name: this.props.currentUser.first_name,
       profile_pic_url: this.props.currentUser.profile_pic_url,
@@ -24,17 +25,15 @@ class UserProfile extends React.Component{
   componentWillMount() {
     this.props.receiveErrors();
   }
-  //
-  // componentDidUpdate() {
-  //   if (this.props.currentUser.is_host) {
-  //     this.props.router.push("/dashboard");
-  //   }
-  // }
 
   handleDelete() {
     this.closeModal();
     this.props.deleteAccount(this.props.currentUser);
 
+  }
+
+  handleViewEvent() {
+    this.props.router.push(`/cities/${this.props.currentUser.city_id}`);
   }
 
   handleAddPhoto() {
@@ -63,6 +62,7 @@ class UserProfile extends React.Component{
   closeModal() {
     this.setState({ modalOpen: false });
   }
+
   openModal() {
     this.setState({ modalOpen: true });
   }
@@ -71,11 +71,13 @@ class UserProfile extends React.Component{
     let hostStatus;
     let hostButtontext;
     let hostUpdateForm;
+    let viewEventsButton;
 
     if (this.props.currentUser) {
-      hostStatus = this.props.currentUser.is_host ? "You are a host (yay!) Host an event for your city!" : "You are not yet a host";
+      hostStatus = this.props.currentUser.is_host ? `You are a host (yay!) Host an event for ${this.props.currentUser.city_name}!` : "You are not yet a host";
       hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
     }
+
 
     if (this.props.currentUser.is_host) {
       hostUpdateForm =
@@ -106,8 +108,12 @@ class UserProfile extends React.Component{
 
         </div>
       );
+        viewEventsButton = (<button className="view-event-button" onClick={this.handleViewEvent}>See all events</button>);
     } else {
       hostUpdateForm = (
+        <div></div>
+      );
+      viewEventsButton = (
         <div></div>
       );
     }
@@ -153,7 +159,9 @@ class UserProfile extends React.Component{
         <div className="host-status-container">
           <h1 className="host-status-text">HOST STATUS: {hostStatus}</h1>
           <button className="host-button" onClick={this.handleHost}>{hostButtontext}</button>
+          {viewEventsButton}
         </div>
+
 
         <ul className="host-form-errors">
           {errors}

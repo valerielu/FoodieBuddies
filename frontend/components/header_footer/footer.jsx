@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-    <div className="footer-container"></div>
+      <div className="footer-quote">Stay Hungry. Stay Foolish.</div>
     </footer>
   );
 };

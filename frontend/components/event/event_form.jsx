@@ -1,9 +1,7 @@
 import React from "react";
 import {withRouter} from "react-router";
 import { Link } from 'react-router';
-// import 'react-select/dist/react-select.css';
 import Select from 'react-select';
-// import 'react-date-picker/index.css';
 // import { DateField, Calendar } from 'react-date-picker';
 
 class EventForm extends React.Component {

@@ -1,3 +1,143 @@
 // Place all the styles related to the api/events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-item-with-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 20px;
+}
+
+.event-item-container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px;
+  width: 100%;
+}
+
+.event-host-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #F7B733;
+  border-radius: 2px;
+  width: 30%;
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  padding: 5px;
+}
+
+.event-host-container:hover {
+  cursor:pointer;
+}
+
+.event-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-host-image {
+  width: 95%;
+  height: 55px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.event-host-name {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #FC4A1A;
+  text-transform: uppercase;
+}
+
+.event-details-container {
+  width: 70%;
+}
+
+.event-details-container > * {
+  padding: 5px;
+  font-size: 12px;
+  color: #909090;
+}
+
+.event-time-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-time-container > * {
+  padding: 1px;
+}
+
+.event-weekday {
+  text-transform: uppercase;
+  color: #909090;
+  font-weight: bold;
+}
+
+.event-date {
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.event-time {
+  color: #000;
+  font-weight: bold;
+}
+
+.event-yelp-link {
+  font-size: 15px;
+}
+
+.event-city {
+ margin-bottom: 5px;
+}
+
+.event-seats-left, .event-no-seats-left {
+  border-top: 1px solid #ccc;
+  font-size: 15px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.event-seats-left {
+  color: #32CD32;
+}
+
+.event-no-seats-left {
+  color: #f00;
+}
+
+
+.join-event-button {
+  background: none;
+  color: #FC4A1A;
+  border: 2px solid #FC4A1A;
+  font-family: "Roboto";
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  margin: 10px 10px;
+  padding: 5px;
+}
+
+.join-event-button:hover {
+  color: #fff;
+  background: #FC4A1A;
+}
+
+.fa-yelp {
+  color: #c41200;
+}

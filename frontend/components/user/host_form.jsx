@@ -2,7 +2,6 @@ import React from "react";
 import {withRouter} from "react-router";
 import { Link } from 'react-router';
 import Select from 'react-select';
-// import 'react-select/dist/react-select.css';
 
 class HostForm extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class HostForm extends React.Component {
       city_id: undefined,
       profile_pic_url: "",
       profile: undefined,
-      cityName: ""
+      cityName: undefined
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +30,7 @@ class HostForm extends React.Component {
 
   componentDidUpdate() {
     if (this.props.currentUser.is_host) {
-      this.props.router.push("/dashboard");
+      this.props.router.push("/userprofile");
     }
   }
 
@@ -42,8 +41,13 @@ class HostForm extends React.Component {
   }
 
   updateCityField (cityOption) {
-    this.setState({city_id: parseInt(cityOption.value)});
-    this.setState({cityName: cityOption.label});
+    if (cityOption instanceof Array || !cityOption) {
+      this.setState({city_id: undefined});
+      this.setState({cityName: undefined});
+    } else if (cityOption) {
+      this.setState({city_id: parseInt(cityOption.value)});
+      this.setState({cityName: cityOption});
+    }
   }
 
   handleAddPhoto() {
@@ -58,7 +62,7 @@ class HostForm extends React.Component {
       });
       return result;
     } else {
-      return [];
+      return undefined;
     }
   }
 
@@ -95,6 +99,7 @@ class HostForm extends React.Component {
           <div className="form-input-container">
 
             <h1>Choose the city that you want to host in!</h1>
+
             <Select className="form-city-input" onChange={this.updateCityField} options={this.cityOptions()} value={this.state.cityName}/>
           </div>
 

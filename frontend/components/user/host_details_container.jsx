@@ -1,14 +1,14 @@
 import HostDetails from "./host_details.jsx";
 import {connect} from "react-redux";
-import {requestSingleCity} from '../../actions/city_actions.js';
+import {requestSingleUser} from '../../actions/user_actions.js';
 
 
 const mapStateToProps = (state) => ({
-  city: state.cities.city
+  host: state.users.host
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestSingleCity: (cityId) => (dispatch(requestSingleCity(cityId)))
+  requestSingleUser: (userId) => (dispatch(requestSingleUser(userId)))
 });
 
 

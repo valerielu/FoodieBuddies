@@ -73,10 +73,10 @@
 }
 
 .city-detail-events-description, .city-detail-hosts-description {
-  font-size: 20px;
+  font-size: 15px;
   color: #808080;
   margin: 20px 0 20px 0;
-  letter-spacing: 1px;
+
 }
 
 .city-detail-host-note {
@@ -88,10 +88,15 @@
 
 .city-detail-events-list, .city-detail-hosts-list {
   display: flex;
-  width: 1000px;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  /*justify-content: center;*/
   flex-wrap: wrap;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.city-detail-events-list {
+  margin-top: 40px;
 }
 
 .create-event-button, .create-host-button {

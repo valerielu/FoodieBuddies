@@ -38,8 +38,8 @@ taipei = City.create!(name: "Taipei", country: "Taiwan", lat: 25.0330,
   lng: 121.5654, pic_url: "https://i.ytimg.com/vi/fz1cBwNEUXI/maxresdefault.jpg")
 
 buffet = Event.create!(date_time: DateTime.strptime("10/3/2016 11:00 AM", "%m/%d/%Y %l:%M %p"), location: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109", limit: 5, host_id: 6 ,city_id: 2 ,food_type: "American buffet", restaurant: "Bacchanal Buffet", yelp_link: "https://www.yelp.com/biz/bacchanal-buffet-las-vegas-7" ,lat: 36.1167 ,lng: -115.1742)
-shakeshack = Event.create!(date_time: DateTime.strptime("10/2/2016 8:00 PM", "%m/%d/%Y %l:%M %p"),location: "3790 S Las Vegas Blvd", limit: 7, host_id: 6 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
-lotus = Event.create!(date_time: DateTime.strptime("10/13/2016 1:00 PM", "%m/%d/%Y %l:%M %p"), location: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 7 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
+shakeshack = Event.create!(date_time: DateTime.strptime("10/2/2016 08:00 PM", "%m/%d/%Y %l:%M %p"),location: "3790 S Las Vegas Blvd", limit: 7, host_id: 6 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
+lotus = Event.create!(date_time: DateTime.strptime("10/13/2016 01:00 PM", "%m/%d/%Y %l:%M %p"), location: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 7 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
 
 attendance1 = Attendance.create!(user_id: 1, event_id: 1)
 attendance2 = Attendance.create!(user_id: 1, event_id: 2)

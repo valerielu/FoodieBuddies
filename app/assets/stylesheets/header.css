@@ -13,6 +13,20 @@ header {
   width: 100%
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1e9c6;
+  height: 40px;
+}
+
+.footer-quote {
+  color: #909090;
+  font-size: 15px;
+  /*font-weight: bold;*/
+}
+
 
 .header-container {
   display: flex;

@@ -64,7 +64,7 @@
 }
 
 
-.host-button, .delete-button, .delete-confirm-button, .cancel-button{
+.host-button, .delete-button, .delete-confirm-button, .cancel-button, .view-event-button{
   background: none;
   font-family: "Roboto";
   font-size: 15px;
@@ -75,12 +75,12 @@
   padding: 10px 10px;
 }
 
-.host-button, .cancel-button {
+.host-button, .cancel-button, .view-event-button {
   color: #4ABDAC;
   border: 2px solid #4ABDAC;
 }
 
-.host-button:hover, .cancel-button:hover {
+.host-button:hover, .cancel-button:hover, .view-event-button:hover {
   color: #fff;
   background: #4ABDAC;
 

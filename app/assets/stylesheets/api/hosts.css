@@ -1,12 +1,15 @@
+/* For the hosting page*/
+
+.hosting-image {
+  width: 100%;
+}
+
 /* For the host display on city page*/
 
 .host-item-container {
-  width: 25%;
+  width: 22%;
   margin: 20px;
-}
-
-.host-item-container:hover {
-  box-shadow: 0 0 15px #909090;
+  margin-right: 0;
 }
 
 .host-item-container li {
@@ -16,12 +19,13 @@
   width: 100%;
   height: auto;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
   border-radius: 2px;
 }
 
 .host-item-container li:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px #909090;
 }
 
 .host-item-container li:hover span {
@@ -30,8 +34,8 @@
 
 .host-item-image {
   border-radius: 2px;
-  width: 180px;
-  height: 150px;
+  width: 90%;
+  height: 75%;
   margin: 10px;
   margin-bottom: 0;
 }

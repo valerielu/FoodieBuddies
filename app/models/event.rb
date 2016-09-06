@@ -18,9 +18,9 @@
 #
 
 class Event < ApplicationRecord
-  validates :date_time, :location, :limit, :host_id, :city_id, :restaurant, presence: true
+  validates :location, :limit, :host_id, :city_id, :restaurant, presence: true #:date_time
   validates :limit, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 9 }
-  validate :events_cannot_be_in_past
+  # validate :events_cannot_be_in_past
 
   belongs_to :city
 
@@ -37,8 +37,12 @@ class Event < ApplicationRecord
 
   def events_cannot_be_in_past
     if self.date_time <= Time.now
-      self.errors[:date] << "has to be in the future"
+      self.errors[:date_time] << "has to be in the future"
     end
+  end
+
+  def parse_date_time_input
+    # Date.strftime("%b %e %Y %a") Time.strftime("%l:%M %p")
   end
 
 end

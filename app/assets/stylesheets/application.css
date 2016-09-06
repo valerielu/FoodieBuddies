@@ -15,14 +15,8 @@
  */
 
 
-/*footer {
-  display: flex;
-  justify-content: center;
-  background: var(--header-footer-color);
-}*/
 
-
-button.hover  {
+button:hover  {
   cursor: pointer;
 }
 

@@ -1,0 +1,47 @@
+.dashboard-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.dashboard-events-container {
+  margin: 20px;
+}
+
+ .dashboard-welcome {
+  font-size: 20px;
+  color: #909090;
+  margin: 20px 0;
+ }
+
+
+.dashboard-title {
+  font-size: 30px;
+  color: #F7B733;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+.events-list {
+  display: flex;
+  width: 100%;
+  /*justify-content: center;*/
+  flex-wrap: wrap;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.add-more-events-button {
+  border: 5px dashed #909090;
+  font-size: 20px;
+  background: none;
+  height: 100px;
+  color: #909090;
+  padding: 20px;
+}
+
+.add-more-events-button:hover {
+  color: #000;
+  border: 5px dashed #000;
+  cursor: pointer;
+}

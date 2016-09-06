@@ -16,9 +16,9 @@ class Hosting extends React.Component{
   }
 
   handleHostCreate() {
-    // this.setState({showform: true});
-    this.showform = true;
     this.props.router.push("/hosting/new");
+    this.showform = true;
+    // this.setState({showform: true});
     //dont need this now since i set state it will re-render
     //but i am keeping it because I want to ensure log in whe the form is shown
   }
