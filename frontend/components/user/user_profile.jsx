@@ -39,7 +39,7 @@ class UserProfile extends React.Component{
     if ((nextProfile !== thisProfile || nextName !== thisName || nextUrl !== thisUrl) && (nextProps.errors.length === 0)) {
       this.updateMessage =
       (<h1 className="host-status-update-feedback">
-      <i className="fa fa-bell-o" aria-hidden="true"></i> Profile saved!</h1>);
+      <i className="fa fa-check" aria-hidden="true"></i> Profile saved!</h1>);
     }
   }
 

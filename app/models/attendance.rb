@@ -22,7 +22,7 @@ class Attendance < ApplicationRecord
   source: :city
 
   def number_of_attendees_in_event
-    if self.event.limit == 0
+    if self.event.limit <= Attendance.where(event_id: self.event_id).length
       self.errors[:event] << "limit is reached"
     end
   end

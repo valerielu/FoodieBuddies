@@ -19,7 +19,7 @@ end
 
 50.times do
   User.create!(username: Faker::Name.first_name + Faker::Name.last_name,
-    password: Faker::Lorem.characters(10), profile_pic_url: Faker::Avatar.image("my-own-slug", "200x200"),
+    password: Faker::Lorem.characters(10), profile_pic_url: Faker::Avatar.image,
     is_host: true, profile: Faker::Lorem.paragraph(10), city_id: 1 + rand(6),
     first_name: Faker::Name.first_name)
 end
@@ -81,7 +81,7 @@ http://yelp.com/biz/andytown-coffee-roasters-san-francisco
 
 100.times do
   Event.create!(date_time: Faker::Time.between(DateTime.now + 1, DateTime.now + 100),
-  location: Faker::Address.street_address, limit: 2 + rand(8), host_id: 1 + rand(56) ,city_id: 1 + rand(6) ,
+  location: Faker::Address.street_address, limit: 2 + rand(8), host_id: 105 + rand(56) ,city_id: 1 + rand(6) ,
   food_type: food_type[rand(9)], restaurant: restaurant[rand(12)],
   yelp_link: yelp_link[rand(12)])
 end
