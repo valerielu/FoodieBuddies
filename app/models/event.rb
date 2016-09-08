@@ -44,7 +44,6 @@ class Event < ApplicationRecord
   def self.parse_date_time_input(time)
     # Time.iso8601(date_time) => in iso serialized string
     # new Date (date_time) => in iso serialized string
-
     DateTime.strptime(time, "%Y-%m-%d %l:%M %P")
   end
 
