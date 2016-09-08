@@ -21,10 +21,30 @@ class UserProfile extends React.Component{
       profile: this.props.currentUser.profile,
       modalOpen: false
     };
+    this.updateMessage = (<div></div>);
   }
 
   componentWillMount() {
     this.props.receiveErrors();
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let nextProfile = nextProps.currentUser.profile;
+    let thisProfile = this.props.currentUser.profile;
+    let nextName = nextProps.currentUser.first_name;
+    let thisName = this.props.currentUser.first_name;
+    let nextUrl = nextProps.currentUser.profile_pic_url;
+    let thisUrl = this.props.currentUser.profile_pic_url;
+
+
+    this.updateMessage = (<div></div>);
+
+    if ((nextProfile !== thisProfile || nextName !== thisName || nextUrl !== thisUrl) && (nextProps.errors.length === 0)) {
+      this.updateMessage =
+      (<h1 className="host-status-update-feedback">
+      <i className="fa fa-bell-o" aria-hidden="true"></i> Profile saved!</h1>);
+    }
   }
 
   handleDelete() {
@@ -79,51 +99,66 @@ class UserProfile extends React.Component{
   }
 
   render () {
-    let hostStatus;
+    let hostStatus, hostTagline;
     let hostButtontext;
     let hostUpdateForm;
     let viewEventsButton;
 
+
     if (this.props.currentUser) {
-      hostStatus = this.props.currentUser.is_host ? `You are a host (yay!) Host an event for ${this.props.currentUser.city_name}!` : "You are not yet a host";
+      hostStatus = this.props.currentUser.is_host ? "You are a host (yay!)" : "You are not yet a host";
+      hostTagline = this.props.currentUser.is_host ? (<h1 className="host-tagline-text">Host an event for {this.props.currentUser.city_name}!</h1>) : (<div></div>);
       hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
     }
 
-    let profileThumbnailClass;
+    let profileThumbnailClass, thumbnailXClass;
     if (!this.state.profile_pic_url || this.state.profile_pic_url.length === 0) {
       profileThumbnailClass = "hide-profile-pic-thumbnail";
+      thumbnailXClass = "fa fa-times hide-thumbnail-x";
     } else {
       profileThumbnailClass = "profile-pic-thumbnail";
+      thumbnailXClass = "fa fa-times thumbnail-x";
     }
 
+    let errors;
+    if (this.props.errors) {
+      errors = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
+      ));
+    } else {
+      errors = [];
+    }
 
     if (this.props.currentUser.is_host) {
       hostUpdateForm =
       (
         <div className="new-host-form-container">
-          <h1 className="new-host-form-title">Update your host profile</h1>
-
-          <ul className="host-form-errors">
-            {errors}
-          </ul>
+          <h1 className="update-host-form-title">Update your host profile</h1>
 
           <form onSubmit={this.handleSubmit} className="new-host-form">
             <div className="form-input-container">
+              <h1 className="form-label">First name</h1>
               <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.first_name} />
 
             </div>
 
             <div className="form-input-image-container">
-              <button className="create-event-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Change profile photo</button>
-              <i className="fa fa-times" aria-hidden="true" onClick={this.handleDeletePhoto}></i>
+              <button className="upload-picture-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Change profile photo</button>
               <img className={profileThumbnailClass} src={this.state.profile_pic_url} />
+              <i className={thumbnailXClass} aria-hidden="true" onClick={this.handleDeletePhoto}></i>
             </div>
 
             <div className="form-input-container">
+              <h1 className="form-label">Profile (Your introduction)</h1>
               <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile}></textarea>
             </div>
 
-            <input className="create-host-button" type="submit" value="Update Profile" />
+            <ul className="login-errors">
+              {errors}
+            </ul>
+
+            <input className="submit-host-button" type="submit" value="Update Profile" />
+            {this.updateMessage}
           </form>
 
         </div>
@@ -138,14 +173,6 @@ class UserProfile extends React.Component{
       );
     }
 
-    let errors;
-    if (this.props.errors) {
-      errors = this.props.errors.map((error, idx) => (
-        <li key={idx}>{error}</li>
-      ));
-    } else {
-      errors = [];
-    }
 
     const style = {
       overlay : {
@@ -158,7 +185,7 @@ class UserProfile extends React.Component{
         zIndex          : 10
       },
       content : {
-        position        : 'fixed',
+        // position        : 'fixed',
         top             : '200px',
         left            : '200px',
         right           : '200px',
@@ -178,14 +205,13 @@ class UserProfile extends React.Component{
       <div className="user-profile-container">
         <div className="host-status-container">
           <h1 className="host-status-text">HOST STATUS: {hostStatus}</h1>
-          <button className="host-button" onClick={this.handleHost}>{hostButtontext}</button>
-          {viewEventsButton}
+          {hostTagline}
+          <div className="host-profile-buttons-container">
+            <button className="host-button" onClick={this.handleHost}>{hostButtontext}</button>
+            {viewEventsButton}
+          </div>
         </div>
 
-
-        <ul className="host-form-errors">
-          {errors}
-        </ul>
         {hostUpdateForm}
 
         <div className="delete-container">
@@ -197,8 +223,8 @@ class UserProfile extends React.Component{
 
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
-
           style={style} >
+
           <i className="fa fa-times" aria-hidden="true" onClick={this.closeModal}></i>
           <div className="delete-modal-container">
             <div className="delete-account-text-container">

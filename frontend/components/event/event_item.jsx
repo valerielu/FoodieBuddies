@@ -1,25 +1,20 @@
 import React from "react";
 import {withRouter} from "react-router";
 import Modal from "react-modal";
+import EventModalContainer from "./event_modal_container.jsx";
 
 class EventItem extends React.Component{
   constructor(props) {
     super(props);
     this.handleJoinEvent = this.handleJoinEvent.bind(this);
     this.handleDropoutEvent = this.handleDropoutEvent.bind(this);
-    this.handleUpdateEvent = this.handleUpdateEvent.bind(this);
     this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
     this.handleHostClick = this.handleHostClick.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
+    this.closeDeleteModal = this.closeDeleteModal.bind(this);
+    this.openDeleteModal = this.openDeleteModal.bind(this);
     this.state = {
-      modalOpen: false,
-      eventData: undefined
+      deleteModalOpen: false,
     };
-  }
-
-  handleUpdateEvent() {
-    // this.props.updateEvent(this.props.event.id, this.state.eventData);
   }
 
   handleJoinEvent() {
@@ -28,24 +23,24 @@ class EventItem extends React.Component{
 
   handleDropoutEvent() {
     this.props.unattendEvent(this.props.event.id, this.props.currentUser.id);
-    this.closeModal();
+    this.closeDeleteModal();
   }
 
   handleDeleteEvent() {
     this.props.deleteEvent(this.props.event.id);
-    this.closeModal();
+    this.closeDeleteModal();
   }
 
   handleHostClick() {
     this.props.router.push(`/cities/${this.props.event.city_id}/hosts/${this.props.event.host_id}`);
   }
 
-  closeModal() {
-    this.setState({ modalOpen: false });
+  closeDeleteModal() {
+    this.setState({ deleteModalOpen: false });
   }
 
-  openModal() {
-    this.setState({ modalOpen: true });
+  openDeleteModal() {
+    this.setState({ deleteModalOpen: true });
   }
 
   render() {
@@ -53,7 +48,7 @@ class EventItem extends React.Component{
     if (this.props.event.host_id === this.props.currentUser.id) {
       eventButton = (<div></div>);
     } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
-      eventButton = (<button className="join-event-button" onClick={this.openModal}>Maybe next time</button>);
+      eventButton = (<button className="join-event-button" onClick={this.openDeleteModal}>Maybe next time</button>);
     } else if (this.props.event.limit === this.props.event.attendees.length) {
       eventButton = (<div></div>);
     } else {
@@ -63,8 +58,8 @@ class EventItem extends React.Component{
     let deleteButton, editButton;
 
     if (this.props.event.host_id === this.props.currentUser.id) {
-      deleteButton = (<button className="edit-event-button" onClick={this.openModal}><i className="fa fa-trash-o" aria-hidden="true"></i></button>);
-      editButton = (<button className="edit-event-button" onClick={this.handleUpdateEvent}><i className="fa fa-pencil" aria-hidden="true"></i></button>);
+      deleteButton = (<button className="delete-event-button" onClick={this.openDeleteModal}><i className="fa fa-trash-o" aria-hidden="true"></i></button>);
+      editButton = (<EventModalContainer className="edit-event-button" event = {this.props.event} />);
     } else {
       deleteButton = (<div></div>);
       editButton = (<div></div>);
@@ -117,6 +112,8 @@ class EventItem extends React.Component{
       }
     };
 
+    const prof_pic = (this.props.event.host_profile_pic_url) ? this.props.event.host_profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+
     return (
       <div className="event-item-with-button-container">
         <div className="event-item-container">
@@ -124,7 +121,7 @@ class EventItem extends React.Component{
 
           <div className="event-right-container">
             <div className="event-host-container" onClick={this.handleHostClick}>
-              <img className="event-host-image" src={this.props.event.host_profile_pic_url} />
+              <img className="event-host-image" src={prof_pic} />
               <h1 className="event-host-name">{this.props.event.host_name}</h1>
             </div>
 
@@ -139,13 +136,13 @@ class EventItem extends React.Component{
 
             <div className="event-time-container">
               <h1 className="event-weekday">
-                {this.props.event.date_time.split(" ")[0]}
+                {this.props.event.readable_date_time.split(" ")[0]}
               </h1>
               <h1 className="event-date">
-                {this.props.event.date_time.split(" ")[1]}
+                {this.props.event.readable_date_time.split(" ")[1]}
               </h1>
               <h1 className="event-time">
-                {this.props.event.date_time.split(" ")[2]}
+                {this.props.event.readable_date_time.split(" ")[2]}
               </h1>
             </div>
 
@@ -165,7 +162,7 @@ class EventItem extends React.Component{
           </div>
 
           <div className="event-seats">
-            <h1 className={seatsclassName}>{seatsLeft} seats left!</h1>
+            <h1 className={seatsclassName}>{seatsLeft} seat(s) left!</h1>
           </div>
 
         </div>
@@ -176,18 +173,18 @@ class EventItem extends React.Component{
 
         <Modal
 
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}
+          isOpen={this.state.deleteModalOpen}
+          onRequestClose={this.closeDeleteModal}
           style={style} >
 
-          <i className="fa fa-times" aria-hidden="true" onClick={this.closeModal}></i>
+          <i className="fa fa-times" aria-hidden="true" onClick={this.closeDeleteModal}></i>
           <div className="delete-modal-container">
             <div className="delete-account-text-container">
               <h1 className="delete-account-title">{Modalphrase}</h1>
             </div>
             <div className="delete-account-choices">
               <button className="delete-confirm-button" onClick={ModalHandler}>Yes</button>
-              <button className="cancel-button" onClick={this.closeModal}>cancel</button>
+              <button className="cancel-button" onClick={this.closeDeleteModal}>cancel</button>
             </div>
           </div>
         </Modal>

@@ -6,20 +6,44 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-
+  margin: 40px;
 }
 
-.host-status-container, .delete-container{
+.host-status-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-profile-buttons-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin: 20px;
 }
 
-.delete-text, .host-status-text {
+.delete-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.host-status-text {
+  font-weight: bold;
+  font-size: 25px;
+  color: #F7B733;
+  margin: 10px 0;
+}
+
+.host-tagline-text {
+  font-weight: bold;
+  font-size: 20px;
+  color: #909090;
+  margin: 10px;
+}
+
+.delete-text {
   font-size: 20px;
   color: #909090;
   letter-spacing: 1px;
+  margin: 10px;
 }
 
 .delete-modal-container {
@@ -35,13 +59,14 @@
 }
 
 .fa-times {
+  color: #909090;
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
 .fa-times:hover {
-    color: #FC4A1A;
+  color: #000;
 }
 
 .delete-account-choices {
@@ -92,6 +117,10 @@
   border: 2px solid #FC4A1A;
 }
 
+.delete-button {
+  width: 177px;
+}
+
 .delete-button:hover, .delete-confirm-button:hover {
   color: #fff;
   background: #FC4A1A;
@@ -99,4 +128,18 @@
 
 .cancel-button, .delete-confirm-button {
   width: 50%;
+}
+
+.update-host-form-title {
+  margin: 30px 0;
+  font-weight: bold;
+  font-size: 25px;
+  color: #F7B733;
+}
+
+.host-status-update-feedback {
+  margin: 10px;
+  font-size: 15px;
+  font-weight: lighter;
+  color: #32CD32;
 }

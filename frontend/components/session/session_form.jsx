@@ -37,10 +37,40 @@ class SessionForm extends React.Component {
   }
 
   handleDemo() {
-    this.props.login({
-      username: "JaneDoe",
-      password: "testing"
-    });
+    const _stringGen = (len) => {
+      let randomWord = "";
+
+      var charset = "0123456789"; //abcdefghijklmnopqrstuvwxyz
+
+      for (let i = 0; i < len; i++ )
+          randomWord += charset.charAt(Math.floor(Math.random() * charset.length));
+
+      return randomWord;
+    };
+
+    // let lengthRange = [4, 5, 6];
+    // let length = lengthRange[Math.floor(Math.random() * lengthRange.length)];
+    let hostStatus = (Math.random() <= 0.5) ? true : false;
+    let city_id = Math.floor(Math.random()*6) + 1;
+    let userName = `Guest${_stringGen(5)}`;
+
+    if (hostStatus) {
+      this.props.signup({
+        username: userName,
+        password: "password",
+        is_host: hostStatus,
+        first_name: userName,
+        city_id: city_id,
+        profile: "Guest user profile"
+      });
+    } else {
+      this.props.signup({
+        username: `GuestUser${_stringGen(length)}`,
+        password: "password",
+        is_host: hostStatus
+      });
+    }
+
   }
 
   render () {

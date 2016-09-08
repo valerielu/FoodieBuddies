@@ -7,6 +7,12 @@ const EventReducer = (state = {}, action) => {
     case EventConstants.RECEIVE_ALL_EVENTS:
       return action.events;
 
+    case EventConstants.RECEIVE_SINGLE_EVENT:
+      if (newState.eventErrors) {
+        delete(newState.eventErrors) ;
+      }
+      return merge(newState, action.event);
+
     case EventConstants.SUBTRACT_EVENT:
       if (newState[action.eventId]) {
         delete(newState[action.eventId]);
@@ -31,6 +37,11 @@ const EventReducer = (state = {}, action) => {
       } else {
         return state;
       }
+
+    case EventConstants.RECEIVE_EVENT_ERRORS:
+
+      newState["eventErrors"] = JSON.parse(action.errors.responseText);
+      return merge(newState, action.event);
 
     default:
       return state;

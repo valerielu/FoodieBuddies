@@ -1,0 +1,47 @@
+.new-event-form-container {
+  margin: 30px;
+}
+
+.new-event-form {
+  margin: 10px;
+}
+
+.new-event-form-title {
+  font-size: 30px;
+  color: #F7B733;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.event-form-text-input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 10px;
+  width: 40%;
+  font-size: 15px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.submit-event-button {
+  background: none;
+  color: #4ABDAC;
+  border: 2px solid #4ABDAC;
+  font-family: "Roboto";
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 10px;
+}
+
+.submit-event-button:hover {
+  color: #fff;
+  background: #4ABDAC;
+}
+
+.form-label {
+  color: gray;
+  font-size: 15px;
+}

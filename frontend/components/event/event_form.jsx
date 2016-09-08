@@ -1,45 +1,32 @@
 import React from "react";
 import {withRouter} from "react-router";
-import { Link } from 'react-router';
-import Select from 'react-select';
-// import { DateField, Calendar } from 'react-date-picker';
+import { DateField, Calendar, DatePicker } from 'react-date-picker';
+import "moment";
 
 class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      date_time: undefined,
       location: undefined,
       limit: undefined,
       city_id: this.props.currentUser.city_id,
       host_id: this.props.currentUser.id,
-      food_type: undefined,
       restaurant: undefined,
+      food_type: undefined,
       yelp_link: undefined
     };
 
-    // json.host_name event.host.first_name
-    // json.host_profile_pic_url event.host.profile_pic_url
-    // json.city_name event.city.name
-    // json.attendees event.attendances.pluck(:user_id)
-    // json.date_time event.date_time.strftime("%A %^b-%d-%Y %I:%M%p")
-    // json.serialized_date_time event.date_time
-    // # Time.iso8601(date_time)
-    // # new Date (date_time)
-
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
-    this.cityOptions = this.cityOptions.bind(this);
-    this.updateCityField = this.updateCityField.bind(this);
-    this.handleAddPhoto = this.handleAddPhoto.bind(this);
+    this.onChange = this.onChange.bind(this);
+
   }
 
   componentWillMount(){
     if (!this.props.currentUser.is_host) {
       this.props.router.push("/hosting");
     }
-    // this.props.requestAllCities();
-    // this.props.receiveErrors();
   }
 
   updateFields (property) {
@@ -48,30 +35,13 @@ class EventForm extends React.Component {
     };
   }
 
-  updateCityField (cityOption) {
-    this.setState({city_id: parseInt(cityOption.value)});
-    this.setState({cityName: cityOption.label});
-  }
-
-  handleAddPhoto() {
-
-  }
-
-  cityOptions () {
-    if (this.props.cities) {
-      let result = [];
-      Object.keys(this.props.cities).map(id => {
-        result.push({value: id, label: this.props.cities[id].name});
-      });
-      return result;
-    } else {
-      return [];
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.createEvent(this.state);
+  }
+
+  onChange (dateString, { dateMoment, timestamp }) {
+    this.setState({date_time: dateString});
   }
 
   render () {
@@ -79,71 +49,59 @@ class EventForm extends React.Component {
     let errors;
     if (this.props.errors) {
       errors = this.props.errors.map((error, idx) => (
-        <li key={idx}>{error}</li>
+        <li key={idx} >{error}</li>
       ));
     } else {
       errors = [];
     }
-
-    // const onChange = (dateString, { dateMoment, timestamp }) => {
-    //   console.log(dateString);
-    // };
-    //
-    // let date = '2017-04-24';
-    // <Calendar
-    //   dateFormat="YYYY-MM-DD"
-    //   date={date}
-    //   onChange={onChange}
-    // />
-    //
-    // <DateField
-    //   dateFormat="YYYY-MM-DD hh:mm a"
-    //   forceValidDate={true}
-    //   updateOnDateClick={true}
-    //   defaultValue={1473053015232}
-    // >
-    //   <DatePicker
-    //     navigation={true}
-    //     locale="en"
-    //     forceValidDate={true}
-    //     highlightWeekends={true}
-    //     highlightToday={true}
-    //     weekNumbers={true}
-    //     weekStartDay={0}
-    //   />
-    // </DateField>
-
-
+    let currentTime = Date.now();
 
     return (
       <div className="new-event-form-container">
-        <h1 className="new-event-form-title">Create a new event</h1>
-
-        <ul className="event-form-errors">
-          {errors}
-        </ul>
+        <h1 className="new-event-form-title">Create a new event in {this.props.currentUser.city_name}</h1>
 
         <form onSubmit={this.handleSubmit} className="new-event-form">
-          <div className="form-input-container">
-            <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First Name"/>
 
+          <DateField
+            dateFormat="YYYY-MM-DD hh:mm a"
+            forceValidDate={true}
+            updateOnDateClick={true}
+            defaultValue={currentTime}
+            className = "event-form-datetime"
+            onChange={this.onChange}
+          >
+            <DatePicker
+              navigation={true}
+              locale="en"
+              forceValidDate={true}
+              highlightWeekends={true}
+              highlightToday={true}
+              weekNumbers={true}
+              weekStartDay={0}
+            />
+          </DateField>
+
+          <div className="form-input-container">
+            <input className="event-form-text-input" type="text" onChange={this.updateFields("restaurant")} value={this.state.restaurant} placeholder="Restaurant"/>
+          </div>
+          <div className="form-input-container">
+            <input className="event-form-text-input" type="text" onChange={this.updateFields("location")} value={this.state.location} placeholder="Address"/>
+          </div>
+          <div className="form-input-container">
+            <input className="event-form-text-input" type="text" onChange={this.updateFields("food_type")} value={this.state.food_type} placeholder="Food type (Ex: Indian) (optional)"/>
+          </div>
+          <div className="form-input-container">
+            <input className="event-form-text-input" type="text" onChange={this.updateFields("yelp_link")} value={this.state.yelp_link} placeholder="Yelp link for restaurant (optional)"/>
+          </div>
+          <div className="form-input-container">
+            <input className="event-form-text-input" type="number" onChange={this.updateFields("limit")} value={this.state.limit} placeholder="Event size limit"/>
           </div>
 
-          <div className="form-input-container">
+          <ul className="login-errors">
+            {errors}
+          </ul>
 
-            <h1>Choose the city that you want to event in!</h1>
-            <Select className="form-city-input" onChange={this.updateCityField} options={this.cityOptions()} value={this.state.cityName}/>
-          </div>
-
-          <div className="form-input-container">
-            <button className="create-event-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Upload profile photo</button>
-          </div>
-
-          <div className="form-input-container">
-            <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile}></textarea>
-          </div>
-
-          <input className="create-host-button" type="submit" value="Submit" />
+          <input className="submit-event-button" type="submit" value="Submit" />
         </form>
 
       </div>

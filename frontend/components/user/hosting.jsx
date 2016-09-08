@@ -69,9 +69,9 @@ class Hosting extends React.Component{
           </ol>
           <h1 className="hosting-info-description"> Join us!</h1>
           {conditionalHostContent}
+          {HostForm}
         </div>
 
-        {HostForm}
 
       </div>
     );

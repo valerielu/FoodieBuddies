@@ -12,6 +12,8 @@ const SessionReducer = (state = preloadedState, action) => {
     case Actions.SessionConstants.RECEIVE_CURRENT_USER:
       newState.errors = [];
       newState.currentUser = action.currentUser;
+      if (action.currentUser.is_host && !action.currentUser.profile_pic_url)
+      action.currentUser.profile_pic_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
       return newState;
     case Actions.SessionConstants.RECEIVE_ERRORS:
       if (action.errors) {

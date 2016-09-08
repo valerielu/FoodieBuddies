@@ -11,7 +11,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] New account creation, login, and guest/demo login
 - [X] Cities (view events and hosts at each city)
 - [X] Users can become hosts
-- [ ] Hosts can create events
+- [X] Hosts can create events
 - [X] Join Events
 - [X] Dashboard of joined events/hosted events
 - [ ] Production README
@@ -61,7 +61,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - User components and respective Redux loops
   - [X] `UserForm` (essentially delete button)
 - [X] Allow user/host delete profile
-- [ ] Style users/edit components
+- [X] Style users/edit components
 
 ### Phase 2: Cities Model, API, and components (1 day)
 
@@ -91,9 +91,9 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [X] Viewing events by city
 - Event components and respective Redux loops
   - [X] `EventItem`(by city on city details and by user on dashboard)
-  - [ ] `NewEventForm`
+  - [X] `NewEventForm`
   - [ ] `EditEventForm` (modal)
-- [ ] Style event components
+- [X] Style event components
 - [ ] Seed events
 
 ### Phase 4: Attendances (1 day)
@@ -121,7 +121,7 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
   - [X] `HostForm` (create a host => updating a user)
   - [X] `HostDetail`
   - [X] `UpdateHostInfo` (inside profile for hosts)
-- [ ] Style hosts components
+- [X] Style hosts components
 - [ ] Seed hosts
 
 ### Phase 6: Events Map integration (1 day)

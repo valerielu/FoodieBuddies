@@ -13,7 +13,7 @@ class Nav extends React.Component {
       return (
         <nav className="header-nav-container">
 
-          <i className="fa fa-bars" aria-hidden="true"></i>
+          <i className="fa fa-tachometer" aria-hidden="true"></i>
           <Link className="header-nav-link" to="/dashboard">Dashboard</Link>
           <i className="fa fa-cog" aria-hidden="true"></i>
           <Link className="header-nav-link" to="/userprofile">Profile</Link>

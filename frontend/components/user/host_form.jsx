@@ -94,45 +94,47 @@ class HostForm extends React.Component {
     }
 
 
-    let profileThumbnailClass;
+    let profileThumbnailClass, thumbnailXClass;
     if (!this.state.profile_pic_url || this.state.profile_pic_url.length === 0) {
       profileThumbnailClass = "hide-profile-pic-thumbnail";
+      thumbnailXClass = "fa fa-times hide-thumbnail-x";
     } else {
       profileThumbnailClass = "profile-pic-thumbnail";
+      thumbnailXClass = "fa fa-times thumbnail-x";
     }
 
     return (
       <div className="new-host-form-container">
         <h1 className="new-host-form-title">Sign up to be a host!</h1>
 
-        <ul className="host-form-errors">
-          {errors}
-        </ul>
-
         <form onSubmit={this.handleSubmit} className="new-host-form">
           <div className="form-input-container">
-            <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First Name"/>
+            <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First name"/>
 
           </div>
 
           <div className="form-input-container">
 
-            <h1>Choose the city that you want to host in!</h1>
+            <h1 className="form-city-input-label">Choose your city</h1>
 
             <Select className="form-city-input" onChange={this.updateCityField} options={this.cityOptions()} value={this.state.cityName}/>
           </div>
 
           <div className="form-input-image-container">
-            <button className="create-host-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Upload profile photo</button>
-            <i className="fa fa-times" aria-hidden="true" onClick={this.handleDeletePhoto}></i>
+            <button className="upload-picture-button" onClick={this.handleAddPhoto}><i className="fa fa-camera" aria-hidden="true"></i> Upload profile photo</button>
             <img className={profileThumbnailClass} src={this.state.profile_pic_url} />
+            <i className={thumbnailXClass} aria-hidden="true" onClick={this.handleDeletePhoto}></i>
           </div>
 
           <div className="form-input-container">
-            <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile} placeholder="Tell us your story and favorite restaurants/foods?"></textarea>
+            <textarea className="form-profile-input" onChange={this.updateFields("profile")} value={this.state.profile} placeholder="Tell us your story and favorite restaurants/foods."></textarea>
           </div>
 
-          <input className="create-host-button" type="submit" value="Submit" />
+          <ul className="login-errors">
+            {errors}
+          </ul>
+
+          <input className="submit-host-button" type="submit" value="Submit" />
         </form>
 
       </div>

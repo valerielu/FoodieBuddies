@@ -1,19 +1,92 @@
-.form-city-input {
-  height: 20px;
-  padding: 0;
-}
-
 .form-input-image-container {
   display: flex;
   align-items: center;
+  margin: 10px 0;
+  width: 400px;
 }
 
 .profile-pic-thumbnail {
   height: 40px;
   width: 40px;
   border: none;
+  margin: 0 10px;
+  border-radius: 2px;
 }
 
-.hide-profile-pic-thumbnail {
+.hide-profile-pic-thumbnail, .hide-thumbnail-x {
   display: none;
+}
+
+.thumbnail-x {
+  color: #909090;
+  position: relative;
+}
+
+.thumbnail-x:hover {
+  color: #000;
+}
+
+.new-host-form {
+  margin: 10px;
+}
+
+.new-host-form-title {
+  font-size: 30px;
+  color: #F7B733;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 30px 0;
+}
+
+.form-firstname-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 10px;
+  width: 40%;
+  font-size: 15px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.form-city-input-label {
+  font-size: 15px;
+  color: gray;
+  margin: 10px 0;
+}
+
+.form-profile-input {
+  height: 200px;
+  width: 40%;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.upload-picture-button {
+  background: #4ABDAC;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+}
+
+.submit-host-button {
+  color: #fff;
+  font-family: "Roboto";
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: none;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid #4ABDAC;
+  color: #4ABDAC;
+}
+
+.submit-host-button:hover {
+  color: #fff;
+  cursor: pointer;
+  background: #4ABDAC;
 }

@@ -8,6 +8,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    # @event.date_time = Event.parse_date_time_input(@event.date_time)
     if @event.save
       render :show
     else

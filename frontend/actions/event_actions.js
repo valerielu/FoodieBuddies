@@ -13,7 +13,8 @@ export const EventConstants = {
   ADD_EVENT_ATTENDEE: "ADD_EVENT_ATTENDEE",
   SUBTRACT_EVENT_ATTENDEE: "SUBTRACT_EVENT_ATTENDEE",
   ADD_CITY_EVENT_ATTENDEE: "ADD_CITY_EVENT_ATTENDEE",
-  SUBTRACT_CITY_EVENT_ATTENDEE: "SUBTRACT_CITY_EVENT_ATTENDEE"
+  SUBTRACT_CITY_EVENT_ATTENDEE: "SUBTRACT_CITY_EVENT_ATTENDEE",
+  RECEIVE_EVENT_ERRORS: "RECEIVE_EVENT_ERRORS"
 
 };
 
@@ -62,6 +63,12 @@ export const receiveSingleEvent = (event) => ({
   type: EventConstants.RECEIVE_SINGLE_EVENT,
   event
 });
+
+export const receiveEventErrors = (errors) => ({
+  type: EventConstants.RECEIVE_EVENT_ERRORS,
+  errors
+});
+
 
 export const subtractEvent = (eventId) => ({
   type: EventConstants.SUBTRACT_EVENT,

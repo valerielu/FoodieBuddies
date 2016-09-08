@@ -1,14 +1,14 @@
 import EventForm from "./event_form.jsx";
 import {connect} from "react-redux";
-import {createEvent} from "../../actions/event_actions.js";
+import {createEvent, updateEvent} from "../../actions/event_actions.js";
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  // errors: state.forms.eventForm
+  errors: state.events.eventErrors
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // updateEvent
+  // updateEvent: (event) => (dispatch(updateEvent(event))),
   createEvent: (event) => (dispatch(createEvent(event)))
 });
 

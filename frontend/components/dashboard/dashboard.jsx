@@ -27,18 +27,23 @@ class Dashboard extends React.Component{
 
   hostedEvents() {
     let events = [];
-    Object.keys(this.props.events).forEach(key => {
-      if (this.props.events[key].host_id === this.props.currentUser.id) {
-        events.push(this.props.events[key]);
-      }
-    });
+    if (this.props.events) {
+      Object.keys(this.props.events).forEach(key => {
+        if (key === "eventErrors") {
+        } else if (this.props.events[key].host_id === this.props.currentUser.id) {
+          events.push(this.props.events[key]);
+        }
+      });
+    }
     return events;
   }
 
   attendingEvents() {
     let events = [];
     Object.keys(this.props.events).forEach(key => {
-      if (this.props.events[key].attendees.includes(this.props.currentUser.id)) {
+      if (key === "eventErrors") {
+      }
+      else if (this.props.events[key].attendees.includes(this.props.currentUser.id)) {
         events.push(this.props.events[key]);
       }
     });

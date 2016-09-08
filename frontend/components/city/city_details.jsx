@@ -11,7 +11,7 @@ class CityDetails extends React.Component{
   }
 
   componentDidMount() {
-    if (!this.props.city) {
+    if (!this.props.city || (this.props.city.id !== this.props.params.cityId)) {
       this.props.requestSingleCity(this.props.params.cityId);
     }
   }
@@ -36,25 +36,25 @@ class CityDetails extends React.Component{
         <HostItem key={host.id} host={host}/>
       ));
 
-      const eventStatus = (events.length > 0) ?
-        (<div className="city-detail-events-text-container">
-          <h1 className="city-detail-events-title">Join a foodie event!</h1>
-          <h1 className="city-detail-events-description"> Meet some serious foodies and go on a delicious adventure! </h1>
-        </div>)
-        :
-        (<div className="city-detail-events-text-container">
-          <h1 className="city-detail-events-title"> No foodie events coming up!</h1>
-          <h1 className="city-detail-events-description"> Talk to the hosts to create one or become a host yourself! </h1>
-        </div>);
+      let eventStatus, eventStatusTagline;
+      if (events.length > 0) {
+        eventStatus = "Join a foodie event!";
+        eventStatusTagline = "Meet some serious foodies and go on a delicious adventure!";
+      } else {
+        eventStatus = "No foodie events coming up!";
+        eventStatusTagline = "Talk to the hosts to create one or become a host yourself!";
+      }
 
-      const eventCreateButton = ( this.props.currentUser && this.props.currentUser.city_id && this.props.currentUser.city_id === this.props.city.id) ?
-        (<div className="city-detail-host-text-container">
-          <h1 className="city-detail-host-note"> <i className="fa fa-bell-o" aria-hidden="true"></i> You are a host of this city! Add to the event list! </h1>
-          <button className="create-event-button" onClick={this.handleEventCreate}>Create event</button>
-         </div>)
-
-        :
-        (<button className="create-host-button" onClick={this.handleHostCreate}>Become a host</button>);
+      let eventStatusNote, clickHandler, buttonText;
+      if ( this.props.currentUser && this.props.currentUser.city_id && this.props.currentUser.city_id === this.props.city.id) {
+        eventStatusNote = "You are a host of this city! Add to the event list!";
+        clickHandler = this.handleEventCreate;
+        buttonText = "Create event";
+      } else {
+        eventStatusNote = `Love the food in ${this.props.city.name}? Get more people to enjoy it with you!`;
+        clickHandler = this.handleHostCreate;
+        buttonText = "Become a host";
+      }
 
       return (
         <div className="city-detail-container">
@@ -68,8 +68,16 @@ class CityDetails extends React.Component{
           </div>
 
           <div className="city-detail-events-container">
-            {eventStatus}
-            {eventCreateButton}
+            <div className="city-detail-events-text-container">
+              <h1 className="city-detail-events-title"> {eventStatus} </h1>
+              <h1 className="city-detail-events-description"> {eventStatusTagline} </h1>
+            </div>
+
+            <div className="city-detail-host-text-container">
+              <h1 className="city-detail-host-note"> <i className="fa fa-bell-o" aria-hidden="true"></i> {eventStatusNote} </h1>
+              <button className="create-event-button" onClick={clickHandler}>{buttonText}</button>
+             </div>
+
             <ul className="city-detail-events-list">
               {events}
             </ul>

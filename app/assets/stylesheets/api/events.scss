@@ -57,12 +57,6 @@
   color: #FC4A1A;
   text-transform: uppercase;
 }
-//
-// .event-right-container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
 
 
 .event-host-buttons-container {
@@ -73,7 +67,7 @@
   position: absolute;
   top: 70px;
   right: 5px;
-
+  margin: 10px 0;
 }
 
 .event-details-container {
@@ -156,13 +150,13 @@
   background: #FC4A1A;
 }
 
-.edit-event-button {
+.delete-event-button, .edit-event-button {
   color: #909090;
   margin: 10px;
   background: none;
 }
 
-.edit-event-button:hover {
+.delete-event-button:hover, .edit-event-button:hover {
   color: #000;
 }
 
