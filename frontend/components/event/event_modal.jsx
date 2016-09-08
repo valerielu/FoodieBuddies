@@ -48,19 +48,11 @@ class EventModal extends React.Component{
     };
   }
 
-
-  componentWillMount(){
-    this.props.receiveEventErrors();
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log("in will receive");
-    console.log(nextProps);
     if (nextProps.errors && nextProps.errors.length === 0) {
-        this.closeEventModal();
+      this.closeEventModal();
     }
   }
-
 
   onChange (dateString, { dateMoment, timestamp }) {
     this.setState({eventData:

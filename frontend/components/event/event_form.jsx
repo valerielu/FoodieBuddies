@@ -27,7 +27,6 @@ class EventForm extends React.Component {
     if (!this.props.currentUser.is_host) {
       this.props.router.push("/hosting");
     }
-    this.props.receiveEventErrors();
   }
 
   updateFields (property) {

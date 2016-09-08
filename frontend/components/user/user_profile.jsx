@@ -24,10 +24,6 @@ class UserProfile extends React.Component{
     this.updateMessage = (<div></div>);
   }
 
-  componentWillMount() {
-    this.props.receiveErrors();
-
-  }
 
   componentWillReceiveProps(nextProps) {
     let nextProfile = nextProps.currentUser.profile;
