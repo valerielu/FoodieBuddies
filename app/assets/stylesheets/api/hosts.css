@@ -161,6 +161,7 @@ ol li {
   display: flex;
   justify-content: center;
   align-items: center;
+  /*overflow: hidden;*/
 }
 
 .host-profile-image {
@@ -171,7 +172,7 @@ ol li {
 
 .host-info-container {
   display: flex;
-
+  height: 50%;
 }
 
 .host-details-profile-container {

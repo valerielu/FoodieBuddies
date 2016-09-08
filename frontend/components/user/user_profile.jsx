@@ -15,6 +15,7 @@ class UserProfile extends React.Component{
     this.handleAddPhoto = this.handleAddPhoto.bind(this);
     this.handleDeletePhoto = this.handleDeletePhoto.bind(this);
     this.handleViewEvent = this.handleViewEvent.bind(this);
+    this.handleViewProfile = this.handleViewProfile.bind(this);
     this.state = {
       first_name: this.props.currentUser.first_name,
       profile_pic_url: this.props.currentUser.profile_pic_url,
@@ -33,7 +34,6 @@ class UserProfile extends React.Component{
     let nextUrl = nextProps.currentUser.profile_pic_url;
     let thisUrl = this.props.currentUser.profile_pic_url;
 
-
     this.updateMessage = (<div></div>);
 
     if ((nextProfile !== thisProfile || nextName !== thisName || nextUrl !== thisUrl) && (nextProps.errors.length === 0)) {
@@ -51,6 +51,10 @@ class UserProfile extends React.Component{
 
   handleViewEvent() {
     this.props.router.push(`/cities/${this.props.currentUser.city_id}`);
+  }
+
+  handleViewProfile() {
+    this.props.router.push(`/cities/${this.props.currentUser.city_id}/hosts/${this.props.currentUser.id}`);
   }
 
   handleAddPhoto(e) {
@@ -95,17 +99,6 @@ class UserProfile extends React.Component{
   }
 
   render () {
-    let hostStatus, hostTagline;
-    let hostButtontext;
-    let hostUpdateForm;
-    let viewEventsButton;
-
-
-    if (this.props.currentUser) {
-      hostStatus = this.props.currentUser.is_host ? "You are a host (yay!)" : "You are not yet a host";
-      hostTagline = this.props.currentUser.is_host ? (<h1 className="host-tagline-text">Host an event for {this.props.currentUser.city_name}!</h1>) : (<div></div>);
-      hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
-    }
 
     let profileThumbnailClass, thumbnailXClass;
     if (!this.state.profile_pic_url || this.state.profile_pic_url.length === 0) {
@@ -125,8 +118,15 @@ class UserProfile extends React.Component{
       errors = [];
     }
 
-    if (this.props.currentUser.is_host) {
-      hostUpdateForm =
+    // let hostStatus, hostTagline, hostButtontext, hostUpdateForm, viewEventsButton, hostProfileButton, hostUpdateForm;
+
+      const hostStatus = this.props.currentUser.is_host ? "You are a host (yay!)" : "You are not yet a host";
+      const hostTagline = this.props.currentUser.is_host ? (<h1 className="host-tagline-text">Host an event for {this.props.currentUser.city_name}!</h1>) : (<div></div>);
+      const hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
+      const hostProfileButton = this.props.currentUser.is_host ? (<button className="view-event-button" onClick={this.handleViewProfile}>View my profile</button>) : (<div></div>);
+      const viewEventsButton = this.props.currentUser.is_host ? (<button className="view-event-button" onClick={this.handleViewEvent}>See all events</button>) : (<div></div>);
+      const hostUpdateForm = this.props.currentUser.is_host ?
+
       (
         <div className="new-host-form-container">
           <h1 className="update-host-form-title">Update your host profile</h1>
@@ -158,16 +158,8 @@ class UserProfile extends React.Component{
           </form>
 
         </div>
-      );
-        viewEventsButton = (<button className="view-event-button" onClick={this.handleViewEvent}>See all events</button>);
-    } else {
-      hostUpdateForm = (
-        <div></div>
-      );
-      viewEventsButton = (
-        <div></div>
-      );
-    }
+      )
+      : (<div></div>);
 
 
     const style = {
@@ -181,7 +173,7 @@ class UserProfile extends React.Component{
         zIndex          : 10
       },
       content : {
-        // position        : 'fixed',
+        position        : 'fixed',
         top             : '200px',
         left            : '200px',
         right           : '200px',
@@ -200,7 +192,10 @@ class UserProfile extends React.Component{
     return (
       <div className="user-profile-container">
         <div className="host-status-container">
-          <h1 className="host-status-text">HOST STATUS: {hostStatus}</h1>
+          <div className = "host-status-text-and-button">
+            <h1 className="host-status-text">HOST STATUS: {hostStatus}</h1>
+            {hostProfileButton}
+          </div>
           {hostTagline}
           <div className="host-profile-buttons-container">
             <button className="host-button" onClick={this.handleHost}>{hostButtontext}</button>

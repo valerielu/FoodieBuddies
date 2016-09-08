@@ -16,6 +16,10 @@ class CityDetails extends React.Component{
     }
   }
 
+  componentWillUnmount() {
+    //unmount props so it doesnt flicker when the next one is mounted
+  }
+
   handleEventCreate() {
     this.props.router.push("/events/new");
   }
@@ -26,7 +30,8 @@ class CityDetails extends React.Component{
 
   render() {
     // inpiration button => (data have to come with each city)
-    if (this.props.city) {
+
+    if (this.props.city && (this.props.city.id === parseInt(this.props.params.cityId))) {
 
       const events = this.props.events.map(event => (
         <EventItemContainer key={event.id} event={event}/>

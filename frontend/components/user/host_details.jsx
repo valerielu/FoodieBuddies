@@ -9,9 +9,13 @@ class HostDetails extends React.Component{
     this.props.requestSingleUser(this.props.params.hostId);
   }
 
+  componentWillUnmount() {
+    //unmount props so it doesnt flicker when the next one is mounted
+  }
+
   render() {
     let profile_pic, title, tagline, profileTitle;
-    if (this.props.host) {
+    if (this.props.host && (this.props.host.id === parseInt(this.props.params.hostId)))  {
       profile_pic = (this.props.host.profile_pic_url) ? this.props.host.profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
       title = `Hello there, I'm ${this.props.host.first_name}!`;
       tagline = `Let's get some deliciousness in ${this.props.host.city_name}!`;

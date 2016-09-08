@@ -46,7 +46,7 @@ class Home extends React.Component {
         });
       } else {
         this.props.signup({
-          username: `GuestUser${_stringGen(length)}`,
+          username: userName,
           password: "password",
           is_host: hostStatus
         });
@@ -56,6 +56,9 @@ class Home extends React.Component {
 
   render () {
     const joinButton = "Let's get food!";
+    const guestButton = (this.props.currentUser) ?
+    (<div></div>) : (<button className="demo-button" onClick={this.handleDemo}>Guest Login</button>);
+
     return (
       <div className="home-container">
 
@@ -68,7 +71,7 @@ class Home extends React.Component {
 
             <div className="home-welcome-buttons-container">
               <button className="home-signup-button" onClick={this.handleSignUp}>{joinButton}</button>
-              <button className="demo-button" onClick={this.handleDemo}>Guest Login</button>
+              {guestButton}
             </div>
           </div>
         </div>

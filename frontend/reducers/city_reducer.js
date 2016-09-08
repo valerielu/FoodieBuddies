@@ -22,20 +22,33 @@ const CityReducer = (state = {}, action) => {
       }
 
     case EventConstants.ADD_EVENT_ATTENDEE:
-      if (newState["city"]) {
+      // if (newState["city"]) {
+      //   newState["city"]["events"][action.data.event_id].attendees.push(action.data.user_id);
+      //   return newState;
+      // } else {
+      //   return state;
+      // }
+      if (window.location.hash.includes("dashboard")) {
+        return state;
+      } else {
         newState["city"]["events"][action.data.event_id].attendees.push(action.data.user_id);
         return newState;
-      } else {
-        return state;
       }
 
     case EventConstants.SUBTRACT_EVENT_ATTENDEE:
-      if (newState["city"]) {
+      // if (newState["city"]) {
+      //   let index = newState["city"]["events"][action.eventId].attendees.indexOf(action.userId);
+      //   newState["city"]["events"][action.eventId].attendees.splice(index);
+      //   return newState;
+      // } else {
+      //   return state;
+      // }
+      if (window.location.hash.includes("dashboard")) {
+        return state;
+      } else {
         let index = newState["city"]["events"][action.eventId].attendees.indexOf(action.userId);
         newState["city"]["events"][action.eventId].attendees.splice(index);
         return newState;
-      } else {
-        return state;
       }
 
     default:

@@ -8,8 +8,9 @@ const EventReducer = (state = {}, action) => {
       return action.events;
 
     case EventConstants.RECEIVE_SINGLE_EVENT:
-      if (newState.eventErrors) {
-        newState.eventErrors = [];
+      if ("eventErrors" in newState) {
+        // newState.eventErrors = [];
+        delete(newState["eventErrors"]);
       }
       return merge(newState, action.event);
 
@@ -40,7 +41,7 @@ const EventReducer = (state = {}, action) => {
 
     case EventConstants.RECEIVE_EVENT_ERRORS:
       newState["eventErrors"] = JSON.parse(action.errors.responseText);
-      return merge(newState, action.event);
+      return newState;
 
     default:
       return state;

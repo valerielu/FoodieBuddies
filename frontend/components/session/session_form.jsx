@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFields = this.updateFields.bind(this);
-    this.handleOtherLink = this.handleOtherLink.bind(this);
+    this.handleOther = this.handleOtherLink.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
   }
 
@@ -48,11 +48,10 @@ class SessionForm extends React.Component {
       return randomWord;
     };
 
-    // let lengthRange = [4, 5, 6];
-    // let length = lengthRange[Math.floor(Math.random() * lengthRange.length)];
     let hostStatus = (Math.random() <= 0.5) ? true : false;
     let city_id = Math.floor(Math.random()*6) + 1;
     let userName = `Guest${_stringGen(5)}`;
+
 
     if (hostStatus) {
       this.props.signup({
@@ -65,7 +64,7 @@ class SessionForm extends React.Component {
       });
     } else {
       this.props.signup({
-        username: `GuestUser${_stringGen(length)}`,
+        username: userName,
         password: "password",
         is_host: hostStatus
       });
@@ -114,7 +113,7 @@ class SessionForm extends React.Component {
           </div>
           <div className="login-alternative2">
             <span className="login-phrase">Not ready to sign up?</span>
-            <button className="tour-button" onClick={this.handleDemo}>TAKE A TOUR</button>
+            <button className="tour-button" onClick={this.handleDemo}>GUEST LOGIN</button>
           </div>
         </div>
         <div className="arrow bounce">

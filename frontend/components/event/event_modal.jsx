@@ -49,8 +49,14 @@ class EventModal extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.errors && nextProps.errors.length === 0) {
+    // if (nextProps.errors && nextProps.errors.length === 0) {
+    //   this.closeEventModal();
+    // }
+
+    if (!nextProps.errors) {
       this.closeEventModal();
+    } else {
+      this.openEventModal();
     }
   }
 

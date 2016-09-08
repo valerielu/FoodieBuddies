@@ -2,6 +2,8 @@ import React from "react";
 import {withRouter} from "react-router";
 import Modal from "react-modal";
 import EventModalContainer from "./event_modal_container.jsx";
+// import { Link } from 'react-router';
+// <Link to="myRoute" params={myParams} target="_blank">
 
 class EventItem extends React.Component{
   constructor(props) {
@@ -49,7 +51,7 @@ class EventItem extends React.Component{
       eventButton = (<div></div>);
     } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
       eventButton = (<button className="join-event-button" onClick={this.openDeleteModal}>Maybe next time</button>);
-    } else if (this.props.event.limit === this.props.event.attendees.length) {
+    } else if (this.props.event.limit <= this.props.event.attendees.length) {
       eventButton = (<div></div>);
     } else {
       eventButton = (<button className="join-event-button" onClick={this.handleJoinEvent}>Sign me up!</button>);
@@ -112,7 +114,8 @@ class EventItem extends React.Component{
       }
     };
 
-    const prof_pic = (this.props.event.host_profile_pic_url) ? this.props.event.host_profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+    const prof_pic = (this.props.event.host_pic_url) ? this.props.event.host_profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+    const yelp_link = (this.props.event.yelp_link && this.props.event.yelp_link.length > 0) ? this.props.event.yelp_link : undefined;
 
     return (
       <div className="event-item-with-button-container">
@@ -147,7 +150,7 @@ class EventItem extends React.Component{
             </div>
 
             <div className="event-location">
-              <a className="event-yelp-link" href={this.props.event.yelp_link}><i className="fa fa-yelp" aria-hidden="true"></i>{this.props.event.restaurant} </a>
+              <a className="event-yelp-link" href={yelp_link} target="_blank"><i className="fa fa-yelp" aria-hidden="true"></i>{this.props.event.restaurant} </a>
               <h1 className="event-address"> @ {this.props.event.location} </h1>
             </div>
 
