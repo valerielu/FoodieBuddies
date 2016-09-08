@@ -8,13 +8,13 @@ class EventForm extends React.Component {
     super(props);
     this.state = {
       date_time: undefined,
-      location: undefined,
-      limit: undefined,
+      location: "",
+      limit: "",
       city_id: this.props.currentUser.city_id,
       host_id: this.props.currentUser.id,
-      restaurant: undefined,
-      food_type: undefined,
-      yelp_link: undefined
+      restaurant: "",
+      food_type: "",
+      yelp_link: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +27,7 @@ class EventForm extends React.Component {
     if (!this.props.currentUser.is_host) {
       this.props.router.push("/hosting");
     }
+    this.props.receiveEventErrors();
   }
 
   updateFields (property) {

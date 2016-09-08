@@ -45,3 +45,43 @@
   color: gray;
   font-size: 15px;
 }
+
+/*event modal form styles*/
+
+.modal-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.edit-event-form-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-event-form {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-left-div, .modal-right-div {
+  margin: 20px;
+  width: 50%;
+}
+
+.event-edit-form-text-input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 10px;
+  /*width: 40%;*/
+  font-size: 15px;
+  padding: 20px;
+  margin: 10px 0;
+}

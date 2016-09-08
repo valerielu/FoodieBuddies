@@ -1,6 +1,6 @@
 import EventModal from "./event_modal.jsx";
 import {connect} from "react-redux";
-import {updateEvent} from "../../actions/event_actions.js";
+import {updateEvent, receiveEventErrors} from "../../actions/event_actions.js";
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateEvent: (eventId, event) => (dispatch(updateEvent(eventId, event)))
+  updateEvent: (eventId, event) => (dispatch(updateEvent(eventId, event))),
+  receiveEventErrors: () => (dispatch(receiveEventErrors()))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventModal);

@@ -48,6 +48,20 @@ class EventModal extends React.Component{
     };
   }
 
+
+  componentWillMount(){
+    this.props.receiveEventErrors();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("in will receive");
+    console.log(nextProps);
+    if (nextProps.errors && nextProps.errors.length === 0) {
+        this.closeEventModal();
+    }
+  }
+
+
   onChange (dateString, { dateMoment, timestamp }) {
     this.setState({eventData:
       {
@@ -59,7 +73,6 @@ class EventModal extends React.Component{
   handleEventSubmit(e) {
     e.preventDefault();
     this.props.updateEvent(this.props.event.id, this.state.eventData);
-    this.closeEventModal();
   }
 
   closeEventModal() {
@@ -84,10 +97,10 @@ class EventModal extends React.Component{
       },
       content : {
         position        : 'fixed',
-        top             : '50px',
-        left            : '200px',
-        right           : '200px',
-        bottom          : '50px',
+        top             : '75px',
+        left            : '150px',
+        right           : '150px',
+        bottom          : '75px',
         border          : '2px solid #4ABDAC',
         boxShadow       : '0 0 10px #909090',
         padding         : '25px',
@@ -104,7 +117,8 @@ class EventModal extends React.Component{
       errors = this.props.errors.map((error, idx) => (
         <li key={idx} >{error}</li>
       ));
-    } else {
+    }
+    else {
       errors = [];
     }
 
@@ -123,50 +137,57 @@ class EventModal extends React.Component{
 
             <i className="fa fa-times" aria-hidden="true" onClick={this.closeEventModal}></i>
 
-            <div className="new-event-form-container">
+            <div className="edit-event-form-container">
               <h1 className="new-event-form-title">Edit Event</h1>
 
-              <form onSubmit={this.handleEventSubmit} className="new-event-form">
+              <form onSubmit={this.handleEventSubmit} className="edit-event-form">
 
-                <h1 className="form-label">Date and Time</h1>
-                <DateField
-                  dateFormat="YYYY-MM-DD hh:mm a"
-                  forceValidDate={true}
-                  updateOnDateClick={true}
-                  defaultValue={dateDefault.getTime()}
-                  className = "event-form-datetime"
-                  onChange={this.onChange}
-                >
-                  <DatePicker
-                    navigation={true}
-                    locale="en"
-                    forceValidDate={true}
-                    highlightWeekends={true}
-                    highlightToday={true}
-                    weekNumbers={true}
-                    weekStartDay={0}
-                  />
-                </DateField>
+                <div className="modal-form">
+                  <div className="modal-left-div">
+                    <h1 className="form-label">Date and Time</h1>
+                    <DateField
+                      dateFormat="YYYY-MM-DD hh:mm a"
+                      forceValidDate={true}
+                      updateOnDateClick={true}
+                      defaultValue={dateDefault.getTime()}
+                      className = "event-form-datetime"
+                      onChange={this.onChange}
+                    >
+                      <DatePicker
+                        navigation={true}
+                        locale="en"
+                        forceValidDate={true}
+                        highlightWeekends={true}
+                        highlightToday={true}
+                        weekNumbers={true}
+                        weekStartDay={0}
+                      />
+                    </DateField>
 
-                <div className="form-input-container">
-                  <h1 className="form-label">Restaurant</h1>
-                  <input className="event-form-text-input" type="text" onChange={this.updateFields("restaurant")} value={this.state.eventData.restaurant} placeholder="Restaurant"/>
-                </div>
-                <div className="form-input-container">
-                  <h1 className="form-label">Address</h1>
-                  <input className="event-form-text-input" type="text" onChange={this.updateFields("location")} value={this.state.eventData.location} placeholder="Address"/>
-                </div>
-                <div className="form-input-container">
-                  <h1 className="form-label">Food type (optional)</h1>
-                  <input className="event-form-text-input" type="text" onChange={this.updateFields("food_type")} value={this.state.eventData.food_type} placeholder="Food type (Ex: Indian) (optional)"/>
-                </div>
-                <div className="form-input-container">
-                  <h1 className="form-label">Yelp link (optional)</h1>
-                  <input className="event-form-text-input" type="text" onChange={this.updateFields("yelp_link")} value={this.state.eventData.yelp_link} placeholder="Yelp link for restaurant (optional)"/>
-                </div>
-                <div className="form-input-container">
-                  <h1 className="form-label">Event size limit</h1>
-                  <input className="event-form-text-input" type="number" onChange={this.updateFields("limit")} value={this.state.eventData.limit} placeholder="Event size limit"/>
+                    <div className="form-input-container">
+                      <h1 className="form-label">Restaurant</h1>
+                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("restaurant")} value={this.state.eventData.restaurant} placeholder="Restaurant"/>
+                    </div>
+                    <div className="form-input-container">
+                      <h1 className="form-label">Address</h1>
+                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("location")} value={this.state.eventData.location} placeholder="Address"/>
+                    </div>
+                  </div>
+
+                  <div className="modal-right-div">
+                    <div className="form-input-container">
+                      <h1 className="form-label">Food type (optional)</h1>
+                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("food_type")} value={this.state.eventData.food_type} placeholder="Food type (Ex: Indian) (optional)"/>
+                    </div>
+                    <div className="form-input-container">
+                      <h1 className="form-label">Yelp link (optional)</h1>
+                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("yelp_link")} value={this.state.eventData.yelp_link} placeholder="Yelp link for restaurant (optional)"/>
+                    </div>
+                    <div className="form-input-container">
+                      <h1 className="form-label">Event size limit</h1>
+                      <input className="event-edit-form-text-input" type="number" onChange={this.updateFields("limit")} value={this.state.eventData.limit} placeholder="Event size limit"/>
+                    </div>
+                  </div>
                 </div>
 
                 <ul className="login-errors">

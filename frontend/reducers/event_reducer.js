@@ -39,8 +39,11 @@ const EventReducer = (state = {}, action) => {
       }
 
     case EventConstants.RECEIVE_EVENT_ERRORS:
-
-      newState["eventErrors"] = JSON.parse(action.errors.responseText);
+      if (action.errors) {
+        newState["eventErrors"] = JSON.parse(action.errors.responseText);
+      } else {
+        newState["eventErrors"] = [];
+      }
       return merge(newState, action.event);
 
     default:
