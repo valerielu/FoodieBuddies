@@ -81,7 +81,7 @@ http://yelp.com/biz/andytown-coffee-roasters-san-francisco
 
 100.times do
   Event.create!(date_time: Faker::Time.between(DateTime.now + 1, DateTime.now + 100),
-  location: Faker::Address.street_address, limit: 2 + rand(9), host_id: 1 + rand(56) ,city_id: 1 + rand(6) ,
+  location: Faker::Address.street_address, limit: 2 + rand(8), host_id: 1 + rand(56) ,city_id: 1 + rand(6) ,
   food_type: food_type[rand(9)], restaurant: restaurant[rand(12)],
   yelp_link: yelp_link[rand(12)])
 end
@@ -92,5 +92,5 @@ Attendance.create!(user_id: 1, event_id: 3)
 Attendance.create!(user_id: 6, event_id: 3)
 
 200.times do
-  Attendance.create(user_id: 1 + rand(160), event_id: 1 + rand(100))
+  Attendance.create(user_id: 1 + rand(160), event_id: 1 + rand(103))
 end
