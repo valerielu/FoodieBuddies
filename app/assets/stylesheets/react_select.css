@@ -69,19 +69,18 @@
   border-color: #007eff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
 }
-.der,
+.Select-placeholder,
 .Select--single > .Select-control .Select-value {
   bottom: 0;
   color: #aaa;
   left: 0;
-  line-height: 16px;
-  width: 200px;
-  padding-top: 3px;
-  padding-left: 20px;
+  line-height: 20px;
+  padding-left: 10px;
   padding-right: 10px;
   position: absolute;
   right: 0;
   top: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -105,7 +104,7 @@
 }
 .Select-input {
   height: 34px;
-  padding-left: 10px;
+  padding-left: 150px;
   padding-right: 10px;
   vertical-align: middle;
 }
