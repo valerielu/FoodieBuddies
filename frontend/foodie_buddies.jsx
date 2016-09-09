@@ -8,11 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {session: {currentUser: window.currentUser}};
-    store = window.store = configureStore(preloadedState);
+    store = configureStore(preloadedState);
   } else {
-    store = window.store = configureStore();
+    store = configureStore();
   }
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={store}/>, root);
 });
+
+//took out window.store

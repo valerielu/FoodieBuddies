@@ -5,6 +5,8 @@ import CityMiddleware from "./city_middleware.js";
 import EventMiddleware from "./event_middleware.js";
 import logger from "redux-logger";
 
-const RootMiddleware = applyMiddleware(logger(), SessionMiddleware, UserMiddleware, CityMiddleware, EventMiddleware);
+// took out logger()
+
+const RootMiddleware = applyMiddleware(SessionMiddleware, UserMiddleware, CityMiddleware, EventMiddleware);
 
 export default RootMiddleware;
