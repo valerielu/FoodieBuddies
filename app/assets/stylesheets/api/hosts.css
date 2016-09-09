@@ -1,7 +1,7 @@
 /* For the hosting page*/
 
 .hosting-image {
-  background-image: url("http://static1.squarespace.com/static/54f3f210e4b0d588ced54230/5529c7f9e4b02ed06b91adb0/55bff339e4b016f66900af8e/1438647567033/SMS+Text+FLY+Group+Eating+NYC+concierge.jpg?format=2500w");
+  background-image: url("http://res.cloudinary.com/dsj48uswp/image/upload/c_scale,w_1800/v1473371480/hosting_background_faefki.jpg");
   background-position: center center;
   background-size: cover;
   position: absolute;
@@ -70,6 +70,7 @@
   background: #FC4A1A;
   font-size: 15px;
   padding: 10px 20px;
+  border: 2px solid #FC4A1A;
 }
 
 .host-interest-button:hover {
@@ -79,8 +80,21 @@
   border: 2px solid #FC4A1A
 }
 
+.hosting-action-title {
+  font-weight: bold;
+  color: #F7B733;
+}
+
+.hosting-action-description, .hosting-info-paragraphs {
+  color: #808080;
+  margin: 10px;
+  width: 50%;
+}
+
 ol li {
   color: #808080;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 /* For the host display on city page*/
@@ -154,6 +168,7 @@ ol li {
   margin: 20px 0;
 }
 
+
 .host-details-image-container {
   background: #fff;
   border: 1px solid #ccc;
@@ -161,27 +176,31 @@ ol li {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 250px;
   /*overflow: hidden;*/
 }
 
 .host-profile-image {
   width: 250px;
   height: 250px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .host-info-container {
   display: flex;
-  height: 50%;
 }
 
 .host-details-profile-container {
   padding: 30px;
-}
 
+}
 .host-detail-profile-title {
   font-size: 30px;
   color: #909090;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+.host-detail-profile-text {
+  white-space: pre-wrap;
 }

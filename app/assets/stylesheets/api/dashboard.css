@@ -1,6 +1,7 @@
 .dashboard-container {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .dashboard-events-container {
@@ -12,6 +13,7 @@
   font-size: 20px;
   color: #909090;
   margin: 20px 0;
+  font-weight: bold;
  }
 
 
@@ -26,8 +28,15 @@
 .events-list {
   display: flex;
   width: 100%;
-  /*justify-content: center;*/
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.add-more-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 .add-more-events-button {

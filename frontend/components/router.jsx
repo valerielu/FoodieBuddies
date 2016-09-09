@@ -62,7 +62,7 @@ class AppRouter extends React.Component{
           <Route path="/cities/:cityId" component={ CityDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/cities/:cityId/hosts/:hostId" component={ HostDetailsContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn}/>
-          <Route path="/userprofile" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
+          <Route path="/useraccount" component={ UserProfileContainer } onEnter={this._ensureLoggedIn}/>
           <Route path="/events/new" component={ EventFormContainer } onEnter={this._ensureLoggedIn}/>
         </Route>
       </Router>

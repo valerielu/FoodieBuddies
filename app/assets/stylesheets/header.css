@@ -34,6 +34,7 @@ footer {
   align-items: center;
   width: 100%;
   padding: 0 20px;
+
 }
 
 .header-links-container {
@@ -60,11 +61,17 @@ footer {
   margin-left: 0px;
 }
 
+.header-logo-anchor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 214px;
+}
+
 .header-logo-img {
-  width: 300px;
-  height: 100px;
-
-
+  width: 197px;
+  height: 65%;
 }
 
 .header-logo-img:hover {

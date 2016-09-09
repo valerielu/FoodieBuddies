@@ -13,16 +13,20 @@
   border-radius: 2px;
 }
 
-.hide-profile-pic-thumbnail, .hide-thumbnail-x {
+.hide-profile-pic-thumbnail, .fa-times.hide-thumbnail-x{
   display: none;
 }
 
-.thumbnail-x {
+
+.fa-times.thumbnail-x {
   color: #909090;
-  position: relative;
+  position: absolute;
+  vertical-align: middle;
+  right: 140px;
+  bottom:10px;
 }
 
-.thumbnail-x:hover {
+.fa-times.thumbnail-x:hover {
   color: #000;
 }
 
@@ -35,7 +39,7 @@
   color: #F7B733;
   font-weight: bold;
   letter-spacing: 1px;
-  margin: 30px 0;
+  margin: 30px 0 20px 0;
 }
 
 .form-firstname-input {

@@ -116,9 +116,6 @@ class EventModal extends React.Component{
         <li key={idx} >{error}</li>
       ));
     }
-    else {
-      errors = [];
-    }
 
 
   let dateDefault = new Date(this.props.event.date_time);

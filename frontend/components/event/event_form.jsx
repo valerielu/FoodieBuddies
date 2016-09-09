@@ -94,7 +94,7 @@ class EventForm extends React.Component {
             <input className="event-form-text-input" type="text" onChange={this.updateFields("yelp_link")} value={this.state.yelp_link} placeholder="Yelp link for restaurant (optional)"/>
           </div>
           <div className="form-input-container">
-            <input className="event-form-text-input" type="number" onChange={this.updateFields("limit")} value={this.state.limit} placeholder="Event size limit"/>
+            <input className="event-form-text-input" type="number" onChange={this.updateFields("limit")} value={this.state.limit} placeholder="Event size (limit between 2 - 9 attendees)"/>
           </div>
 
           <ul className="login-errors">

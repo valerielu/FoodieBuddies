@@ -65,5 +65,5 @@
 | "/hosting" | "HostContainer" |
 | "/cities/:cityId/host/:hostdId" | "HostDetailContainer" |
 | "/dashboard" | "DashboardContainer" |
-| "/userprofile" | "AccountContainer" |
+| "/useraccount" | "AccountContainer" |
 | "/events/new" | "NewEventContainer" |

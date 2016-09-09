@@ -16,13 +16,11 @@ class HostDetails extends React.Component{
   render() {
     let profile_pic, title, tagline, profileTitle;
     if (this.props.host && (this.props.host.id === parseInt(this.props.params.hostId)))  {
-      profile_pic = (this.props.host.profile_pic_url) ? this.props.host.profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+      profile_pic = (this.props.host.profile_pic_url) ? this.props.host.profile_pic_url : "https://robohash.org/autvoluptatemvoluptatum.png?size=250x250&set=set1";
       title = `Hello there, I'm ${this.props.host.first_name}!`;
       tagline = `Let's get some deliciousness in ${this.props.host.city_name}!`;
       profileTitle = `${this.props.host.first_name}'s story`;
-    }
 
-    if (this.props.host) {
       return (
 
         <div className="host-details-container">
@@ -40,7 +38,7 @@ class HostDetails extends React.Component{
 
             <div className="host-details-profile-container">
               <h1 className="host-detail-profile-title">{profileTitle}</h1>
-              <p>{this.props.host.profile}</p>
+              <p className="host-detail-profile-text">{this.props.host.profile}</p>
             </div>
 
           </div>

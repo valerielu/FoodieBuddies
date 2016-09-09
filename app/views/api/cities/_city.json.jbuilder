@@ -8,6 +8,7 @@ if show_details
         json.partial! "api/events/event", event: event
       end
     end
+
   end
   json.hosts do
     city.hosts.each do |host|
@@ -17,3 +18,5 @@ if show_details
     end
   end
 end
+events = city.events.sort_by(&:date_time)
+json.event_order events.pluck(:id);

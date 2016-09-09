@@ -16,7 +16,7 @@ class Nav extends React.Component {
           <i className="fa fa-tachometer" aria-hidden="true"></i>
           <Link className="header-nav-link" to="/dashboard">Dashboard</Link>
           <i className="fa fa-cog" aria-hidden="true"></i>
-          <Link className="header-nav-link" to="/userprofile">Profile</Link>
+          <Link className="header-nav-link" to="/useraccount">Account</Link>
         </nav>
       );
     } else {

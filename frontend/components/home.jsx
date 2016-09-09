@@ -81,13 +81,25 @@ class Home extends React.Component {
           <h1 className="home-content-title">Why do people love foodiebuddies?</h1>
 
           <div className="home-content-box">
-            <img src="" alt=""/>
-            <h2 className="content-box-title">Because the more the merrier</h2>
+            <img className="homepage-image" src="http://res.cloudinary.com/dsj48uswp/image/upload/v1473368336/group_image_j9aoxf.png"/>
+            <div className="content-text-container">
+              <h2 className="content-box-title">Because eating alone is not as fun</h2>
+                <p className="content-text">Everyone loves meeting new people and eating good food. Why not combine the two?
+                Whether you are a visitor or local to the area, don't eat alone anymore - find foodie buddies near you and spread the joy!
+
+                </p>
+            </div>
           </div>
 
           <div className="home-content-box">
-            <h2 className="content-box-title">Because friends who eat together stay together</h2>
-            <img src="" alt=""/>
+            <div className="content-text-container-2">
+              <h2 className="content-box-title">Because sharing is caring</h2>
+              <p className="content-text">Share delicious dishes. Share your stories. Share your favorite restaurants.
+                No commitment - attend or unattend events with ease!
+                If you love making these things happen, sign up to be a host!
+              </p>
+            </div>
+            <img className="homepage-image" src="http://res.cloudinary.com/dsj48uswp/image/upload/v1473380031/highfive-e7a173c8a773070abd084deeac2eb53919a70990425599ed5e7164dc143d45c6_lpnfdp.png"/>
           </div>
 
         </div>

@@ -13,7 +13,7 @@ const SessionReducer = (state = preloadedState, action) => {
       newState.errors = [];
       newState.currentUser = action.currentUser;
       if (action.currentUser.is_host && !action.currentUser.profile_pic_url)
-      action.currentUser.profile_pic_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+      action.currentUser.profile_pic_url = "https://robohash.org/autvoluptatemvoluptatum.png?size=250x250&set=set1";
       return newState;
     case Actions.SessionConstants.RECEIVE_ERRORS:
       if (action.errors) {

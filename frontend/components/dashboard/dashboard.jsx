@@ -27,27 +27,50 @@ class Dashboard extends React.Component{
 
   hostedEvents() {
     let events = [];
-    if (this.props.events) {
-      Object.keys(this.props.events).forEach(key => {
-        if (key === "eventErrors") {
+
+    if (this.props.events.event_order) {
+      this.props.events.event_order.forEach(key => {
+        if (key === "eventErrors" || key === "event_order") {
         } else if (this.props.events[key].host_id === this.props.currentUser.id) {
           events.push(this.props.events[key]);
         }
       });
     }
+
     return events;
+    // if (this.props.events) {
+    //   Object.keys(this.props.events).forEach(key => {
+    //     if (key === "eventErrors") {
+    //     } else if (this.props.events[key].host_id === this.props.currentUser.id) {
+    //       events.push(this.props.events[key]);
+    //     }
+    //   });
+    // }
+
   }
 
   attendingEvents() {
     let events = [];
-    Object.keys(this.props.events).forEach(key => {
-      if (key === "eventErrors") {
-      }
-      else if (this.props.events[key].attendees.includes(this.props.currentUser.id)) {
-        events.push(this.props.events[key]);
-      }
-    });
+
+    if (this.props.events.event_order) {
+      this.props.events.event_order.forEach(key => {
+        if (key === "eventErrors" || key === "event_order") {
+        }
+        else if (this.props.events[key].attendees.includes(this.props.currentUser.id)) {
+          events.push(this.props.events[key]);
+        }
+      });
+    }
     return events;
+
+    // Object.keys(this.props.events).forEach(key => {
+    //   if (key === "eventErrors" || key === "event_order") {
+    //   }
+    //   else if (this.props.events[key].attendees.includes(this.props.currentUser.id)) {
+    //     events.push(this.props.events[key]);
+    //   }
+    // });
+
   }
 
   render() {
@@ -76,10 +99,11 @@ class Dashboard extends React.Component{
           <div className="dashboard-events-container">
             <ul className="events-list">
               {hostedEvents}
+              <div className="add-more-button-container">
+                <button className="add-more-events-button" onClick={this.handleCreateEvents}>
+                  <i className="fa fa-plus" aria-hidden="true"></i> Create a foodie event</button>
+                </div>
             </ul>
-
-            <button className="add-more-events-button" onClick={this.handleCreateEvents}>
-              <i className="fa fa-plus" aria-hidden="true"></i> Create a foodie event</button>
           </div>
         </div>
       );
@@ -97,10 +121,12 @@ class Dashboard extends React.Component{
         <div className="dashboard-events-container">
           <ul className="events-list">
             {attendingEvents}
+            <div className="add-more-button-container">
+              <button className="add-more-events-button" onClick={this.handleJoinEvents}>
+                <i className="fa fa-plus" aria-hidden="true"></i> Join more foodie events</button>
+            </div>
           </ul>
 
-          <button className="add-more-events-button" onClick={this.handleJoinEvents}>
-            <i className="fa fa-plus" aria-hidden="true"></i> Join more foodie events</button>
         </div>
 
         {hostInfo}

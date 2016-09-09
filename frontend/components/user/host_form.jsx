@@ -24,6 +24,12 @@ class HostForm extends React.Component {
 
   }
 
+  componentDidMount() {
+    window.scrollTo(0,800);
+
+    
+  }
+
   componentWillMount() {
     this.props.requestAllCities();
     this.props.receiveErrors();
@@ -31,7 +37,7 @@ class HostForm extends React.Component {
 
   componentDidUpdate() {
     if (this.props.currentUser.is_host) {
-      this.props.router.push("/userprofile");
+      this.props.router.push("/useraccount");
     }
   }
 
@@ -109,7 +115,7 @@ class HostForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="new-host-form">
           <div className="form-input-container">
-            <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First name"/>
+            <input className="form-firstname-input" type="text" onChange={this.updateFields("first_name")} value={this.state.firstname} placeholder="First name (Displayed on your public host profile)"/>
 
           </div>
 

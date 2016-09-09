@@ -69,14 +69,15 @@
   border-color: #007eff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
 }
-.Select-placeholder,
+.der,
 .Select--single > .Select-control .Select-value {
   bottom: 0;
   color: #aaa;
   left: 0;
-  line-height: 20px;
+  line-height: 16px;
   width: 200px;
-  padding-left: 10px;
+  padding-top: 3px;
+  padding-left: 20px;
   padding-right: 10px;
   position: absolute;
   right: 0;

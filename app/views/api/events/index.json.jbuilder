@@ -5,3 +5,5 @@ events.each do |event|
     json.partial! "api/events/event", event: event, events: @events
   end
 end
+
+json.event_order events.pluck(:id);

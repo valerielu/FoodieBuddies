@@ -25,6 +25,9 @@ class UserProfile extends React.Component{
     this.updateMessage = (<div></div>);
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
 
   componentWillReceiveProps(nextProps) {
     let nextProfile = nextProps.currentUser.profile;

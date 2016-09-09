@@ -21,6 +21,7 @@ class EventItem extends React.Component{
 
   handleJoinEvent() {
     this.props.attendEvent({user_id: this.props.currentUser.id, event_id: this.props.event.id});
+
   }
 
   handleDropoutEvent() {
@@ -45,11 +46,14 @@ class EventItem extends React.Component{
     this.setState({ deleteModalOpen: true });
   }
 
+
+
   render() {
     let eventButton;
     if (this.props.event.host_id === this.props.currentUser.id) {
       eventButton = (<div></div>);
     } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
+
       eventButton = (<button className="join-event-button" onClick={this.openDeleteModal}>Maybe next time</button>);
     } else if (this.props.event.limit <= this.props.event.attendees.length) {
       eventButton = (<div></div>);
@@ -114,7 +118,7 @@ class EventItem extends React.Component{
       }
     };
 
-    const prof_pic = (this.props.event.host_pic_url) ? this.props.event.host_profile_pic_url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/2000px-Pacman.svg.png";
+    const prof_pic = (this.props.event.host_profile_pic_url) ? this.props.event.host_profile_pic_url : "https://robohash.org/autvoluptatemvoluptatum.png?size=250x250&set=set1";
     const yelp_link = (this.props.event.yelp_link && this.props.event.yelp_link.length > 0) ? this.props.event.yelp_link : undefined;
 
     return (
@@ -155,11 +159,11 @@ class EventItem extends React.Component{
             </div>
 
             <div className="event-food-type">
-              Food type: {this.props.event.food_type}
+              <h1 className="event-item-type-title">Food type:</h1>{this.props.event.food_type}
             </div>
 
             <div className="event-city">
-              City: {this.props.event.city_name}
+              <h1 className="event-item-type-title">City:</h1>{this.props.event.city_name}
             </div>
 
           </div>

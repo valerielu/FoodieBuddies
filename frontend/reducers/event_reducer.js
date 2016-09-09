@@ -17,6 +17,7 @@ const EventReducer = (state = {}, action) => {
     case EventConstants.SUBTRACT_EVENT:
       if (newState[action.eventId]) {
         delete(newState[action.eventId]);
+        newState.event_order.splice(newState.event_order.indexOf(action.eventId), 1);
         return newState;
       } else {
         return state;

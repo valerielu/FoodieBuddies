@@ -35,6 +35,7 @@
 
 .event-host-container:hover {
   cursor:pointer;
+  box-shadow: 0 0 5px #808080;
 }
 
 .event-button-container {
@@ -87,6 +88,15 @@
 
 .event-time-container > * {
   padding: 1px;
+}
+
+.event-item-type-title {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.event-food-type, .event-city {
+  display: flex;
 }
 
 .event-weekday {
