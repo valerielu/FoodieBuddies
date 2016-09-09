@@ -136,7 +136,7 @@ ol li {
 .host-name {
   border: 2px solid transparent;
   /*text-shadow: 2px 2px 5px #ccc;*/
-  font-weight: bold;
+  font-weight: lighter;
   letter-spacing: 1px;
   font-size: 20px;
   color: #000;

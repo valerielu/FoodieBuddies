@@ -297,7 +297,7 @@ https://yelp.com/biz/andytown-coffee-roasters-san-francisco
 
 30.times do
   Event.create!(date_time: Faker::Time.between(DateTime.now + 1, DateTime.now + 100),
-  address: Faker::Address.street_address, limit: 2 + rand(8), host_id: 55 + rand(36) ,city_id: 1 + rand(6) ,
+  address: Faker::Address.street_address, limit: 2 + rand(8), host_id: 55 + rand(36) ,city_id: 1 + rand(6),
   food_type: food_type[rand(9)], restaurant: restaurant[rand(12)],
   yelp_link: yelp_link[rand(12)])
 end

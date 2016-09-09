@@ -123,8 +123,8 @@ class UserProfile extends React.Component{
 
     // let hostStatus, hostTagline, hostButtontext, hostUpdateForm, viewEventsButton, hostProfileButton, hostUpdateForm;
 
-      const hostStatus = this.props.currentUser.is_host ? "You are a host (yay!)" : "You are not yet a host";
-      const hostTagline = this.props.currentUser.is_host ? (<h1 className="host-tagline-text">Host an event for {this.props.currentUser.city_name}!</h1>) : (<div></div>);
+      const hostStatus = this.props.currentUser.is_host ? `You are a host for ${this.props.currentUser.city_name} (yay!)` : `You are not yet a host`;
+      const hostTagline = this.props.currentUser.is_host ? (<h1 className="host-tagline-text">Host an event!</h1>) : (<div></div>);
       const hostButtontext = this.props.currentUser.is_host ? "Create event" : "Become a host";
       const hostProfileButton = this.props.currentUser.is_host ? (<button className="view-event-button" onClick={this.handleViewProfile}>View my profile</button>) : (<div></div>);
       const viewEventsButton = this.props.currentUser.is_host ? (<button className="view-event-button" onClick={this.handleViewEvent}>See all events</button>) : (<div></div>);

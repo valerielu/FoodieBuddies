@@ -38,11 +38,17 @@
 }
 
 .city-item-container {
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 320px;
+  height: 160px;
+  border-radius: 2px;
+  overflow: hidden;
   margin: 20px;
 }
+
 
 .city-item-image {
   width: 100%;
@@ -53,16 +59,6 @@
   vertical-align: middle
 }
 
-.city-item-container {
-  opacity: 0.8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 320px;
-  height: 160px;
-  border-radius: 2px;
-  overflow: hidden;
-}
 
 .city-name {
   border: 2px solid transparent;
