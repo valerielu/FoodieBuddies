@@ -5,7 +5,7 @@ import Footer from "./header_footer/footer.jsx";
 const App = ({children}) => (
   <div>
     <HeaderContainer />
-      {children}
+      <div className="children">{children}</div>
     <Footer />
   </div>
 );

@@ -25,3 +25,11 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #faf6e8;
 }
+
+.children {
+  top: 70px;
+}
+
+footer {
+bottom: -70px;
+}
