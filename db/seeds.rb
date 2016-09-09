@@ -215,20 +215,20 @@ BOARD GAMES, and anything else you think of."
 ]
 
 profile_pics = [
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473187206/zlsk7n0ya1kgffbgtzis.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473187194/en09mfxdszzqhk5744mw.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388735/guy4_l3vtfq.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388734/girl4_kmpheo.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388736/guy1_ijlfyq.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388735/guy2_qjnuhh.png",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388735/girl5_akhsvl.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388735/girl3_oui7h0.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388734/guy3_mk2qfd.jpg",
-  "http://res.cloudinary.com/dsj48uswp/image/upload/v1473388735/girl2_mxekxf.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187206/zlsk7n0ya1kgffbgtzis.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388735/guy4_l3vtfq.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388734/girl4_kmpheo.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388736/guy1_ijlfyq.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388735/guy2_qjnuhh.png",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388735/girl5_akhsvl.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388735/girl3_oui7h0.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388734/guy3_mk2qfd.jpg",
+  "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473388735/girl2_mxekxf.jpg",
   ""
 ]
 
-30.times do
+35.times do
   User.create!(username: Faker::Name.first_name + Faker::Name.last_name,
     password: Faker::Lorem.characters(10), profile_pic_url: profile_pics[rand(11)],
     is_host: true, profile: profiles[rand(10)], city_id: 1 + rand(6),
@@ -239,45 +239,45 @@ host1 = User.create!(username: "JaneDoe", password: "testing", is_host: true,
   profile: "I currently live in SF and I am so excited to be a host on FoodieBuddies! My definition of a “foodie” is a person who loves food and is passionate about it. A foodie’s eyes would literally light up when anything related to food comes up in a conversation.
   I am definitely a foodie myself!! I do not have one favourite type of cuisine but I do enjoy Japanese, Chinese, and Italian. And I love burgers!
   I do not make Japanese food at home and I occasionally cook Chinese and Italian. It should be evident from that I love going out to eat way too much!",
-  profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/c_scale,w_500/v1473389206/demo_user_pic_h6ni0h.jpg",
+  profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473389206/demo_user_pic_h6ni0h.jpg",
   city_id: 4, first_name: "Jane")
 
-host2 = User.create!(username: "SecondHost", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg",
-  city_id: 2, first_name: "Happy Corgi")
-host3 = User.create!(username: "LilyPad", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg",
-  city_id: 2, first_name: "Lily")
-host4 = User.create!(username: "LindaZhang", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg",
-  city_id: 2, first_name: "Linda")
-host5 = User.create!(username: "JessicaQueen", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg",
-  city_id: 2, first_name: "Jessica")
-host6 = User.create!(username: "Richy0", password: "testing", is_host: true,
-  profile: "host story", profile_pic_url: "http://www.pawbuzz.com/wp-content/uploads/sites/551/2014/11/corgi-puppies-21.jpg",
-  city_id: 2, first_name: "Richy")
+# host2 = User.create!(username: "SecondHost", password: "testing", is_host: true,
+#   profile: "host story", profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+#   city_id: 2, first_name: "Happy Corgi")
+# host3 = User.create!(username: "LilyPad", password: "testing", is_host: true,
+#   profile: "host story", profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+#   city_id: 2, first_name: "Lily")
+# host4 = User.create!(username: "LindaZhang", password: "testing", is_host: true,
+#   profile: "host story", profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+#   city_id: 2, first_name: "Linda")
+# host5 = User.create!(username: "JessicaQueen", password: "testing", is_host: true,
+#   profile: "host story", profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+#   city_id: 2, first_name: "Jessica")
+# host6 = User.create!(username: "Richy0", password: "testing", is_host: true,
+#   profile: "host story", profile_pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/w_250,h_250,c_fill/v1473187194/en09mfxdszzqhk5744mw.jpg",
+#   city_id: 2, first_name: "Richy")
 
 paris = City.create!(name: "Paris", country: "France", lat: 48.8566,
-  lng: 2.3522, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/c_scale,w_1600/v1473379552/Paris-Wallpaper-9_ijq5ce.jpg")
+  lng: 2.3522, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473379552/Paris-Wallpaper-9_ijq5ce.jpg")
 vegas = City.create!(name: "Las Vegas", state: "NV", country: "USA", lat: 36.1699,
-  lng: -115.1398, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/c_scale,h_900/v1473374639/Las-Vegas_apw3rb.jpg")
+  lng: -115.1398, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473374639/Las-Vegas_apw3rb.jpg")
 
 ny = City.create!(name: "New York", state: "NY", country: "USA", lat: 43.2994,
-  lng: -74.2179, pic_url: "https://www.omnihotels.com/-/media/images/hotels/nycber/destinations/nyc-aerial-skyline.jpg?h=660&la=en&w=1170")
+  lng: -74.2179, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473394886/newyork2_yklagw.jpg")
 sanfran = City.create!(name: "San Francisco", state: "CA", country: "USA", lat: 37.7749,
   lng: -122.4194, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473379770/san-francisco-wallpaper-11_xkq9iu.jpg")
 sydney = City.create!(name: "Sydney", country: "Australia", lat: -33.8688,
-  lng: 151.2093, pic_url: "https://images.trvl-media.com/media/content/shared/images/travelguides/destination/178312/Sydney-Opera-House-31126.jpg")
+  lng: 151.2093, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473394891/sydney2_qekch8.jpg")
 taipei = City.create!(name: "Taipei", country: "Taiwan", lat: 25.0330,
-  lng: 121.5654, pic_url: "https://i.ytimg.com/vi/fz1cBwNEUXI/maxresdefault.jpg")
+  lng: 121.5654, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473394889/taipei_kumny7.jpg")
 
 buffet = Event.create!(date_time: DateTime.strptime("10/3/2016 11:00 AM", "%m/%d/%Y %l:%M %p"),
-  location: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109", limit: 5, host_id: 85 ,city_id: 2 ,food_type: "American buffet", restaurant: "Bacchanal Buffet", yelp_link: "https://www.yelp.com/biz/bacchanal-buffet-las-vegas-7" ,lat: 36.1167 ,lng: -115.1742)
+  location: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109", limit: 5, host_id: 90 ,city_id: 2 ,food_type: "American buffet", restaurant: "Bacchanal Buffet", yelp_link: "https://www.yelp.com/biz/bacchanal-buffet-las-vegas-7" ,lat: 36.1167 ,lng: -115.1742)
 shakeshack = Event.create!(date_time: DateTime.strptime("10/2/2016 08:00 PM", "%m/%d/%Y %l:%M %p"),
-  location: "3790 S Las Vegas Blvd", limit: 7, host_id: 85 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
+  location: "3790 S Las Vegas Blvd", limit: 7, host_id: 90 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
 lotus = Event.create!(date_time: DateTime.strptime("10/13/2016 01:00 PM", "%m/%d/%Y %l:%M %p"),
-  location: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 86 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
+  location: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 90 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
 
 restaurant = ["Andytown Coffee Roasters", "Bronze Cafe", "Sweet Spice", "Little Miss BBQ", "Los Andes Restaurant", "Aviva by Kameel", "Copper Top BBQ", "Ono Seafood", "Golden Bear Trading Company", "Dat Cajun Guy", "Big Al's Pizzeria", "Detroit Coney Grill"]
 food_type = ["American", "Mexican", "Chinese", "Indian", "Vegan", "Japanese", "Mediterranean", "Fast food", "French", "Vietnamese"]
