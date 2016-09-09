@@ -3,7 +3,7 @@ var webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/foodie_buddies.jsx.jsx",
+  entry: "./frontend/foodie_buddies.jsx",
   output: {
     path: "./app/assets/javascripts",
     filename: "bundle.js"
