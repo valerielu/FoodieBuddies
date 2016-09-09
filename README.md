@@ -86,18 +86,19 @@ If you are the host of the event, you will not have the join button but instead 
 
 In addition to the features already implemented, I plan to continue work on this project.  Some additional features includes:
 
-Integration with Google Map API
+### Integration with Google Map API
 - [ ] Viewing events by city to pull up a city map and mark all the events on Google Map
 - [ ] Add events by address to add new markers on map
 - [ ] Google Map API showing events based on address
 
-Integration with Google Calendar API
+### Integration with Google Calendar API
 - [ ] Ability to set reminders on events and add events to calendar
 
-Search
-- [ ] Search events by type of food (make them tags)
+### Search
+- [ ] Search events by type of food
+- [ ] Search events by hosts
 
-Integration with Yelp API
+### Integration with Yelp API
 - [ ] Restaurant suggestions based on the city
 - [ ] Restaurant details, menus, and rating displayed on the event
 - [ ] Adjust event time based on restaurant hours
