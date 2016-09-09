@@ -8,7 +8,7 @@ class EventForm extends React.Component {
     super(props);
     this.state = {
       date_time: undefined,
-      location: "",
+      address: "",
       limit: "",
       city_id: this.props.currentUser.city_id,
       host_id: this.props.currentUser.id,
@@ -85,7 +85,7 @@ class EventForm extends React.Component {
             <input className="event-form-text-input" type="text" onChange={this.updateFields("restaurant")} value={this.state.restaurant} placeholder="Restaurant"/>
           </div>
           <div className="form-input-container">
-            <input className="event-form-text-input" type="text" onChange={this.updateFields("location")} value={this.state.location} placeholder="Address"/>
+            <input className="event-form-text-input" type="text" onChange={this.updateFields("address")} value={this.state.address} placeholder="Address"/>
           </div>
           <div className="form-input-container">
             <input className="event-form-text-input" type="text" onChange={this.updateFields("food_type")} value={this.state.food_type} placeholder="Food type (Ex: Indian) (optional)"/>

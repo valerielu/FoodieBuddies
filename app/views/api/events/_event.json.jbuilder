@@ -1,4 +1,4 @@
-json.extract! event, :id, :location, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
+json.extract! event, :id, :address, :limit, :host_id, :city_id, :food_type, :restaurant, :yelp_link, :lat, :lng
 json.host_name event.host.first_name
 json.host_profile_pic_url event.host.profile_pic_url
 json.city_name event.city.name

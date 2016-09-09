@@ -132,6 +132,6 @@ FoodieBuddies is a web application inspired by TeaWithStrangers built using Ruby
 - [ ] Search events by type of food (make them tags)
 - [ ] Set reminders on events (google calendar API)
 - [ ] City suggestions (inspiration)
-- [ ] Google Map API showing events based on location
+- [ ] Google Map API showing events based on address
 - [ ] Events and hosts ratings
 - [ ] Yelp API integration for restaurant inspirations and event details

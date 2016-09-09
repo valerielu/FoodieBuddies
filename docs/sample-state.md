@@ -10,7 +10,7 @@ json
   },
   forms: {
     eventForm: {
-      errors: ["date_time can't be blank", "time can't be blank", "location can't be blank", "limit can't be blank"]
+      errors: ["date_time can't be blank", "time can't be blank", "address can't be blank", "limit can't be blank"]
     }
   },
   cities: {
@@ -33,7 +33,7 @@ json
           id: 1
           date: "20160831",
           time: "19:30:00 PDT",
-          location: "123 restaurant, Durham, NC",
+          address: "123 restaurant, Durham, NC",
           limit: 20,
           description: "is yummy",
           city_id: 2,
@@ -48,7 +48,7 @@ json
         id: 1
         date: "20160831",
         time: "19:30:00 PDT",
-        location: "123 restaurant, Durham, NC",
+        address: "123 restaurant, Durham, NC",
         limit: 20,
         description: "is yummy",
         city_id: 2,
@@ -61,7 +61,7 @@ json
         id: 2
         date: "20160831",
         time: "19:30:00 PDT",
-        location: "123 restaurant, Durham, NC",
+        address: "123 restaurant, Durham, NC",
         limit: 20,
         description: "is yummy",
         city_id: 2,

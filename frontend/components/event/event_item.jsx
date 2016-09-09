@@ -54,7 +54,7 @@ class EventItem extends React.Component{
       eventButton = (<div></div>);
     } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
 
-      eventButton = (<button className="join-event-button" onClick={this.openDeleteModal}>Maybe next time</button>);
+      eventButton = (<button className="join-event-button" onClick={this.openDeleteModal}>I changed my mind</button>);
     } else if (this.props.event.limit <= this.props.event.attendees.length) {
       eventButton = (<div></div>);
     } else {
@@ -153,9 +153,9 @@ class EventItem extends React.Component{
               </h1>
             </div>
 
-            <div className="event-location">
+            <div className="event-address">
               <a className="event-yelp-link" href={yelp_link} target="_blank"><i className="fa fa-yelp" aria-hidden="true"></i>{this.props.event.restaurant} </a>
-              <h1 className="event-address"> @ {this.props.event.location} </h1>
+              <h1 className="event-address"> @ {this.props.event.address} </h1>
             </div>
 
             <div className="event-food-type">

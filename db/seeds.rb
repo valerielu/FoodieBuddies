@@ -273,11 +273,11 @@ taipei = City.create!(name: "Taipei", country: "Taiwan", lat: 25.0330,
   lng: 121.5654, pic_url: "http://res.cloudinary.com/dsj48uswp/image/upload/v1473394889/taipei_kumny7.jpg")
 
 buffet = Event.create!(date_time: DateTime.strptime("10/3/2016 11:00 AM", "%m/%d/%Y %l:%M %p"),
-  location: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109", limit: 5, host_id: 90 ,city_id: 2 ,food_type: "American buffet", restaurant: "Bacchanal Buffet", yelp_link: "https://www.yelp.com/biz/bacchanal-buffet-las-vegas-7" ,lat: 36.1167 ,lng: -115.1742)
+  address: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109", limit: 5, host_id: 90 ,city_id: 2 ,food_type: "American buffet", restaurant: "Bacchanal Buffet", yelp_link: "https://www.yelp.com/biz/bacchanal-buffet-las-vegas-7" ,lat: 36.1167 ,lng: -115.1742)
 shakeshack = Event.create!(date_time: DateTime.strptime("10/2/2016 08:00 PM", "%m/%d/%Y %l:%M %p"),
-  location: "3790 S Las Vegas Blvd", limit: 7, host_id: 90 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
+  address: "3790 S Las Vegas Blvd", limit: 7, host_id: 90 ,city_id: 2 ,food_type: "Fast food", restaurant: "Shake Shack")
 lotus = Event.create!(date_time: DateTime.strptime("10/13/2016 01:00 PM", "%m/%d/%Y %l:%M %p"),
-  location: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 90 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
+  address: "953 E Sahara Ave A5, Nevada, NV 89104", limit: 2, host_id: 90 ,city_id: 2 ,food_type: "Thai", restaurant: "Lotus of Siam", yelp_link: "https://www.yelp.com/biz/lotus-of-siam-las-vegas")
 
 restaurant = ["Andytown Coffee Roasters", "Bronze Cafe", "Sweet Spice", "Little Miss BBQ", "Los Andes Restaurant", "Aviva by Kameel", "Copper Top BBQ", "Ono Seafood", "Golden Bear Trading Company", "Dat Cajun Guy", "Big Al's Pizzeria", "Detroit Coney Grill"]
 food_type = ["American", "Mexican", "Chinese", "Indian", "Vegan", "Japanese", "Mediterranean", "Fast food", "French", "Vietnamese"]
@@ -297,7 +297,7 @@ http://yelp.com/biz/andytown-coffee-roasters-san-francisco
 
 30.times do
   Event.create!(date_time: Faker::Time.between(DateTime.now + 1, DateTime.now + 100),
-  location: Faker::Address.street_address, limit: 2 + rand(8), host_id: 55 + rand(36) ,city_id: 1 + rand(6) ,
+  address: Faker::Address.street_address, limit: 2 + rand(8), host_id: 55 + rand(36) ,city_id: 1 + rand(6) ,
   food_type: food_type[rand(9)], restaurant: restaurant[rand(12)],
   yelp_link: yelp_link[rand(12)])
 end

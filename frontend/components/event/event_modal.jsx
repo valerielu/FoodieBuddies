@@ -21,7 +21,7 @@ class EventModal extends React.Component{
       ModalOpen: false,
       eventData: {
         date_time: this.props.event.date_time,
-        location: this.props.event.location,
+        address: this.props.event.address,
         limit: this.props.event.limit,
         restaurant: this.props.event.restaurant,
         food_type: food_type,
@@ -36,7 +36,7 @@ class EventModal extends React.Component{
         {eventData:
           {
             date_time: this.state.eventData.date_time,
-            location: this.state.eventData.location,
+            address: this.state.eventData.address,
             limit: this.state.eventData.limit,
             restaurant: this.state.eventData.restaurant,
             food_type: this.state.eventData.food_type,
@@ -165,7 +165,7 @@ class EventModal extends React.Component{
                     </div>
                     <div className="form-input-container">
                       <h1 className="form-label">Address</h1>
-                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("location")} value={this.state.eventData.location} placeholder="Address"/>
+                      <input className="event-edit-form-text-input" type="text" onChange={this.updateFields("address")} value={this.state.eventData.address} placeholder="Address"/>
                     </div>
                   </div>
 

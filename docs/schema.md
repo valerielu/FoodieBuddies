@@ -28,7 +28,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 date        | date      | not null
 time        | time      | not null
-location    | string    | not null
+address    | string    | not null
 limit       | integer   | not null
 host_id     | integer   | not null, foreign key (references host), indexed (should be current user)
 city_id     | integer   | not null, foreign key (references city), indexed (should be current user's city)
