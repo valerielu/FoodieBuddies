@@ -25,7 +25,16 @@ footer {
 .footer-quote {
   color: #909090;
   font-size: 15px;
+}
 
+.icon-links {
+  font-size: 30px;
+  margin: 5px;
+  color: #808080;
+}
+
+.icon-links:hover {
+  color: #4885ed;
 }
 
 
