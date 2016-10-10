@@ -16,9 +16,6 @@ class CityDetails extends React.Component{
     }
   }
 
-  componentWillUnmount() {
-    //unmount props so it doesnt flicker when the next one is mounted
-  }
 
   handleEventCreate() {
     this.props.router.push("/events/new");
