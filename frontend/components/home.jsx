@@ -31,15 +31,15 @@ class Home extends React.Component {
         return randomWord;
       };
 
-      let hostStatus = (Math.random() <= 0.5) ? true : false;
+      // let hostStatus = (Math.random() <= 0.5) ? true : false;
       let city_id = Math.floor(Math.random()*6) + 1;
       let userName = `Guest${_stringGen(5)}`;
 
-      if (hostStatus) {
+      if (true) {
         this.props.signup({
           username: userName,
           password: "password",
-          is_host: hostStatus,
+          is_host: true,
           first_name: userName,
           city_id: city_id,
           profile: "Guest user profile"
@@ -48,7 +48,7 @@ class Home extends React.Component {
         this.props.signup({
           username: userName,
           password: "password",
-          is_host: hostStatus
+          is_host: false
         });
       }
     }
